@@ -4,9 +4,11 @@ namespace unit03_jumper
 {
     public class Word
     {
-        private List<string> LotrWords = new List<string>()
+        private string[] LotrWords = new string[5]
         {
             "sauron", "frodo", "gollum", "gandalf", "legolas"
-        }
+        };
+
+        
     }
 }
