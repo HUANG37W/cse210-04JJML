@@ -2,7 +2,7 @@ using System;
 
 namespace unit03_jumper
 {
-    public class Word
+    public class Word 
     {
         private string[] LotrWords = new string[5]
         {
