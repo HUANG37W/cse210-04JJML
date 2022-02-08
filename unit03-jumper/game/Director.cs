@@ -7,13 +7,24 @@ namespace unit03_jumper
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
         private Word word = new Word();
+<<<<<<< HEAD
+=======
+        private Terminal terminal = new Terminal();
+
+        public string userInput = "y";
+>>>>>>> 030c179012f52afb8886c993caba80ecb9ca93eb
         public void SetupGame()
         {
-            //stub
+            word.PickWord(string pull);
+            skyguy.PrintGuy();
         }
 
         public void StartGame()
         {
+            while (isPlaying == true)
+            {
+                //reference the methods that make the game work
+            }
             //stub
         }
 
@@ -24,7 +35,23 @@ namespace unit03_jumper
 
         public void DoUpdate()
         {
+            //check if the game is still okay to continue
+            isPlaying = word.CheckWin(isPlaying);
             //stub
+            if (isPlaying == false)
+            {
+                terminal.WriteText("Do you want to play again? y/n");
+                terminal.ReadText(userInput);
+                userInput = userInput.ToUpper();
+                if (userInput == "Y")
+                {
+                    isPlaying = true;
+                }
+                else
+                {
+                    isPlaying = false;
+                }
+            }
         }
 
         public void DoOutput()

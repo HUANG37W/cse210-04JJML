@@ -4,10 +4,15 @@ namespace unit03_jumper
 {
     public class Word 
     {
+<<<<<<< HEAD
         public Word();
         {
             //instance constructor
         }
+=======
+
+        public Terminal terminal = new Terminal();
+>>>>>>> 030c179012f52afb8886c993caba80ecb9ca93eb
         private string[] LotrWords = new string[5]
         {
             "sauron", "frodo", "gollum", "gandalf", "legolas"
@@ -38,15 +43,19 @@ namespace unit03_jumper
             {
                 case 1:
                     gameWords = LotrWords;
+                    terminal.WriteText("Lotr words selected.");
                     break;
                 case 2:
                     gameWords = marvelWords;
+                    terminal.WriteText("Marvel words selected.");
                     break;
                 case 3:
                     gameWords = starWords;
+                    terminal.WriteText("Star Wars words selected.");
                     break;
                 case 4:
                     gameWords = harryPotter;
+                    terminal.WriteText("Harry Potter words selected.");
                     break;
                 default:
                     Console.WriteLine("Something went wrong with the random.");
@@ -58,6 +67,13 @@ namespace unit03_jumper
             gameWord = gameWords[rnd];
 
             return gameWord;
+        }
+
+        public bool CheckWin(bool gameOn)
+        {
+            //if word blanks full then gameOn = false
+            //else if all the lives are lost then gameOn = false
+            return gameOn;
         }
 
         
