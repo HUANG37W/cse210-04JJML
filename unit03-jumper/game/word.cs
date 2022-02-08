@@ -56,6 +56,13 @@ namespace unit03_jumper
             return gameWord;
         }
 
+        public bool CheckWin(bool gameOn)
+        {
+            //if word blanks full then gameOn = false
+            //else if all the lives are lost then gameOn = false
+            return gameOn;
+        }
+
         
     }
 }
