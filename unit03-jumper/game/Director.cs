@@ -7,9 +7,12 @@ namespace unit03_jumper
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
         private Word word = new Word();
+<<<<<<< HEAD
+=======
         private Terminal terminal = new Terminal();
 
         public string userInput = "y";
+>>>>>>> 030c179012f52afb8886c993caba80ecb9ca93eb
         public void SetupGame()
         {
             word.PickWord(string pull);

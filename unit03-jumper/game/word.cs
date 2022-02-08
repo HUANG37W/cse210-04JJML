@@ -4,8 +4,15 @@ namespace unit03_jumper
 {
     public class Word 
     {
+<<<<<<< HEAD
+        public Word();
+        {
+            //instance constructor
+        }
+=======
 
         public Terminal terminal = new Terminal();
+>>>>>>> 030c179012f52afb8886c993caba80ecb9ca93eb
         private string[] LotrWords = new string[5]
         {
             "sauron", "frodo", "gollum", "gandalf", "legolas"
