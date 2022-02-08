@@ -7,6 +7,10 @@ namespace unit03_jumper
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
         private Word word = new Word();
+<<<<<<< HEAD
+
+=======
+>>>>>>> abd2b574ae6d037e0834e2c272f279b8abe285fc
         private Terminal terminal = new Terminal();
 
         public string userInput = "y";

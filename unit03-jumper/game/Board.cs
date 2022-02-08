@@ -6,7 +6,7 @@ namespace unit03_jumper
     {
         public Board()
         {
-
+           Console.WriteLine("My name is jordan"); 
         }
 
       
