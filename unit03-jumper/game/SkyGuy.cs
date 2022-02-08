@@ -5,27 +5,25 @@ namespace unit03_jumper
 {
     class SkyGuy
     {
-        static void Main(string[] args)
-        {
 
-            List<string> parachute = AddNumbers();
-            {
-                PrintGuy(parachute);
-            }
-
-        static List<string> AddNumbers()
+         private string[] parachute = new string[8]
         {
-            List<string> parachute = new List<string>();
-            for (int i = 1; i< 7; i++)
+            " ____", " /   \\", " _____", "  \\  /" , "  \\ / ", "   0", "  / | \\", "  /  \\"
+        
+        };  
+
+        public void PrintGuy()
+        {
+            foreach (string i in parachute)
             {
-                parachute.Add(i.ToString());
+                Console.WriteLine(i);
             }
-            return parachute;
 
             
         }
     }
 
+<<<<<<< HEAD
     static void PrintGuy(List<string> parachute)
     {
         Console.WriteLine();
@@ -44,5 +42,7 @@ namespace unit03_jumper
 
     
     
-}
+=======
+   
+>>>>>>> 3380698fee0f3d00b69045c13c3ecc5d77ede4c1
 }
