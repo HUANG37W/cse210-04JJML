@@ -6,10 +6,13 @@ namespace unit03_jumper
     {
         public Board()
         {
-           Console.WriteLine("My name is jordan"); 
+           
         }
 
-      
+        public static string ToNonDashed(this string input)
+    {
+        return input?.Replace("-", string.Empty);
+    }  
         
 
       
