@@ -18,6 +18,44 @@ namespace unit03_jumper
             "stark", "thanos", "peter", "america", "winter"
         };
 
+        private string[] harryPotter = new string[5]
+        {
+            "harry", "weasley", "hermione", "malfoy", "voldemort"
+        };
+        private string[] gameWords = new string[5];
+
+        public string PickWord()
+        {
+            Random random = new Random();
+            int rnd = random.Next(1, 4);
+            string gameWord;
+
+            switch (rnd)
+            {
+                case 1:
+                    gameWords = LotrWords;
+                    break;
+                case 2:
+                    gameWords = marvelWords;
+                    break;
+                case 3:
+                    gameWords = starWords;
+                    break;
+                case 4:
+                    gameWords = harryPotter;
+                    break;
+                default:
+                    Console.WriteLine("Something went wrong with the random.");
+                    break;
+            }
+
+            rnd = random.Next(0, 4);
+
+            gameWord = gameWords[rnd];
+
+            return gameWord;
+        }
+
         
     }
 }
