@@ -6,7 +6,7 @@ namespace unit03_jumper
     {   
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
-        private Word word = new Word;
+        private Word word = new Word();
         public void SetupGame()
         {
             //stub
