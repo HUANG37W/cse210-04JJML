@@ -12,8 +12,10 @@ namespace unit03_jumper
         public string userInput = "y";
         public void SetupGame()
         {
-            word.PickWord(string pull);
+            word.PickWord();
             skyguy.PrintGuy();
+            skyguy.PrintParachute();
+            
         }
 
         public void StartGame()
@@ -21,6 +23,7 @@ namespace unit03_jumper
             while (isPlaying == true)
             {
                 //reference the methods that make the game work
+                
             }
             //stub
         }
@@ -33,14 +36,16 @@ namespace unit03_jumper
         public void DoUpdate()
         {
             //check if the game is still okay to continue
+            //need to add lives >0
             isPlaying = word.CheckWin(isPlaying);
+        
             //stub
             if (isPlaying == false)
             {
                 terminal.WriteText("Do you want to play again? y/n");
                 terminal.ReadText(userInput);
                 userInput = userInput.ToUpper();
-                if (userInput == "Y")
+                if (userInput == "Y") 
                 {
                     isPlaying = true;
                 }
@@ -48,7 +53,9 @@ namespace unit03_jumper
                 {
                     isPlaying = false;
                 }
+
             }
+            
         }
 
         public void DoOutput()
@@ -57,3 +64,15 @@ namespace unit03_jumper
         }
     }
 }
+
+                // int lives = skyguy.GetLives();
+                // if (lives >0);
+                // {
+                //     isPlaying = true;
+                // }
+                // else
+                // {
+                //     {
+                //         isPlaying = false;
+                //     }
+                // }
