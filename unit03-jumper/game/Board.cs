@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace unit03_jumper
 {
@@ -30,7 +31,7 @@ namespace unit03_jumper
             for (int j = 0; j < dashNum; j++)
             {
                 //fill the wordChars string list with underscore at start of game
-                wordChars[j] = "_";
+                wordChars.ToString() += "_";
             }
         }
 
