@@ -9,13 +9,16 @@ namespace unit03_jumper
         private Word word = new Word();
         private Terminal terminal = new Terminal();
 
+        private Board board = new Board();
+
         public string userInput = "y";
         public void SetupGame()
         {
             word.PickWord();
-            skyguy.PrintGuy();
             skyguy.PrintParachute();
-            
+            skyguy.PrintGuy();
+            board.InitDashes();
+            board.DisplayDashes();
         }
 
         public void StartGame()
@@ -25,7 +28,6 @@ namespace unit03_jumper
                 //reference the methods that make the game work
                 
             }
-            //stub
         }
 
         public void DoInput()

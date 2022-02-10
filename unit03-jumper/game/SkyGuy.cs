@@ -12,8 +12,10 @@ namespace unit03_jumper
         /// </summary>
 
         public SkyGuy()
-        {    
+        {
+            //SkyGuy Instance Constructor
         }
+
         // the body of the skyguy
         private string[] body = new string[2]
         {
@@ -21,7 +23,7 @@ namespace unit03_jumper
         };
 
         // the parachute of the skyguy
-        private List<string> parachute = new List<string>() 
+        private List<string> parachute = new List<string>()
         {
              " ____", " /   \\ ", " _____", "  \\  /" , "   \\/ ", "   0"
         };
@@ -35,7 +37,6 @@ namespace unit03_jumper
             {
                 Console.WriteLine(i);
             }
-            
         }
         /// <summary>
         /// Prints the parachute of skyguy in rows, indexed, and includes the head.
