@@ -17,12 +17,13 @@ namespace unit03_jumper
             word.PickWord();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
-            board.InitDashes();
-            board.DisplayDashes();
+            board.DisplayWord();
+            board.GetGuess();
         }
 
         public void StartGame()
         {
+            DoOutput();
             while (isPlaying == true)
             {
                 //reference the methods that make the game work
@@ -36,7 +37,9 @@ namespace unit03_jumper
         }
 
         public void DoUpdate()
-        {
+        {   
+            if (skyguy.IsDead())
+                isPlaying = false;
             //check if the game is still okay to continue
             //need to add lives >0
             isPlaying = word.CheckWin(isPlaying);
@@ -62,19 +65,11 @@ namespace unit03_jumper
 
         public void DoOutput()
         {
-            //stub
+            board.DisplayWord();
+            skyguy.PrintParachute();
+            skyguy.PrintGuy();
         }
     }
 }
 
-                // int lives = skyguy.GetLives();
-                // if (lives >0);
-                // {
-                //     isPlaying = true;
-                // }
-                // else
-                // {
-                //     {
-                //         isPlaying = false;
-                //     }
-                // }
+               

@@ -10,7 +10,7 @@ namespace unit03_jumper
         /// <summary>
         /// Constructs a new SkyGuy.
         /// </summary>
-
+        private Terminal terminal = new Terminal();      
         public SkyGuy()
         {
             //SkyGuy Instance Constructor
@@ -35,7 +35,7 @@ namespace unit03_jumper
         {
             foreach (string i in body)
             {
-                Console.WriteLine(i);
+                terminal.WriteText(i);
             }
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace unit03_jumper
         {
             foreach (string i in parachute)
             {
-                Console.WriteLine(i);
+                terminal.WriteText(i);
             }
             
         }
@@ -55,14 +55,16 @@ namespace unit03_jumper
         public void UpdateParachute()
         {
             parachute.RemoveAt(0);
+            _lives --;
+            if (IsDead())
+            {
+                parachute[parachute.Count - 1] = "x";
+            }
         }
-        /// <summary>
-        /// Returns the number of objects left in the list, stores in variable lives.
-        /// </summary>
-        public int GetLives()
+        
+        public bool IsDead()
         {
-            _lives = parachute.Count();
-            return _lives;
+            return _lives <= 0;
         }
         
     }

@@ -10,7 +10,7 @@ namespace unit03_jumper
             
         }
 
-        public Terminal terminal = new Terminal();
+        private Terminal terminal = new Terminal();
         private string[] LotrWords = new string[5]
         {
             "sauron", "frodo", "gollum", "gandalf", "legolas"
