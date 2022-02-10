@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 namespace unit03_jumper
 {
     public class Board
@@ -10,7 +9,9 @@ namespace unit03_jumper
 
         private Word word = new Word(); //creates instance of word
 
-        private List<string> wordChars = new List<string>(); 
+        private List<string> wordChars = new List<string>();
+
+        // private char[] wordChars = new char[64];
 
         public int dashNum = 0;
 
@@ -27,12 +28,17 @@ namespace unit03_jumper
         {
             string gameWord = word.PickWord();
             dashNum = gameWord.Length;
+            
 
             for (int j = 0; j < dashNum; j++)
             {
                 //fill the wordChars string list with underscore at start of game
                 wordChars.ToString() += "_";
             }
+
+         
+
+
         }
 
         public void DisplayDashes()
@@ -46,8 +52,8 @@ namespace unit03_jumper
 
         public void GetGuess()
         {
-            string guess = "";
-            terminal.WriteChar("Guess a letter: ");
+            string guess = "a";
+            terminal.WriteChar("Guess one letter of the word: ");
             terminal.ReadText(guess);
 
             for (int k = 0; k < dashNum; k++)
@@ -56,16 +62,21 @@ namespace unit03_jumper
                 {
                     wordChars[k] = guess;
                 }
+
+
             }
+
         }
 
         public void ReplaceDash()
         {
             string gameWord = word.PickWord();
-            foreach (letter in gameWord)
+            foreach (char letter in gameWord)
             {
                 wordChars.add(letter);
             }
-        }    
+        } 
+
+        
     }     
 }
