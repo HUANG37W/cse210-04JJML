@@ -11,16 +11,15 @@ namespace unit03_jumper
         private SkyGuy sky = new SkyGuy();
 
         private List<string> guesses = new List<string>();
-        private Word word = new Word();
 
         private string gameword;
 
         private string letter;
         private string guess;
 
-        public Board()
+        public Board(string word)
         {
-            gameword = word.GetWord();
+            gameword = word;
         }
 
         public void DisplayWord()
@@ -40,20 +39,15 @@ namespace unit03_jumper
             }
 
         }
-        public void GetGuess()
+        public string GetGuess()
         {
             guess = "";
-            terminal.Write("\nGuess a letter of the word: ");
-            terminal.ReadText(guess);
+            guess = terminal.ReadText("\nGuess a letter of the word: "); //saves the guess in variable "guess"
             guesses.Add(guess);
+
+            return guess;
         }
-        public void KillSkyGuy()
-        {
-            if (guess != letter)
-            {
-                sky.UpdateParachute();
-            }
-        }
+        
             
     
 

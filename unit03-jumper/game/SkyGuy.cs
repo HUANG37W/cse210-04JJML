@@ -61,7 +61,7 @@ namespace unit03_jumper
             _lives--;
             if (IsDead())
             {
-                parachute[parachute.Count - 1] = "x";
+                parachute.Add("   x");
             }
         }
         ///<summary>

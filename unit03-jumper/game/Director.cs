@@ -12,9 +12,18 @@ namespace unit03_jumper
         
         private Terminal terminal = new Terminal();
 
-        private Board board = new Board();
+        private Board board;
+
+        private Word word = new Word();
 
         private string userInput = "Y";
+
+        private string guess;
+
+        public Director()
+        {
+            board = new Board(word.GetWord());
+        }
         
 
         //set up the game: pick a random word, display the initial look of the board.
@@ -23,7 +32,6 @@ namespace unit03_jumper
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
-            board.GetGuess();
        }
 
         //start the actual game, looping through all the functions until the game is over
@@ -41,15 +49,24 @@ namespace unit03_jumper
         public void DoInput()
         {
             //ask the user for their letter guess
-            board.GetGuess();
+            guess = board.GetGuess();
         }
 
         public void DoUpdate()
         {   
 
             if (skyguy.IsDead())
+            {
                 isPlaying = false;
-            
+                terminal.WriteText("Better luck next time!");
+            }
+                
+
+            if (!word.CheckGuess(guess))
+            {
+                skyguy.UpdateParachute();
+            }
+
             if (isPlaying == false)
             {
                 terminal.WriteText("Do you want to play again? y/n");
@@ -74,7 +91,6 @@ namespace unit03_jumper
             //and then the spaces where the word needs to filled.
             skyguy.PrintParachute();
             skyguy.PrintGuy();
-            board.KillSkyGuy();
             terminal.WriteText(" \n");
             board.DisplayWord();
             

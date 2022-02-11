@@ -10,7 +10,7 @@ namespace unit03_jumper
         {
             SetWord();
         }
-        private string getword;
+        private string gameWord;
         private Terminal terminal = new Terminal();
         private List<string> LotrWords = new List<string>
         {
@@ -34,41 +34,47 @@ namespace unit03_jumper
 
         public string GetWord()
         {
-            return getword;
+            terminal.WriteText(gameWord); //THIS IS SPOILERS
+            return gameWord;
         }
         public void SetWord() 
         {
             Random random = new Random();
-            int rnd = random.Next(1,4);
-            string gameWord;
+            int rnd = random.Next(1,5);
 
             switch (rnd)
             {
                 case 1:
                     gameWords = LotrWords;
-                    terminal.WriteText("Lotr words selected.");
+                    terminal.WriteText("\nLotr words selected.");
                     break;
                 case 2:
                     gameWords = marvelWords;
-                    terminal.WriteText("Marvel words selected.");
+                    terminal.WriteText("\nMarvel words selected.");
                     break;
                 case 3:
                     gameWords = starWords;
-                    terminal.WriteText("Star Wars words selected.");
+                    terminal.WriteText("\nStar Wars words selected.");
                     break;
                 case 4:
                     gameWords = harryPotter;
-                    terminal.WriteText("Harry Potter words selected.");
+                    terminal.WriteText("\nHarry Potter words selected.");
                     break;
                 default:
-                    terminal.WriteText("Something went wrong with the random.");
+                    terminal.WriteText("\nSomething went wrong with the random.");
                     break;
             }
             
-            rnd = random.Next(0, 4);
+            rnd = random.Next(0, 5);
             gameWord = gameWords[rnd];
 
             
+        }
+
+        public bool CheckGuess(string guess)
+        {
+            //returns true or false depending on if the gameWord contains our guess
+            return gameWord.Contains(guess);
         }
         
     }
