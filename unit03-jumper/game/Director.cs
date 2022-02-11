@@ -65,9 +65,10 @@ namespace unit03_jumper
 
         public void DoOutput()
         {
-            board.DisplayWord();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
+            terminal.WriteText(" \n");
+            board.DisplayWord();
         }
     }
 }
