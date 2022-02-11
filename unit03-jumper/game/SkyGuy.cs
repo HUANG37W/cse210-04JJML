@@ -19,13 +19,13 @@ namespace unit03_jumper
         // the body of the skyguy
         private string[] body = new string[2]
         {
-            "  /|\\", "  / \\"
+            "   /|\\", "   / \\"
         };
 
         // the parachute of the skyguy
         private List<string> parachute = new List<string>()
         {
-             "   ___", "  /   \\ ", "  ____", "  \\  /" , "   \\/ ", "   0"
+             "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
         };
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace unit03_jumper
             _lives--;
             if (IsDead())
             {
-                parachute.Add("   x");
+                parachute.Add("    x");
             }
         }
         ///<summary>
