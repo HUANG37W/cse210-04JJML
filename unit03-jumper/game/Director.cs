@@ -11,7 +11,7 @@ namespace unit03_jumper
 
         private Board board = new Board();
 
-        public string userInput = "y";
+        private string userInput = "y";
         public void SetupGame()
         {
             word.PickWord();

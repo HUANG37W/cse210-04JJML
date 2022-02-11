@@ -7,25 +7,25 @@ namespace unit03_jumper
     class SkyGuy
     {
         int _lives = 6;
+        private Terminal terminal = new Terminal(); 
         /// <summary>
-        /// Constructs a new SkyGuy.
-        /// </summary>
-        private Terminal terminal = new Terminal();      
+        /// Constructs instance SkyGuy.
+        /// </summary>     
         public SkyGuy()
         {
-            //SkyGuy Instance Constructor
+            
         }
 
         // the body of the skyguy
         private string[] body = new string[2]
         {
-            "  / | \\", "  /  \\"
+            "  /|\\", "  / \\"
         };
 
         // the parachute of the skyguy
         private List<string> parachute = new List<string>()
         {
-             " ____", " /   \\ ", " _____", "  \\  /" , "   \\/ ", "   0"
+             "   ___", "  /   \\ ", " ____", "  \\  /" , "   \\/ ", "   0"
         };
 
         /// <summary>
@@ -51,6 +51,9 @@ namespace unit03_jumper
         }
         /// <summary>
         /// Removes the first object in the list parachute.
+        /// <para>
+        /// Subtracts lives if removing part of parachute.
+         /// </para>
         /// </summary>
         public void UpdateParachute()
         {
@@ -61,7 +64,9 @@ namespace unit03_jumper
                 parachute[parachute.Count - 1] = "x";
             }
         }
-        
+        ///<summary>
+        ///Changes head from 0 to x if lives at 0
+        ///</summary>
         public bool IsDead()
         {
             return _lives <= 0;
