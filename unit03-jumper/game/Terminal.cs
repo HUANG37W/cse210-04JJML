@@ -39,10 +39,6 @@ namespace unit03_jumper
             Console.WriteLine(text);
         }
 
-        public void WriteChar(string text)
-        {
-            Console.Write(text);
-        }
         public void Write(string text)
         {
             Console.Write(text);

@@ -58,7 +58,7 @@ namespace unit03_jumper
         public void UpdateParachute()
         {
             parachute.RemoveAt(0);
-            _lives --;
+            _lives--;
             if (IsDead())
             {
                 parachute[parachute.Count - 1] = "x";

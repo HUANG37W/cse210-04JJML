@@ -56,7 +56,7 @@ namespace unit03_jumper
                     terminal.WriteText("Harry Potter words selected.");
                     break;
                 default:
-                    Console.WriteLine("Something went wrong with the random.");
+                    terminal.WriteText("Something went wrong with the random.");
                     break;
             }
 
@@ -66,14 +66,6 @@ namespace unit03_jumper
 
             return gameWord;
         }
-
-        public bool CheckWin(bool gameOn)
-        {
-            //if word blanks full then gameOn = false
-            //else if all the lives are lost then gameOn = false
-            return gameOn;
-        }
-
         
     }
 }
