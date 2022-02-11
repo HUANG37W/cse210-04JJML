@@ -30,7 +30,7 @@ namespace unit03_jumper
 
                 else
                 {
-                    terminal.Write("-");
+                    terminal.Write("_ ");
                 }
             }
 
