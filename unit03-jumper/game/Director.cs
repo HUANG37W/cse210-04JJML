@@ -14,10 +14,10 @@ namespace unit03_jumper
         private string userInput = "y";
         public void SetupGame()
         {
-            word.PickWord();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
+            word.PickWord();
             board.GetGuess();
         }
 

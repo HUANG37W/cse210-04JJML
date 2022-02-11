@@ -25,7 +25,7 @@ namespace unit03_jumper
         // the parachute of the skyguy
         private List<string> parachute = new List<string>()
         {
-             "   ___", "  /   \\ ", " ____", "  \\  /" , "   \\/ ", "   0"
+             "   ___", "  /   \\ ", "  ____", "  \\  /" , "   \\/ ", "   0"
         };
 
         /// <summary>
