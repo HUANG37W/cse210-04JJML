@@ -7,29 +7,30 @@ namespace unit03_jumper
 
         private Terminal terminal = new Terminal(); //creates instance of our terminal service
 
-        private Word word = new Word(); //creates instance of word
+    
         private SkyGuy sky = new SkyGuy();
 
         private List<string> guesses = new List<string>();
+        private Word word = new Word();
 
         private string gameword;
 
-        private string s;
+        private string letter;
         private string guess;
 
         public Board()
         {
-            gameword = word.PickWord();
+            gameword = word.GetWord();
         }
 
         public void DisplayWord()
         {
-            foreach (char letter in gameword)
+            foreach (char letters in gameword)
             {
-                s = letter.ToString();
-                if (guesses.Contains(s))
+                letter = letters.ToString();
+                if (guesses.Contains(letter))
                 {
-                    terminal.Write(s);
+                    terminal.Write(letter);
                 }
                 //saying if the letter guess was wrong
                 else
@@ -45,13 +46,10 @@ namespace unit03_jumper
             terminal.Write("\nGuess a letter of the word: ");
             terminal.ReadText(guess);
             guesses.Add(guess);
-
         }
-
-
         public void KillSkyGuy()
         {
-            if (guess != s)
+            if (guess != letter)
             {
                 sky.UpdateParachute();
             }

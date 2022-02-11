@@ -8,7 +8,8 @@ namespace unit03_jumper
     {   
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
-        private Word word = new Word();
+        ///word is instantiated and sets gameword
+        
         private Terminal terminal = new Terminal();
 
         private Board board = new Board();
@@ -22,7 +23,6 @@ namespace unit03_jumper
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
-            word.PickWord();
             board.GetGuess();
        }
 
@@ -35,9 +35,6 @@ namespace unit03_jumper
                 DoInput();
                 DoUpdate();
                 DoOutput();
-   
-                //reference the methods that make the game work
-                
             }
         }
 
@@ -52,11 +49,7 @@ namespace unit03_jumper
 
             if (skyguy.IsDead())
                 isPlaying = false;
-            //check if the game is still okay to continue
-            //need to add lives >0
-            // isPlaying = board.CheckWin(isPlaying);
-        
-            //asks user if they want to play again after game over
+            
             if (isPlaying == false)
             {
                 terminal.WriteText("Do you want to play again? y/n");

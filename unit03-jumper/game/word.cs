@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace unit03_jumper
 {
@@ -7,34 +8,38 @@ namespace unit03_jumper
 
         public Word()
         {
-            
+            SetWord();
         }
-
+        private string getword;
         private Terminal terminal = new Terminal();
-        private string[] LotrWords = new string[5]
+        private List<string> LotrWords = new List<string>
         {
             "sauron", "frodo", "gollum", "gandalf", "legolas"
         };
 
-         private string[] starWords = new string[5]
+         private List<string> starWords = new List<string>
         {
             "blaster", "vader", "fives", "anakin", "kenobi"
         };
-         private string[] marvelWords = new string[5]
+         private List<string> marvelWords = new List<string>
         {
             "stark", "thanos", "peter", "america", "winter"
         };
 
-        private string[] harryPotter = new string[5]
+        private List<string> harryPotter = new List<string>
         {
             "harry", "weasley", "hermione", "malfoy", "voldemort"
         };
-        private string[] gameWords = new string[5];
+        private List<string> gameWords;
 
-        public string PickWord()
+        public string GetWord()
+        {
+            return getword;
+        }
+        public void SetWord() 
         {
             Random random = new Random();
-            int rnd = random.Next(1, 4);
+            int rnd = random.Next(1,4);
             string gameWord;
 
             switch (rnd)
@@ -59,12 +64,11 @@ namespace unit03_jumper
                     terminal.WriteText("Something went wrong with the random.");
                     break;
             }
-
+            
             rnd = random.Next(0, 4);
-
             gameWord = gameWords[rnd];
 
-            return gameWord;
+            
         }
         
     }
