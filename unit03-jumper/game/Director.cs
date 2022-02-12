@@ -34,7 +34,6 @@ namespace unit03_jumper
         public void SetupGame()
         {
             isPlaying = true;
-            //skyguy.SetupParachute();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
@@ -54,7 +53,6 @@ namespace unit03_jumper
                 DoInput();
                 DoOutput();
                 DoUpdate();
-                // Check if game is over
             }
         }
 
@@ -76,16 +74,11 @@ namespace unit03_jumper
                 terminal.WriteText("\nBetter luck next time!");
             }
 
-
             if (!word.CheckGuess(guess))
             {
                 skyguy.UpdateParachute();
             }
-            else
-            {
-                
-            }
-
+            
             //if the game is over, ask user if they want to play again.
             if (isPlaying == false)
             {
@@ -103,10 +96,7 @@ namespace unit03_jumper
                     isPlaying = false;
                     terminal.Write($"\tisPlaying saved as: {isPlaying}");
                 }
-
             }
-
-            
         }
 
         public void DoOutput()
