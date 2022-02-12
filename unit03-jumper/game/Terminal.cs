@@ -43,6 +43,5 @@ namespace unit03_jumper
         {
             Console.Write(text);
         }
-        
     }
 }
