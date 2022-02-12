@@ -48,6 +48,8 @@ namespace unit03_jumper
                 // terminal.Write( letter);
             }
         }
+        
+
         public string GetGuess()
         {
             guess = terminal.ReadText("\n\nGuess a letter of the word: "); //saves the guess in variable "guess"
@@ -57,6 +59,10 @@ namespace unit03_jumper
             return guess;
         }
        
+       /// <summary>
+        /// Checks if the game is won (all the blanks filled) and returns a
+        /// true or false.
+        /// </summary>
         public bool CheckWin(bool gameOn)
         {
             foreach (char letter in gameword)
