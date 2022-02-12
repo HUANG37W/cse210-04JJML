@@ -15,7 +15,7 @@ namespace unit03_jumper
         private Board board;
         private Word word = new Word();
 
-        private string userInput = "";
+        private string userInput = " ";
 
         private string guess;
 
