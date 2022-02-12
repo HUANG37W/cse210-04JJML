@@ -81,7 +81,5 @@ namespace unit03_jumper
             }
             return gameOn;
         }   
-
-        
     }     
 }

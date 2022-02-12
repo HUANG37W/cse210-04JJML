@@ -69,8 +69,6 @@ namespace unit03_jumper
             
             rnd = random.Next(0, 5);
             gameWord = gameWords[rnd];
-
-            
         }
 
         public bool CheckGuess(string guess)

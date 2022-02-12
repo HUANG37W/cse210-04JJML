@@ -59,7 +59,6 @@ namespace unit03_jumper
             {
                 terminal.WriteText(i);
             }
-            
         }
         /// <summary>
         /// Removes the first object in the list parachute.
@@ -83,8 +82,5 @@ namespace unit03_jumper
         {
             return _lives < 1;
         }
-        
     }
-
-
 }
