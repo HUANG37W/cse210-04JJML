@@ -71,7 +71,7 @@ namespace unit03_jumper
             if (skyguy.IsDead())
             {
                 isPlaying = false;
-                terminal.WriteText("\nBetter luck next time!");
+                terminal.WriteText("\n\nBetter luck next time!");
             }
 
             if (!word.CheckGuess(guess))
