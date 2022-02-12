@@ -17,6 +17,8 @@ namespace unit03_jumper
         private string letter;
         private string guess;
 
+        public static int saveGuy = 0; //IMPORTANT FOR CHECKING IF THE GAME IS WON
+
         public Board(string word)
         {
             gameword = word;
@@ -41,7 +43,6 @@ namespace unit03_jumper
         }
         public string GetGuess()
         {
-            guess = "";
             guess = terminal.ReadText("\nGuess a letter of the word: "); //saves the guess in variable "guess"
             guesses.Add(guess);
 

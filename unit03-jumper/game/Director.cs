@@ -13,22 +13,27 @@ namespace unit03_jumper
         private Terminal terminal = new Terminal();
 
         private Board board;
-
         private Word word = new Word();
+
+        public int scoreGoal;
 
         private string userInput = "Y";
 
         private string guess;
 
+        private int score = 0;
+
         public Director()
         {
             board = new Board(word.GetWord());
+
         }
         
 
         //set up the game: pick a random word, display the initial look of the board.
         public void SetupGame()
         {
+            isPlaying = true;
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
@@ -65,8 +70,19 @@ namespace unit03_jumper
             if (!word.CheckGuess(guess))
             {
                 skyguy.UpdateParachute();
+                
+            }
+            else
+            {
+                score++; //increases the score by one if the guess was correct
+                // if (score = saveGuy)
+                // {
+                //     //if the max score has been reached, you won the game!
+                //     isPlaying = true;
+                // }
             }
 
+            //if the game is over, ask user if they want to play again.
             if (isPlaying == false)
             {
                 terminal.WriteText("Do you want to play again? y/n");
