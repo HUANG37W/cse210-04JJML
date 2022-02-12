@@ -15,7 +15,7 @@ namespace unit03_jumper
         private Board board;
         private Word word = new Word();
 
-        private string userInput = "Y";
+        private string userInput;
 
         private string guess;
 
@@ -44,8 +44,9 @@ namespace unit03_jumper
             while (isPlaying == true)
             {
                 DoInput();
-                DoUpdate();
                 DoOutput();
+                DoUpdate();
+                // Check if game is over
             }
         }
 
@@ -57,24 +58,26 @@ namespace unit03_jumper
 
         public void DoUpdate()
         {   
+            //check if the game should still be going on
+            //THIS DOESN'T WORK YET FOR SOME REASON
+            isPlaying = board.CheckWin(isPlaying);
 
             if (skyguy.IsDead())
             {
                 isPlaying = false;
-                terminal.WriteText("Better luck next time!");
+                terminal.WriteText("\nBetter luck next time!");
             }
                 
 
             if (!word.CheckGuess(guess))
             {
                 skyguy.UpdateParachute();
-                
             }
             else
             {
                 
                 //THIS IS FOR CHECKING IF THE GAME IS WON OR NOT
-                // if (score = saveGuy)
+                // if (score == saveGuy)
                 // {
                 //     //if the max score has been reached, you won the game!
                 //     isPlaying = true;
@@ -84,7 +87,7 @@ namespace unit03_jumper
             //if the game is over, ask user if they want to play again.
             if (isPlaying == false)
             {
-                terminal.WriteText("Do you want to play again? y/n");
+                terminal.WriteText("\nDo you want to play again? y\n");
                 terminal.ReadText(userInput);
                 userInput = userInput.ToUpper();
                 if (userInput == "Y")
@@ -97,6 +100,7 @@ namespace unit03_jumper
                 }
 
             }
+
             
         }
 
