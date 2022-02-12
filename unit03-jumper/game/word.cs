@@ -11,6 +11,8 @@ namespace unit03_jumper
             SetWord();
         }
         private string gameWord;
+
+        public int scoreGoal; //will be set to the number of characters of chosen word
         private Terminal terminal = new Terminal();
         private List<string> LotrWords = new List<string>
         {
