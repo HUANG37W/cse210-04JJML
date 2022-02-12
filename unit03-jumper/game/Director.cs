@@ -16,7 +16,7 @@ namespace unit03_jumper
 
         private Word word = new Word();
 
-        private string userInput = "Y";
+        private string userInput = "";
 
         private string guess;
 
@@ -60,7 +60,7 @@ namespace unit03_jumper
                 isPlaying = false;
                 terminal.WriteText("Better luck next time!");
             }
-                
+
 
             if (!word.CheckGuess(guess))
             {
