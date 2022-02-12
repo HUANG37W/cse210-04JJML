@@ -17,7 +17,9 @@ namespace unit03_jumper
         private string letter;
         private string guess;
 
-        public static int saveGuy = 0; //IMPORTANT FOR CHECKING IF THE GAME IS WON
+        private int score = 0; //This is the user's score which keeps track of how close to winning
+
+        public static int saveGuy = 0; //IMPORTANT FOR CHECKING IF THE GAME IS WON (Compare score with saveGuy)
 
         public Board(string word)
         {
@@ -32,6 +34,7 @@ namespace unit03_jumper
                 if (guesses.Contains(letter))
                 {
                     terminal.Write(letter);
+                    score++; //increases the score if the guess is correct
                 }
                 //saying if the letter guess was wrong
                 else
@@ -53,7 +56,7 @@ namespace unit03_jumper
     
 
         
-
+        // MOST LIKELY DELETE THIS
         // public bool CheckWin(bool gameOn)
         // {
         //     foreach (char letter in gameword)

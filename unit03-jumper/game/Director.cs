@@ -15,8 +15,6 @@ namespace unit03_jumper
         private Board board;
         private Word word = new Word();
 
-        public int scoreGoal;
-
         private string userInput = "Y";
 
         private string guess;
@@ -74,7 +72,8 @@ namespace unit03_jumper
             }
             else
             {
-                score++; //increases the score by one if the guess was correct
+                
+                //THIS IS FOR CHECKING IF THE GAME IS WON OR NOT
                 // if (score = saveGuy)
                 // {
                 //     //if the max score has been reached, you won the game!
