@@ -15,11 +15,13 @@ namespace unit03_jumper
         private Board board;
         private Word word = new Word();
 
-        private string userInput = " ";
+        //private string userInput = " ";
 
         private string guess;
 
         private int score = 0;
+
+        private bool replay = false;
 
         public Director()
         {
@@ -32,6 +34,7 @@ namespace unit03_jumper
         public void SetupGame()
         {
             isPlaying = true;
+            //skyguy.SetupParachute();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
@@ -43,9 +46,14 @@ namespace unit03_jumper
             SetupGame();
             while (isPlaying == true)
             {
+                if (replay)
+                {
+                    SetupGame();
+                    replay = false; //sets replay back to 0 so SetupGame isn't called multiple times
+                }
                 DoInput();
-                DoUpdate();
                 DoOutput();
+                DoUpdate();
             }
         }
 
@@ -84,16 +92,20 @@ namespace unit03_jumper
             //if the game is over, ask user if they want to play again.
             if (isPlaying == false)
             {
-                terminal.WriteText("Do you want to play again? y/n");
-                terminal.ReadText(userInput);
+                string userInput = "y";
+                //terminal.WriteText("Do you want to play again? y/n");
+                userInput = terminal.ReadText("Do you want to play again? y/n");
                 userInput = userInput.ToUpper();
                 if (userInput == "Y")
                 {
                     isPlaying = true;
+                    replay = true; //keep track that we are playing again
+                    terminal.Write($"isPlaying saved as: {isPlaying}");
                 }
                 else
                 {
                     isPlaying = false;
+                    terminal.Write($"isPlaying saved as: {isPlaying}");
                 }
 
             }

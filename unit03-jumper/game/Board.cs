@@ -26,6 +26,9 @@ namespace unit03_jumper
             gameword = word;
         }
 
+        /// <summary>
+        /// This will get our word and let us compare it to the game word to then display.
+        /// </summary>
         public void DisplayWord()
         {
             foreach (char letters in gameword)
@@ -44,9 +47,14 @@ namespace unit03_jumper
             }
 
         }
+
+        /// <summary>
+        /// Allows us to get the guess and adds the guess to a list. 
+        /// </summary>
         public string GetGuess()
         {
             guess = terminal.ReadText("\nGuess a letter of the word: "); //saves the guess in variable "guess"
+            terminal.WriteText("\n");
             guesses.Add(guess);
 
             return guess;

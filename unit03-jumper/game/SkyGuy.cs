@@ -6,7 +6,7 @@ namespace unit03_jumper
 {
     class SkyGuy
     {
-        int _lives = 6;
+        public int _lives = 6;
         private Terminal terminal = new Terminal(); 
         /// <summary>
         /// Constructs instance SkyGuy.
@@ -18,15 +18,27 @@ namespace unit03_jumper
 
         // the body of the skyguy
         private string[] body = new string[2]
-        {
-            "   /|\\", "   / \\"
-        };
+        {"   /|\\", "   / \\"};
 
         // the parachute of the skyguy
         private List<string> parachute = new List<string>()
         {
              "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
         };
+
+
+        /// <summary>
+        /// Resets the board/parachute of the skyguy at start of new game.
+        /// </summary>
+        // public void SetupParachute()
+        // {
+        //     body = {"   /|\\", "   / \\"};
+        //     parachute = new List<string>() 
+        //     {
+        //      "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
+        //     };
+        //     lives = 6;
+        // }
 
         /// <summary>
         /// Prints the fixed body of skyguy.
@@ -69,7 +81,7 @@ namespace unit03_jumper
         ///</summary>
         public bool IsDead()
         {
-            return _lives <= 0;
+            return _lives < 1;
         }
         
     }
