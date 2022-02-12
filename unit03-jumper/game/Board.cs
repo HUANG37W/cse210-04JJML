@@ -45,7 +45,6 @@ namespace unit03_jumper
                 {
                     terminal.Write("_ ");
                 }
-                // terminal.Write( letter);
             }
         }
         

@@ -15,11 +15,13 @@ namespace unit03_jumper
         private Board board;
         private Word word = new Word();
 
-        private string userInput;
+        private string userInput = " ";
 
         private string guess;
 
         private int score = 0;
+
+        private bool replay = false;
 
         public Director()
         {
@@ -32,6 +34,7 @@ namespace unit03_jumper
         public void SetupGame()
         {
             isPlaying = true;
+            //skyguy.SetupParachute();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
@@ -43,6 +46,11 @@ namespace unit03_jumper
             SetupGame();
             while (isPlaying == true)
             {
+                if (replay)
+                {
+                    SetupGame();
+                    replay = false; //sets replay back to 0 so SetupGame isn't called multiple times
+                }
                 DoInput();
                 DoOutput();
                 DoUpdate();
@@ -67,7 +75,7 @@ namespace unit03_jumper
                 isPlaying = false;
                 terminal.WriteText("\nBetter luck next time!");
             }
-                
+
 
             if (!word.CheckGuess(guess))
             {
@@ -76,27 +84,24 @@ namespace unit03_jumper
             else
             {
                 
-                //THIS IS FOR CHECKING IF THE GAME IS WON OR NOT
-                // if (score == saveGuy)
-                // {
-                //     //if the max score has been reached, you won the game!
-                //     isPlaying = true;
-                // }
             }
 
             //if the game is over, ask user if they want to play again.
             if (isPlaying == false)
             {
-                terminal.WriteText("\nDo you want to play again? y\n");
-                terminal.ReadText(userInput);
+                userInput = terminal.ReadText("\nDo you want to play again? y/n?\n");
+                terminal.WriteText($"\tUserInput was saved as: {userInput}");
                 userInput = userInput.ToUpper();
                 if (userInput == "Y")
                 {
                     isPlaying = true;
+                    replay = true; //keep track that we are playing again
+                    terminal.Write($"\tisPlaying saved as: {isPlaying}");
                 }
                 else
                 {
                     isPlaying = false;
+                    terminal.Write($"\tisPlaying saved as: {isPlaying}");
                 }
 
             }
