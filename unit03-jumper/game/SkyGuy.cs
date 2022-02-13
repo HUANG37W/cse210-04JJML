@@ -17,28 +17,26 @@ namespace unit03_jumper
         }
 
         // the body of the skyguy
-        private string[] body = new string[2]
-        {"   /|\\", "   / \\"};
+        private string[] body;
 
         // the parachute of the skyguy
-        private List<string> parachute = new List<string>()
-        {
-             "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
-        };
+        private List<string> parachute;
 
 
         /// <summary>
         /// Resets the board/parachute of the skyguy at start of new game.
         /// </summary>
-        // public void SetupParachute()
-        // {
-        //     body = {"   /|\\", "   / \\"};
-        //     parachute = new List<string>() 
-        //     {
-        //      "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
-        //     };
-        //     lives = 6;
-        // }
+        public void SetupParachute()
+        {
+            body = new string[2]
+            {"   /|\\", "   / \\"};
+
+            parachute = new List<string>() 
+            {
+            "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
+            };
+            _lives = 6;
+        }
 
         /// <summary>
         /// Prints the fixed body of skyguy.

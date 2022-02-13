@@ -12,12 +12,12 @@ namespace unit03_jumper
 
         private List<string> guesses = new List<string>();
 
-        private string gameword;
+        private string _gameword;
 
-        private string letter;
-        private string guess;
+        private string _letter;
+        private string _guess;
 
-        private int score = 0; //This is the user's score which keeps track of how close to winning
+        private int _score = 0; //This is the user's score which keeps track of how close to winning
 
         public static int saveGuy = 0; //IMPORTANT FOR CHECKING IF THE GAME IS WON (Compare score with saveGuy)
         /// <summary>
@@ -25,20 +25,19 @@ namespace unit03_jumper
         /// </summary>
         public Board(string word)
         {
-            gameword = word;
+            _gameword = word;
         }
         /// <summary>
         /// Displays the board, replaces letter and displays it, or a dash.
         /// </summary>
         public void DisplayWord()
         {
-            foreach (char letters in gameword)
+            foreach (char letters in _gameword)
             {
-                letter = letters.ToString();
-                if (guesses.Contains(letter))
+                _letter = letters.ToString();
+                if (guesses.Contains(_letter))
                 {
-                    terminal.Write(letter);
-                    score++; //increases the score if the guess is correct
+                    terminal.Write(_letter);
                 }
                 //saying if the letter guess was wrong
                 else
@@ -51,11 +50,11 @@ namespace unit03_jumper
 
         public string GetGuess()
         {
-            guess = terminal.ReadText("\n\nGuess a letter of the word: "); //saves the guess in variable "guess"
+            _guess = terminal.ReadText("\n\nGuess a letter of the word: "); //saves the guess in variable "guess"
             terminal.WriteText("\n");
-            guesses.Add(guess);
+            guesses.Add(_guess);
 
-            return guess;
+            return _guess;
         }
        
        /// <summary>
@@ -64,18 +63,19 @@ namespace unit03_jumper
         /// </summary>
         public bool CheckWin(bool gameOn)
         {
-            foreach (char letter in gameword)
+            foreach (char letter in _gameword)
             {
-                int num = 0;
-                int maxNum = gameword.Length;
+                int maxNum = _gameword.Length;
                 string s = letter.ToString();
                 //if there are "_" still in the list guesses, the word is not filled yet
                 if (guesses.Contains(s))
                 {
-                    num++;
+                    _score++;
                 }
-                if (num >= maxNum)
+                if (_score >= maxNum)
                 {
+                    //FIX THIS: The for each loop racks up points into _score too fast giving an early win.
+                    terminal.WriteText("You Win!");
                     gameOn = false;
                 }
             }
