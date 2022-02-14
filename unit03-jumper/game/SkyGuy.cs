@@ -6,7 +6,7 @@ namespace unit03_jumper
 {
     class SkyGuy
     {
-        public int _lives = 6;
+        private int _lives = 6;
         private Terminal terminal = new Terminal(); 
         /// <summary>
         /// Constructs instance SkyGuy.
@@ -25,7 +25,6 @@ namespace unit03_jumper
         {
              "   ___", "  /   \\ ", "  _____", "  \\   /" , "   \\ / ", "    0"
         };
-
 
         /// <summary>
         /// Resets the board/parachute of the skyguy at start of new game.
