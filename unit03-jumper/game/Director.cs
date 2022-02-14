@@ -8,13 +8,17 @@ namespace unit03_jumper
     {   
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
-        ///word is instantiated and sets gameword
+        ///word is instantiated and sets the gameword
+        
         private Terminal terminal = new Terminal();
         private Board board;
         private Word word = new Word();
-        private string userInput = " ";
 
-        private bool replay = false;
+        private string _userInput = " ";
+
+        private string _guess;
+
+        private bool _replay = false;
 
         public Director()
         {
@@ -27,6 +31,7 @@ namespace unit03_jumper
         public void SetupGame()
         {
             isPlaying = true;
+            skyguy.SetupParachute();
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
@@ -38,10 +43,11 @@ namespace unit03_jumper
             SetupGame();
             while (isPlaying == true)
             {
-                if (replay)
+                if (_replay)
                 {
-                    SetupGame();
-                    replay = false; //sets replay back to 0 so SetupGame isn't called multiple times
+                    SetupGame(); //resets the board for the next game
+                    word.SetWord(); //picks a new word for the next game
+                    _replay = false; //sets replay back to 0 so SetupGame isn't called multiple times
                 }
                 DoInput();
                 DoOutput();
@@ -52,7 +58,7 @@ namespace unit03_jumper
         public void DoInput()
         {
             //ask the user for their letter guess
-            guess = board.GetGuess();
+            _guess = board.GetGuess();
         }
 
         public void DoUpdate()
@@ -67,7 +73,7 @@ namespace unit03_jumper
                 terminal.WriteText("\n\nBetter luck next time!");
             }
 
-            if (!word.CheckGuess(guess))
+            if (!word.CheckGuess(_guess))
             {
                 skyguy.UpdateParachute();
             }
@@ -75,19 +81,19 @@ namespace unit03_jumper
             //if the game is over, ask user if they want to play again.
             if (isPlaying == false)
             {
-                userInput = terminal.ReadText("\nDo you want to play again? y/n?\n");
-                terminal.WriteText($"\tUserInput was saved as: {userInput}");
-                userInput = userInput.ToUpper();
-                if (userInput == "Y")
+                _userInput = terminal.ReadText("\nDo you want to play again? y/n?\n");
+                terminal.WriteText($"\tUserInput was saved as: {_userInput}");
+                _userInput = _userInput.ToUpper();
+                if (_userInput == "Y")
                 {
                     isPlaying = true;
-                    replay = true; //keep track that we are playing again
-                    terminal.Write($"\tisPlaying saved as: {isPlaying}");
+                    _replay = true; //keep track that we are playing again
+                    terminal.WriteText($"\tisPlaying saved as: {isPlaying}");
                 }
                 else
                 {
                     isPlaying = false;
-                    terminal.Write($"\tisPlaying saved as: {isPlaying}");
+                    terminal.WriteText($"\tisPlaying saved as: {isPlaying}");
                 }
             }
         }
