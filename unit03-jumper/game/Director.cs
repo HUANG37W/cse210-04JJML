@@ -9,17 +9,10 @@ namespace unit03_jumper
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
         ///word is instantiated and sets gameword
-        
         private Terminal terminal = new Terminal();
-
         private Board board;
         private Word word = new Word();
-
         private string userInput = " ";
-
-        private string guess;
-
-        private int score = 0;
 
         private bool replay = false;
 
