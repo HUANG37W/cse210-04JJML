@@ -5,19 +5,15 @@ using System.Collections.Generic;
 namespace unit03_jumper
 {
     class Director
-    {   
+    {  
+        /// Instantiates skyguy, isplaying, terminal, the board, word, guess, userinput, replay 
         private SkyGuy skyguy = new SkyGuy();
         private bool isPlaying = true;
-        ///word is instantiated and sets the gameword
-        
         private Terminal terminal = new Terminal();
         private Board board;
         private Word word = new Word();
-
         private string _userInput = " ";
-
         private string _guess;
-
         private bool _replay = false;
 
         public Director()
@@ -27,7 +23,7 @@ namespace unit03_jumper
         }
         
 
-        //set up the game: pick a random word, display the initial look of the board.
+        ///<summary>  Set up the game: pick a random word, display the initial look of the board.</summary>
         public void SetupGame()
         {
             isPlaying = true;
@@ -35,9 +31,10 @@ namespace unit03_jumper
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             board.DisplayWord();
+            // needs board.Reset()
        }
 
-        //start the actual game, looping through all the functions until the game is over
+        ///<summary> Start the actual game, looping through all the functions until the game is over.</summary>
         public void StartGame()
         {
             SetupGame();
@@ -60,13 +57,17 @@ namespace unit03_jumper
             //ask the user for their letter guess
             _guess = board.GetGuess();
         }
-
+        /// <summary>
+        /// Checks if skyguy lost all parachute, game ends
+        /// <para>
+        /// Removes part of parachute if guess wrong.
+         /// </para>
+         /// <para>
+        /// Checks if game over with matching guess string and  gameword string.
+         /// </para>
+        /// </summary>
         public void DoUpdate()
         {   
-            //check if the game should still be going on
-            //THIS DOESN'T WORK YET FOR SOME REASON
-            isPlaying = board.CheckWin(isPlaying);
-
             if (skyguy.IsDead())
             {
                 isPlaying = false;
@@ -76,6 +77,12 @@ namespace unit03_jumper
             if (!word.CheckGuess(_guess))
             {
                 skyguy.UpdateParachute();
+            }
+
+            if (board.IsFinished())
+            {
+                isPlaying = false;
+                terminal.WriteText("You Win");
             }
             
             //if the game is over, ask user if they want to play again.
@@ -97,11 +104,10 @@ namespace unit03_jumper
                 }
             }
         }
-
+        ///<summary>Displays the paracute, then the guy attatched to the parachute,and then the spaces where the word needs to filled.</summary>
         public void DoOutput()
         {
-            //Displays the paracute, then the guy attatched to the parachute,
-            //and then the spaces where the word needs to filled.
+            
             skyguy.PrintParachute();
             skyguy.PrintGuy();
             terminal.WriteText(" \n");

@@ -10,9 +10,8 @@ namespace unit03_jumper
         {
             SetWord();
         }
-        private string gameWord;
-
-        public int scoreGoal; //will be set to the number of characters of chosen word
+        /// Instantiates gameword, terminal and each list of words.
+        private string _gameWord;
         private Terminal terminal = new Terminal();
         private List<string> LotrWords = new List<string>
         {
@@ -36,8 +35,8 @@ namespace unit03_jumper
 
         public string GetWord()
         {
-            terminal.WriteText($"\tPssst! The word is: {gameWord}"); //THIS IS SPOILERS
-            return gameWord;
+            terminal.WriteText($"\tPssst! The word is: {_gameWord}"); //THIS IS SPOILERS
+            return _gameWord;
         }
         public void SetWord() 
         {
@@ -68,13 +67,13 @@ namespace unit03_jumper
             }
             
             rnd = random.Next(0, 5);
-            gameWord = gameWords[rnd];
+            _gameWord = gameWords[rnd];
         }
 
         public bool CheckGuess(string guess)
         {
             //returns true or false depending on if the gameWord contains our guess
-            return gameWord.Contains(guess);
+            return _gameWord.Contains(guess);
         }
         
     }
