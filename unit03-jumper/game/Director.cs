@@ -83,6 +83,9 @@ namespace unit03_jumper
             if (board.IsFinished())
             {
                 isPlaying = false;
+                skyguy.PrintParachute();
+                skyguy.PrintGuy();
+                board.DisplayWord();
                 terminal.WriteText("You Win");
             }
             
