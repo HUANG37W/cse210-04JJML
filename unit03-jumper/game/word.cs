@@ -35,7 +35,7 @@ namespace unit03_jumper
 
         public string GetWord()
         {
-            terminal.WriteText($"\tPssst! The word is: {_gameWord}"); //THIS IS SPOILERS
+            //terminal.WriteText($"\tPssst! The word is: {_gameWord}"); //THIS IS SPOILERS
             return _gameWord;
         }
         public void SetWord() 

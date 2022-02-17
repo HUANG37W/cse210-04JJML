@@ -47,8 +47,9 @@ namespace unit03_jumper
                     _replay = false; //sets replay back to 0 so SetupGame isn't called multiple times
                 }
                 DoInput();
-                DoOutput();
                 DoUpdate();
+                DoOutput();
+                
             }
         }
 
