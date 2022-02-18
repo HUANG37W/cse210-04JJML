@@ -36,8 +36,8 @@ namespace Unit04.Game.Directing
             videoService.OpenWindow();
             while (videoService.IsWindowOpen() == true)
             {
-                GetInputs(cast);
-                DoUpdates(cast);
+                // GetInputs(cast);
+                // DoUpdates(cast);
                 DoOutputs(cast);
             }
             videoService.CloseWindow();
@@ -49,9 +49,9 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void GetInputs(Cast cast)
         {
-            Actor robot = cast.GetFirstActor("robot");
+            Actor Player = cast.GetFirstActor("player");
             Point velocity = keyboardService.GetDirection();
-            robot.SetVelocity(velocity);     
+            Player.SetVelocity(velocity);     
         }
 
         /// <summary>
@@ -61,23 +61,23 @@ namespace Unit04.Game.Directing
         private void DoUpdates(Cast cast)
         {
             Actor banner = cast.GetFirstActor("banner");
-            Actor robot = cast.GetFirstActor("robot");
+            Actor player = cast.GetFirstActor("player");
             List<Actor> artifacts = cast.GetActors("artifacts");
 
             banner.SetText("");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
-            robot.MoveNext(maxX, maxY);
+            player.MoveNext(maxX, maxY);
 
-            foreach (Actor actor in artifacts)
-            {
-                if (robot.GetPosition().Equals(actor.GetPosition()))
-                {
-                    Artifact artifact = (Artifact) actor;
-                    string message = artifact.GetMessage();
-                    banner.SetText(message);
-                }
-            } 
+            // foreach (Actor actor in artifacts)
+            // {
+            //     if (robot.GetPosition().Equals(actor.GetPosition()))
+            //     {
+            //         Artifact artifact = (Artifact) actor;
+            //         string message = artifact.GetMessage();
+            //         banner.SetText(message);
+            //     }
+            // } 
         }
 
         /// <summary>
@@ -86,9 +86,9 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void DoOutputs(Cast cast)
         {
-            List<Actor> actors = cast.GetAllActors();
+            // List<Actor> actors = cast.GetAllActors();
             videoService.ClearBuffer();
-            videoService.DrawActors(actors);
+            // videoService.DrawActors(actors);
             videoService.FlushBuffer();
         }
 
