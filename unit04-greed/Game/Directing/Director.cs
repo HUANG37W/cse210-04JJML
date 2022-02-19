@@ -50,8 +50,13 @@ namespace Unit04.Game.Directing
         private void GetInputs(Cast cast)
         {
             Actor Player = cast.GetFirstActor("player");
+            Actor SkyDrops = cast.GetFirstActor("rock");
+            //figure out how to create a gem later
             Point velocity = keyboardService.GetDirection();
-            Player.SetVelocity(velocity);     
+            Player.SetVelocity(velocity);
+            Point thisBeAPoint = new Point(1, 2);
+            Player.SetPosition(thisBeAPoint);
+            //Player.SetColor(Color());
         }
 
         /// <summary>
@@ -60,9 +65,9 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
-            Actor banner = cast.GetFirstActor("banner");
+            Actor banner = cast.GetFirstActor("scoreBoard");
             Actor player = cast.GetFirstActor("player");
-            List<Actor> artifacts = cast.GetActors("artifacts");
+            List<Actor> skydrops = cast.GetActors("skyDrops");
 
             banner.SetText("");
             int maxX = videoService.GetWidth();
