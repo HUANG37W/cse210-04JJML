@@ -36,8 +36,8 @@ namespace Unit04.Game.Directing
             videoService.OpenWindow();
             while (videoService.IsWindowOpen() == true)
             {
-                // GetInputs(cast);
-                // DoUpdates(cast);
+                GetInputs(cast);
+                DoUpdates(cast);
                 DoOutputs(cast);
             }
             videoService.CloseWindow();
@@ -50,13 +50,14 @@ namespace Unit04.Game.Directing
         private void GetInputs(Cast cast)
         {
             Actor Player = cast.GetFirstActor("player");
-            Actor SkyDrops = cast.GetFirstActor("rock");
-            //figure out how to create a gem later
+            Actor Stone = cast.GetFirstActor("stone");
+            Actor Gem = cast.GetFirstActor("gem");
+            //need to figure out downward velocity for gem and stone.
+
+            //for controlling player
             Point velocity = keyboardService.GetDirection();
             Player.SetVelocity(velocity);
-            Point thisBeAPoint = new Point(1, 2);
-            Player.SetPosition(thisBeAPoint);
-            //Player.SetColor(Color());
+
         }
 
         /// <summary>
@@ -69,6 +70,8 @@ namespace Unit04.Game.Directing
             Actor player = cast.GetFirstActor("player");
             List<Actor> skydrops = cast.GetActors("skyDrops");
 
+            //might need to loop this text so it will update to the
+            //the current score.
             scoreBoard.SetText("Hello world");
             Point point = new Point(15, 5);
             scoreBoard.SetPosition(point);
@@ -76,6 +79,8 @@ namespace Unit04.Game.Directing
             int maxY = videoService.GetHeight();
             player.MoveNext(maxX, maxY);
 
+            
+            //MAYBE THIS IS WHERE OUR COLLISION LOGIC SHOULD GO
             // foreach (Actor actor in artifacts)
             // {
             //     if (robot.GetPosition().Equals(actor.GetPosition()))
@@ -93,9 +98,9 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void DoOutputs(Cast cast)
         {
-            // List<Actor> actors = cast.GetAllActors();
+            List<Actor> actors = cast.GetAllActors();
             videoService.ClearBuffer();
-            // videoService.DrawActors(actors);
+            videoService.DrawActors(actors);
             videoService.FlushBuffer();
         }
 
