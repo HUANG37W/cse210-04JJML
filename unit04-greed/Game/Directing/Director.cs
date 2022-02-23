@@ -72,7 +72,7 @@ namespace Unit04.Game.Directing
 
             //might need to loop this text so it will update to the
             //the current score.
-            scoreBoard.SetText("Hello world");
+            scoreBoard.SetText("Score");
             Point point = new Point(15, 5);
             scoreBoard.SetPosition(point);
             int maxX = videoService.GetWidth();
