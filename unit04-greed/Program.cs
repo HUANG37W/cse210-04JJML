@@ -37,24 +37,21 @@ namespace unit04_greed
             // create the cast
             Cast cast = new Cast();
 
-            // create the banner
-            Actor banner = new Actor();
-            banner.SetText("");
-            banner.SetFontSize(FONT_SIZE);
-            banner.SetColor(WHITE);
-            banner.SetPosition(new Point(CELL_SIZE, 0));
-            cast.AddActor("banner", banner);
+            // create scoreboard 
+            ScoreBoard scoreboard = new ScoreBoard();
+            cast.AddActor("scoreboard", scoreboard);
 
-            // create the robot
-            Actor robot = new Actor();
-            robot.SetText("#");
-            robot.SetFontSize(FONT_SIZE);
-            robot.SetColor(WHITE);
-            robot.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
-            cast.AddActor("robot", robot);
+           
+            // create the player 
+            Actor player = new Actor();
+            player.SetText("#");
+            player.SetFontSize(FONT_SIZE);
+            player.SetColor(WHITE);
+            player.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            cast.AddActor("player", player);
 
     
-
+            ///create the gems and rocks.
             
             
 

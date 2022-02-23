@@ -36,15 +36,15 @@ namespace Unit04.Game.Directing
             videoService.OpenWindow();
             while (videoService.IsWindowOpen() == true)
             {
-                // GetInputs(cast);
-                // DoUpdates(cast);
+                GetInputs(cast);
+                DoUpdates(cast);
                 DoOutputs(cast);
             }
             videoService.CloseWindow();
         }
 
         /// <summary>
-        /// Gets directional input from the keyboard and applies it to the robot.
+        /// Gets directional input from the keyboard and applies it to the player.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void GetInputs(Cast cast)
@@ -55,29 +55,37 @@ namespace Unit04.Game.Directing
         }
 
         /// <summary>
-        /// Updates the robot's position and resolves any collisions with artifacts.
+        /// Updates the player's position and resolves any collisions with artifacts.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
-            Actor banner = cast.GetFirstActor("banner");
+            Actor scoreboard = cast.GetFirstActor("scoreboard");
             Actor player = cast.GetFirstActor("player");
-            List<Actor> artifacts = cast.GetActors("artifacts");
+            // change artifacts to skydrops
+            // List<Actor> artifacts = cast.GetActors("artifacts");
 
-            banner.SetText("");
+            // was an empty string
+            scoreboard.SetText("Your score is");
+            scoreboard.SetText("Your score is");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
             player.MoveNext(maxX, maxY);
+/// figure out actor in cast.
+            
+            
 
-            // foreach (Actor actor in artifacts)
-            // {
-            //     if (robot.GetPosition().Equals(actor.GetPosition()))
-            //     {
-            //         Artifact artifact = (Artifact) actor;
-            //         string message = artifact.GetMessage();
-            //         banner.SetText(message);
-            //     }
-            // } 
+            foreach (SkyDrops)
+            {
+                if (player.GetPosition().Equals(actor.GetPosition()))
+                {
+                    Skydrops skydrops = (Skydrops) actor;
+                        ScoreBoard scoreboard = (ScoreBoard) actor;
+                        ScoreBoard.score += 10;
+                    string message = artifact.GetMessage();
+                    banner.SetText(message);
+                }
+            } 
         }
 
         /// <summary>
@@ -86,10 +94,11 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void DoOutputs(Cast cast)
         {
-            // List<Actor> actors = cast.GetAllActors();
+            List<Actor> actors = cast.GetAllActors();
             videoService.ClearBuffer();
-            // videoService.DrawActors(actors);
+            videoService.DrawActors(actors);
             videoService.FlushBuffer();
+            
         }
 
     }

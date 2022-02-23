@@ -3,31 +3,36 @@ namespace Unit04.Game.Casting
 {
     public class ScoreBoard : Actor
     {
-        private int score = 0;
-
+        private int _score = 0;
         /// <summary>
-        /// Constructs a new instance of an Artifact.
+        /// Constructs instance of scoreboard.
         /// </summary>
         public ScoreBoard()
         {
+            _score = 0;
+            SetText($"Score is: {_score}");
+            SetFontSize(12);
+            SetColor(new Color(76, 187, 23)); // green
+            SetPosition(new Point(20, 20));
         }
 
         /// <summary>
-        /// Gets the artifact's message.
+        /// Gets the scoreboard's score.
         /// </summary>
         /// <returns>The message.</returns>
         public int GetScore()
         {
-            return score;
+            return _score;
         }
 
         /// <summary>
         /// Sets the scoreboard score to the given value.
         /// </summary>
         /// <param name="score">The given message.</param>
-        public void SetScore (int score)
+        public void UpdateScore (int points)
         {
-            this.score = score;
+            _score += points;
+            SetText($"Score is: {_score}");
         }
     }    
 }
