@@ -67,14 +67,12 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
-            Actor scoreboard = cast.GetFirstActor("scoreboard");
+            ScoreBoard scoreboard = (ScoreBoard)cast.GetFirstActor("scoreboard");
             Actor player = cast.GetFirstActor("player");
-            // change artifacts to skydrops
-            // List<Actor> artifacts = cast.GetActors("artifacts");
+            List<Actor> skyDrops = cast.GetActors("skyDrops");
 
-            // was an empty string
-            scoreboard.SetText("Your score is");
-            scoreboard.SetText("Your score is");
+
+
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
             player.MoveNext(maxX, maxY);
@@ -82,15 +80,18 @@ namespace Unit04.Game.Directing
             
             
 
-            foreach (SkyDrops)
+            foreach (SkyDrops drop in skyDrops)
             {
-                if (player.GetPosition().Equals(actor.GetPosition()))
+                if (player.GetPosition().Equals(drop.GetPosition()))
                 {
-                    Skydrops skydrops = (Skydrops) actor;
-                        ScoreBoard scoreboard = (ScoreBoard) actor;
-                        ScoreBoard.score += 10;
-                    string message = artifact.GetMessage();
-                    banner.SetText(message);
+                    if (drop.GetDropType() == "gem")
+                    {
+                        scoreboard.UpdateScore(20);
+                    }
+                    else
+                    {
+                        scoreboard.UpdateScore(-25);
+                    }
                 }
             } 
         }

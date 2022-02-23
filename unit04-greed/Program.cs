@@ -57,56 +57,19 @@ namespace unit04_greed
             Random random = new Random();
             for (int i = 0; i < DEFAULT_gem; i++)
             {
-                string gem = ((char)random.Next(42,42)).ToString();
-                // string message = messages[i];
-
-                int x = random.Next(1, COLS);
-                int y = random.Next(1, ROWS);
-                Point position = new Point(x, 0);
-                position = position.Scale(CELL_SIZE);
-
-                int r = random.Next(0, 256);
-                int g = random.Next(0, 256);
-                int b = random.Next(0, 256);
-                Color color = new Color(r, g, b);
-
-                SkyStones skyStones = new SkyStones();
-                skyStones.SetText(gem);
-                skyStones.SetFontSize(FONT_SIZE);
-                skyStones.SetColor(color);
-                skyStones.SetPosition(position);
-                // skyStones.SetMessage(message);
-                cast.AddActor("skystone", skyStones);
+                SkyDrops skyDrops = new SkyDrops(true);
+                cast.AddActor("skyDrops", skyDrops);
             }
 
              // create the artifacts
             Random randomTwo = new Random();
             for (int i = 0; i < DEFAULT_stone; i++)
             {
-                string stone = ((char)randomTwo.Next(79,79)).ToString();
-                // string message = messages[i];
-
-                int x = randomTwo.Next(1, COLS);
-                int y = randomTwo.Next(1, ROWS);
-                Point position = new Point(x, 0);
-                position = position.Scale(CELL_SIZE);
-
-                int r = randomTwo.Next(0, 256);
-                int g = randomTwo.Next(0, 256);
-                int b = randomTwo.Next(0, 256);
-                Color color = new Color(r, g, b);
-
-                SkyStones skyStones = new SkyStones();
-                skyStones.SetText(stone);
-                skyStones.SetFontSize(FONT_SIZE);
-                skyStones.SetColor(color);
-                skyStones.SetPosition(position);
-                // skyStones.SetMessage(message);
-                cast.AddActor("skystone", skyStones);
+                SkyDrops skyDrops = new SkyDrops(false);
+                cast.AddActor("skyDrops", skyDrops);
             }
     
-            ///create the gems and rocks.
-            
+           
             
 
             // start the game
