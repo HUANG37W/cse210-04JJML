@@ -53,7 +53,7 @@ namespace Unit04.Game.Directing
             Actor Stone = cast.GetFirstActor("stone");
             Actor Gem = cast.GetFirstActor("gem");
             //need to figure out downward velocity for gem and stone.
-            
+
 
             //for controlling player
             Point velocity = keyboardService.GetDirection();

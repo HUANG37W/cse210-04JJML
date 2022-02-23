@@ -23,7 +23,8 @@ namespace unit04_greed
         private static int ROWS = 40;
         
         private static Color WHITE = new Color(255, 255, 255);
-        private static int DEFAULT_ARTIFACTS = 40;
+        private static int DEFAULT_gem = 5;
+        private static int DEFAULT_stone = 10;
 
         private static string CAPTION = "Greed";
 
@@ -41,15 +42,68 @@ namespace unit04_greed
             ScoreBoard scoreboard = new ScoreBoard();
             cast.AddActor("scoreboard", scoreboard);
 
-           
-            // create the player 
+            // create the player
             Actor player = new Actor();
             player.SetText("#");
             player.SetFontSize(FONT_SIZE);
             player.SetColor(WHITE);
-            player.SetPosition(new Point(MAX_X / 2, MAX_Y / 2));
+            player.SetPosition(new Point(450, 550));
             cast.AddActor("player", player);
 
+            
+            
+
+            // create the artifacts
+            Random random = new Random();
+            for (int i = 0; i < DEFAULT_gem; i++)
+            {
+                string gem = ((char)random.Next(42,42)).ToString();
+                // string message = messages[i];
+
+                int x = random.Next(1, COLS);
+                int y = random.Next(1, ROWS);
+                Point position = new Point(x, 0);
+                position = position.Scale(CELL_SIZE);
+
+                int r = random.Next(0, 256);
+                int g = random.Next(0, 256);
+                int b = random.Next(0, 256);
+                Color color = new Color(r, g, b);
+
+                SkyStones skyStones = new SkyStones();
+                skyStones.SetText(gem);
+                skyStones.SetFontSize(FONT_SIZE);
+                skyStones.SetColor(color);
+                skyStones.SetPosition(position);
+                // skyStones.SetMessage(message);
+                cast.AddActor("skystone", skyStones);
+            }
+
+             // create the artifacts
+            Random randomTwo = new Random();
+            for (int i = 0; i < DEFAULT_stone; i++)
+            {
+                string stone = ((char)randomTwo.Next(79,79)).ToString();
+                // string message = messages[i];
+
+                int x = randomTwo.Next(1, COLS);
+                int y = randomTwo.Next(1, ROWS);
+                Point position = new Point(x, 0);
+                position = position.Scale(CELL_SIZE);
+
+                int r = randomTwo.Next(0, 256);
+                int g = randomTwo.Next(0, 256);
+                int b = randomTwo.Next(0, 256);
+                Color color = new Color(r, g, b);
+
+                SkyStones skyStones = new SkyStones();
+                skyStones.SetText(stone);
+                skyStones.SetFontSize(FONT_SIZE);
+                skyStones.SetColor(color);
+                skyStones.SetPosition(position);
+                // skyStones.SetMessage(message);
+                cast.AddActor("skystone", skyStones);
+            }
     
             ///create the gems and rocks.
             
