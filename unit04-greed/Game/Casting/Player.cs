@@ -8,15 +8,12 @@ namespace Unit04.Game.Casting
     {
         public Player()
         {
-            //constructor
+            SetText("#");
+            SetFontSize(15);
+            SetColor(new Color(75, 0, 130)); // green
+            SetPosition(new Point(int.MaxValue/2, 550));
+            SetVelocity(new Point(0,1));
+
         }
-        
-        //follow how Robot works from previous asssignment?
-        //There just isn't a "Robot" class in the previous assing, so
-        //I am confused
-        
-
     }
-
-
 }
