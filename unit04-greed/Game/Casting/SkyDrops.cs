@@ -11,7 +11,7 @@ namespace Unit04.Game.Casting
         {
             if (isGem)
             {
-                SetText(((char)43).ToString());
+                SetText(((char)42).ToString());
                 _type = "gem";
             }
             else 
