@@ -114,10 +114,10 @@ namespace Unit04.Game.Directing
                 cast.AddActor("skyDrops", new SkyDrops(false));
             }
 
-            foreach (SkyDrop in skyDrops)
-            {
-                
-            }
+            // foreach (SkyDrop in skyDrops)
+            // {
+
+            // }
             // private bool IsCollision(Actor first, Actor second)
             // {
             //     int size = Constants.CELL_SIZE;
