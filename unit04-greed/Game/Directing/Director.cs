@@ -52,8 +52,8 @@ namespace Unit04.Game.Directing
         private void GetInputs(Cast cast)
         {
             Actor Player = cast.GetFirstActor("player");
-            Actor Stone = cast.GetFirstActor("stone");
-            Actor Gem = cast.GetFirstActor("gem");
+            //Actor Stone = cast.GetFirstActor("stone");
+            //Actor Gem = cast.GetFirstActor("gem");
             //need to figure out downward velocity for gem and stone.
             //for controlling player
             Point velocity = keyboardService.GetDirection();
@@ -92,6 +92,7 @@ namespace Unit04.Game.Directing
                     {
                         scoreboard.UpdateScore(-25);
                     }
+
                 }
             } 
         }

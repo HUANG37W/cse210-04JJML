@@ -32,6 +32,5 @@ namespace Unit04.Game.Casting
         {
             return _type;
         }
-
     }
 }
