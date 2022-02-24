@@ -102,7 +102,7 @@ namespace Unit04.Game.Directing
             
             }
             Random random = new Random();
-            int nextSkyDrop = random.Next(1,50);
+            int nextSkyDrop = random.Next(1,25);
 
             
             if (nextSkyDrop == 5)
@@ -144,6 +144,24 @@ namespace Unit04.Game.Directing
             videoService.FlushBuffer();
             
         }
+
+         private bool IsCollision(Actor first, Actor second)
+            {
+                int size = Constants.CELL_SIZE;
+                int x1 = first.GetPosition().GetX(); 
+                int y1 = first.GetPosition().GetY();
+
+                int x2 = second.GetPosition().GetX(); 
+                int y2 = second.GetPosition().GetY();
+
+                bool foundCollision = false;
+
+                if (Math.Abs(x1-x2) < size && Math.Abs(y1 - y2) < size)
+                {
+                    return foundCollision = true;
+                }
+                return foundCollision;
+            } 
 
     }
 }
