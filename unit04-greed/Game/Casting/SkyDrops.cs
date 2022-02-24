@@ -25,7 +25,7 @@ namespace Unit04.Game.Casting
             int b = random.Next(0, 256);
             SetColor(new Color(r, g, b));
             SetFontSize(20);
-            SetPosition(new Point(random.Next(0,640),0)); 
+            SetPosition(new Point(random.Next(0,640),35)); 
         }
 
         public string GetDropType()
