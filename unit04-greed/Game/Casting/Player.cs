@@ -11,7 +11,7 @@ namespace Unit04.Game.Casting
             SetText("#");
             SetFontSize(15);
             SetColor(new Color(75, 0, 130)); // indigo
-            SetPosition(new Point(int.MaxValue/2, 350));
+            SetPosition(new Point(450, 550));
             SetVelocity(new Point(0,1));
 
         }
