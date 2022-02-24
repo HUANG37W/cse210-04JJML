@@ -71,13 +71,13 @@ namespace Unit04.Game.Directing
             List<Actor> skyDrops = cast.GetActors("skyDrops");
 
 
-            foreach (Actor actor in cast.GetAllActors())
-            {
+            // foreach (Actor actor in cast.GetFirstActor("player"))
+            // {
                 int maxX = videoService.GetWidth();
                 int maxY = videoService.GetHeight();
-                player.MoveNext(maxX, maxY, false);
+                player.MoveNext(maxX, maxY , true);
 
-            }
+            // }
             
             foreach (SkyDrops drop in skyDrops)
             {
@@ -112,6 +112,11 @@ namespace Unit04.Game.Directing
             else if (nextSkyDrop ==10)
             {
                 cast.AddActor("skyDrops", new SkyDrops(false));
+            }
+
+            foreach (SkyDrop in skyDrops)
+            {
+                
             }
             // private bool IsCollision(Actor first, Actor second)
             // {
