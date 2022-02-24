@@ -17,7 +17,7 @@ namespace Unit04.Game.Casting
             else 
             {
                 SetText(((char)79).ToString());
-                _type = "rock";
+                _type = "stone";
             }
             Random random = new Random();
             int r = random.Next(0, 256);
@@ -32,6 +32,5 @@ namespace Unit04.Game.Casting
         {
             return _type;
         }
-        
     }
 }

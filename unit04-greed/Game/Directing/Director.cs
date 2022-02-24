@@ -13,6 +13,8 @@ namespace Unit04.Game.Directing
     /// </summary>
     public class Director
     {
+        private int maxX;
+        private int maxY;
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
 
@@ -53,8 +55,6 @@ namespace Unit04.Game.Directing
             //Actor Stone = cast.GetFirstActor("stone");
             //Actor Gem = cast.GetFirstActor("gem");
             //need to figure out downward velocity for gem and stone.
-
-
             //for controlling player
             Point velocity = keyboardService.GetDirection();
             Player.SetVelocity(velocity);
@@ -62,7 +62,7 @@ namespace Unit04.Game.Directing
         }
 
         /// <summary>
-        /// Updates the player's position and resolves any collisions with artifacts.
+        /// Updates the player's position and resolves any collisions with skydrops.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
@@ -87,8 +87,14 @@ namespace Unit04.Game.Directing
             
             /// figure out actor in cast.
 
+            // foreach (Actor actor in cast.GetAllActors())
+            // (
+            //     int maxX = videoService.GetWidth();
+            //     int maxY = videoService.GetHeight();
+            //     actor.MoveNext(maxX, maxY);
+
+            // }
             
-            //Check for collision with rock or gem
             foreach (SkyDrops drop in skyDrops)
             {
                 if (player.GetPosition().Equals(drop.GetPosition()))

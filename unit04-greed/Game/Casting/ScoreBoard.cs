@@ -14,6 +14,7 @@ namespace Unit04.Game.Casting
             SetFontSize(12);
             SetColor(new Color(76, 187, 23)); // green
             SetPosition(new Point(20, 20));
+            SetVelocity(new Point(0,0));
         }
 
         /// <summary>

@@ -44,16 +44,10 @@ namespace unit04_greed
 
             // create the player
             Actor player = new Actor();
-            player.SetText("#");
-            player.SetFontSize(FONT_SIZE);
-            player.SetColor(WHITE);
-            player.SetPosition(new Point(450, 550));
             cast.AddActor("player", player);
 
-            
-            
 
-            // create the artifacts
+            // create the gems
             Random random = new Random();
             for (int i = 0; i < DEFAULT_gem; i++)
             {
@@ -61,7 +55,7 @@ namespace unit04_greed
                 cast.AddActor("skyDrops", skyDrops);
             }
 
-             // create the artifacts
+             // create the stones
             Random randomTwo = new Random();
             for (int i = 0; i < DEFAULT_stone; i++)
             {
