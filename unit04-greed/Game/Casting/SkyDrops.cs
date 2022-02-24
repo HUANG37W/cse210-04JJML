@@ -32,28 +32,6 @@ namespace Unit04.Game.Casting
         {
             return _type;
         }
-
-        private int randomX = 0;
         
-        /// <summary>
-        /// Sets a random integer to be used for the column or X position
-        /// of the falling object.
-        /// </summary>
-        public int SetRandColumn()
-        {
-            Random random = new Random();
-            randomX = random.Next(0, 59);
-            //picks random column among 60 total to have the stone fall from
-            return randomX;
-        }
-
-      
-        
-
-
-                
-               
-        
-
     }
 }
