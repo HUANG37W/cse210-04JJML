@@ -13,8 +13,6 @@ namespace Unit04.Game.Directing
     /// </summary>
     public class Director
     {
-        private int maxX;
-        private int maxY;
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
 
@@ -94,9 +92,26 @@ namespace Unit04.Game.Directing
                     }
 
                 }
-            } 
-        }
+            }
+            // private bool IsCollision(Actor first, Actor second)
+            // {
+            //     int size = Constants.CELL_SIZE;
+            //     int x1 = first.GetPosition().GetX(); 
+            //     int y1 = first.GetPosition().GetY();
 
+            //     int x2 = second.GetPosition().GetX(); 
+            //     int y2 = second.GetPosition().GetY();
+
+            //     bool foundCollision = false;
+
+            //     if (Math.Abs(x1-x2) <s ize && Math.Abs(y1 - y2) < size)
+            //     {
+            //         return foundCollision = true;
+            //     }
+            //     return foundCollision
+            // }   
+        }    
+                
         /// <summary>
         /// Draws the actors on the screen.
         /// </summary>

@@ -15,7 +15,7 @@ namespace unit04_greed
     class Program
     {
         private static int FRAME_RATE = 24;
-        private static int MAX_X = 900;
+        public static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
         private static int FONT_SIZE = 15;
