@@ -11,7 +11,7 @@ namespace Unit04.Game.Casting
         {
             _score = 0;
             SetText($"Score is: {_score}");
-            SetFontSize(12);
+            SetFontSize(17);
             SetColor(new Color(76, 187, 23)); // green
             SetPosition(new Point(20, 20));
             SetVelocity(new Point(0,0));
