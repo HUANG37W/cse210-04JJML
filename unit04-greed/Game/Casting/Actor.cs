@@ -15,7 +15,7 @@ namespace Unit04.Game.Casting
         private string text = "";
         private int fontSize = 15;
         private Color color = new Color(255, 255, 255); // white
-        private Point position = new Point(0, 0);
+        protected Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
 
         /// <summary>
@@ -77,10 +77,18 @@ namespace Unit04.Game.Casting
         /// </summary>
         /// <param name="maxX">The maximum x value.</param>
         /// <param name="maxY">The maximum y value.</param>
-        public void MoveNext(int maxX, int maxY)
+        public void MoveNext(int maxX, int maxY, bool shouldwrap)
         {
-            int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
-            int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
+            // int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
+            // int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
+            int x = position.GetX() + velocity.GetX();
+            int y = position.GetY() + velocity.GetY();
+
+            if (shouldwrap)
+            {
+                x = (x + maxX) % maxX;
+                y = (y + maxY) % maxY;
+            }
             position = new Point(x, y);
         }
 

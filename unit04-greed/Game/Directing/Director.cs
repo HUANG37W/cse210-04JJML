@@ -72,10 +72,16 @@ namespace Unit04.Game.Directing
             List<Actor> skyDrops = cast.GetActors("skyDrops");
 
 
+            foreach (Actor actor in cast.GetAllActors())
+            {
+                int maxX = videoService.GetWidth();
+                int maxY = videoService.GetHeight();
+                player.MoveNext(maxX, maxY, false);
 
-            int maxX = videoService.GetWidth();
-            int maxY = videoService.GetHeight();
-            player.MoveNext(maxX, maxY);
+            }
+            // int maxX = videoService.GetWidth();
+            // int maxY = videoService.GetHeight();
+            // player.MoveNext(maxX, maxY);
 /// figure out actor in cast.
             
             

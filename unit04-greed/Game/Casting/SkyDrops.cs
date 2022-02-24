@@ -11,7 +11,7 @@ namespace Unit04.Game.Casting
         {
             if (isGem)
             {
-                SetText(((char)43).ToString());
+                SetText(((char)42).ToString());
                 _type = "gem";
             }
             else 
@@ -24,7 +24,7 @@ namespace Unit04.Game.Casting
             int g = random.Next(0, 256);
             int b = random.Next(0, 256);
             SetColor(new Color(r, g, b));
-            SetFontSize(12);
+            SetFontSize(20);
             SetPosition(new Point(random.Next(0,640),0)); 
         }
 
@@ -46,6 +46,8 @@ namespace Unit04.Game.Casting
             //picks random column among 60 total to have the stone fall from
             return randomX;
         }
+
+      
         
 
 
