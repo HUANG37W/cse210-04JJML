@@ -10,8 +10,8 @@ namespace Unit04.Game.Casting
         {
             SetText("#");
             SetFontSize(15);
-            SetColor(new Color(75, 0, 130)); // green
-            SetPosition(new Point(int.MaxValue/2, 550));
+            SetColor(new Color(75, 0, 130)); // indigo
+            SetPosition(new Point(int.MaxValue/2, 350));
             SetVelocity(new Point(0,1));
 
         }
