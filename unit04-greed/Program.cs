@@ -43,7 +43,7 @@ namespace unit04_greed
             cast.AddActor("scoreboard", scoreboard);
 
             // create the player
-            Actor player = new Actor();
+            Player player = new Player();
             cast.AddActor("player", player);
 
 
