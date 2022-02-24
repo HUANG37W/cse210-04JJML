@@ -86,8 +86,10 @@ namespace Unit04.Game.Casting
 
             if (shouldwrap)
             {
-                x = (x + maxX) % maxX;
-                y = (y + maxY) % maxY;
+                // x = (x + maxX) % maxX;
+                // y = (y + maxY) % maxY;
+                x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
+                y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
             }
             position = new Point(x, y);
         }
