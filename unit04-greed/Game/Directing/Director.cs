@@ -77,21 +77,15 @@ namespace Unit04.Game.Directing
                 player.MoveNext(maxX, maxY, false);
 
             }
-            // int maxX = videoService.GetWidth();
-            // int maxY = videoService.GetHeight();
-            // player.MoveNext(maxX, maxY);
-/// figure out actor in cast.
+            
+            foreach (SkyDrops drop in skyDrops)
+            {
+                drop.MoveNext(Constants.MAX_X, Constants.MAX_Y, false);
+            }
+
             
             
-            /// figure out actor in cast.
-
-            // foreach (Actor actor in cast.GetAllActors())
-            // (
-            //     int maxX = videoService.GetWidth();
-            //     int maxY = videoService.GetHeight();
-            //     actor.MoveNext(maxX, maxY);
-
-            // }
+            
             
             foreach (SkyDrops drop in skyDrops)
             {

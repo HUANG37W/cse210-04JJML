@@ -5,6 +5,7 @@ using System.Linq;
 using Unit04.Game.Casting;
 using Unit04.Game.Directing;
 using Unit04.Game.Services;
+using Unit04;
 
 
 namespace unit04_greed
@@ -14,15 +15,15 @@ namespace unit04_greed
     /// </summary>
     class Program
     {
-        private static int FRAME_RATE = 12;
-        public static int MAX_X = 900;
-        private static int MAX_Y = 600;
-        private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 15;
-        private static int COLS = 60;
-        private static int ROWS = 40;
+        // private static int FRAME_RATE = 12;
+        // public static int MAX_X = 900;
+        // private static int MAX_Y = 600;
+        // private static int CELL_SIZE = 15;
+        // private static int FONT_SIZE = 15;
+        // private static int COLS = 60;
+        // private static int ROWS = 40;
         
-        private static Color WHITE = new Color(255, 255, 255);
+        // private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_gem = 5;
         private static int DEFAULT_stone = 10;
 
@@ -67,9 +68,9 @@ namespace unit04_greed
             
 
             // start the game
-            KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
+            KeyboardService keyboardService = new KeyboardService(Constants.CELL_SIZE);
             VideoService videoService 
-                = new VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE, false);
+                = new VideoService(CAPTION, Constants.MAX_X, Constants.MAX_Y, Constants.CELL_SIZE, Constants.FRAME_RATE, false);
             Director director = new Director(keyboardService, videoService);
             director.StartGame(cast);
         }
