@@ -54,6 +54,7 @@ namespace Unit04.Game.Directing
             //Actor Stone = cast.GetFirstActor("stone");
             //Actor Gem = cast.GetFirstActor("gem");
             //need to figure out downward velocity for gem and stone.
+
             //for controlling player
             Point velocity = keyboardService.GetDirection();
             Player.SetVelocity(velocity);
@@ -69,6 +70,7 @@ namespace Unit04.Game.Directing
             ScoreBoard scoreboard = (ScoreBoard)cast.GetFirstActor("scoreboard");
             Actor player = cast.GetFirstActor("player");
             List<Actor> skyDrops = cast.GetActors("skyDrops");
+            
 
 
             // foreach (Actor actor in cast.GetFirstActor("player"))
@@ -114,27 +116,30 @@ namespace Unit04.Game.Directing
                 cast.AddActor("skyDrops", new SkyDrops(false));
             }
 
-            // foreach (SkyDrop in skyDrops)
-            // {
+            // IsCollision(player,skyDrops);
 
-            // }
-            // private bool IsCollision(Actor first, Actor second)
-            // {
-            //     int size = Constants.CELL_SIZE;
-            //     int x1 = first.GetPosition().GetX(); 
-            //     int y1 = first.GetPosition().GetY();
 
-            //     int x2 = second.GetPosition().GetX(); 
-            //     int y2 = second.GetPosition().GetY();
+            foreach (SkyDrops geo in skyDrops)
+            {
+                
+                if (IsCollision(player,geo))
+                {
 
-            //     bool foundCollision = false;
+                    Console.WriteLine("hit skydrop");
+                    cast.RemoveActor("skyDrops",geo);
+                    if (geo.GetDropType() == "gem")
+                    {
+                        scoreboard.UpdateScore(20);
+                    }
+                    else
+                    {
+                        scoreboard.UpdateScore(-25);
+                    }
+                }
+            }
 
-            //     if (Math.Abs(x1-x2) <s ize && Math.Abs(y1 - y2) < size)
-            //     {
-            //         return foundCollision = true;
-            //     }
-            //     return foundCollision
-            // }   
+            
+          
         }    
                 
         /// <summary>
