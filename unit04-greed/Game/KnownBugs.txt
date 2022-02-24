@@ -1,8 +1,2 @@
-1. Collision logic isn't working. (We still need to test it)
-
-2. Player moves in fast leaps left to right on the screen
-
-3. Need to figure out how to delete stones and gems from list without
-breaking the for loop
-
-4. 
+1. Need to figure out how to delete stones and gems from list without
+breaking the for loop?
