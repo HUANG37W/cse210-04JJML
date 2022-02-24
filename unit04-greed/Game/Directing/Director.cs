@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unit04.Game.Casting;
 using Unit04.Game.Services;
+using System;
 
 
 namespace Unit04.Game.Directing
@@ -84,9 +85,6 @@ namespace Unit04.Game.Directing
             }
 
             
-            
-            
-            
             foreach (SkyDrops drop in skyDrops)
             {
                 if (player.GetPosition().Equals(drop.GetPosition()))
@@ -101,6 +99,19 @@ namespace Unit04.Game.Directing
                     }
 
                 }
+            
+            }
+            Random random = new Random();
+            int nextSkyDrop = random.Next(1,50);
+
+            
+            if (nextSkyDrop == 5)
+            {
+                cast.AddActor("skyDrops", new SkyDrops(true));
+            }
+            else if (nextSkyDrop ==10)
+            {
+                cast.AddActor("skyDrops", new SkyDrops(false));
             }
             // private bool IsCollision(Actor first, Actor second)
             // {
