@@ -4,6 +4,9 @@ using Unit04.Game.Services;
 
 namespace Unit04
 {
+    /// <summary>
+    /// The responsibility of constants is to keep track of all the constants, max_x and max_y, gem and stone ratio, and other constants if needed.
+    /// </summary>
     public static class Constants
     {
         public static int FRAME_RATE = 12;

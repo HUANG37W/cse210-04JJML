@@ -105,7 +105,7 @@ namespace Unit04.Game.Casting
             {
                 throw new ArgumentException("color can't be null");
             }
-            this.color = color;
+                this.color = color;
         }
 
         /// <summary>
