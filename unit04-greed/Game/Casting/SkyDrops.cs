@@ -3,10 +3,19 @@ using System.Collections.Generic;
 
 namespace Unit04.Game.Casting
 {
+
+    /// <summary>
+    /// <para>A thing that participates in the game.</para>
+    /// <para>
+    /// The responsibility of skydrops is to keep track of its appearance, position, velocity in 2d space, and type as gem or stone.
+    ///Randomly selects gem or stone and color.
+    /// </para>
+    /// </summary>
     class SkyDrops : Actor
     {
         private string _type;
 
+        
         public SkyDrops(bool isGem)
         {
             if (isGem)

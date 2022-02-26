@@ -1,6 +1,12 @@
 using System;
 namespace Unit04.Game.Casting
-{
+{   
+    /// <summary>
+    /// <para>A thing that participates in the game.</para>
+    /// <para>
+    /// The responsibility of scoreboard is to keep track of its appearance, position, and score. 
+    /// </para>
+    /// </summary>
     public class ScoreBoard : Actor
     {
         private int _score = 0;

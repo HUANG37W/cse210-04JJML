@@ -85,28 +85,11 @@ namespace Unit04.Game.Directing
             {
                 drop.MoveNext(Constants.MAX_X, Constants.MAX_Y, false);
             }
-
             
-            foreach (SkyDrops drop in skyDrops)
-            {
-                if (player.GetPosition().Equals(drop.GetPosition()))
-                {
-                    if (drop.GetDropType() == "gem")
-                    {
-                        scoreboard.UpdateScore(20);
-                    }
-                    else
-                    {
-                        scoreboard.UpdateScore(-25);
-                    }
-
-                }
-            
-            }
             Random random = new Random();
             int nextSkyDrop = random.Next(1,25);
 
-            
+            /// adding skydrops - gem or stone according to list size.
             if (nextSkyDrop == 5)
             {
                 cast.AddActor("skyDrops", new SkyDrops(true));
@@ -115,19 +98,14 @@ namespace Unit04.Game.Directing
             {
                 cast.AddActor("skyDrops", new SkyDrops(false));
             }
-
-            // IsCollision(player,skyDrops);
-
-
-            foreach (SkyDrops geo in skyDrops)
+            /// collision logic adds 20 for gem, lose 25 for stone
+            foreach (SkyDrops drops in skyDrops)
             {
-                
-                if (IsCollision(player,geo))
+                if (IsCollision(player,drops))
                 {
-
                     Console.WriteLine("hit skydrop");
-                    cast.RemoveActor("skyDrops",geo);
-                    if (geo.GetDropType() == "gem")
+                    cast.RemoveActor("skyDrops",drops);
+                    if (drops.GetDropType() == "gem")
                     {
                         scoreboard.UpdateScore(20);
                     }
@@ -137,9 +115,6 @@ namespace Unit04.Game.Directing
                     }
                 }
             }
-
-            
-          
         }    
                 
         /// <summary>
