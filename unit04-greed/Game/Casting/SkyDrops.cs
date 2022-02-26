@@ -29,6 +29,7 @@ namespace Unit04.Game.Casting
                 _type = "stone";
             }
             Random random = new Random();
+            /// r, g, and b are used to create random colors
             int r = random.Next(0, 256);
             int g = random.Next(0, 256);
             int b = random.Next(0, 256);
