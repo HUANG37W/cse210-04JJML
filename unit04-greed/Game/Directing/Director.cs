@@ -34,14 +34,14 @@ namespace Unit04.Game.Directing
         /// <param name="cast">The given cast.</param>
         public void StartGame(Cast cast)
         {
-            videoService.OpenWindow();
+            videoService.OpenWindow(); //opens the window of the game
             while (videoService.IsWindowOpen() == true)
             {
                 GetInputs(cast);
                 DoUpdates(cast);
                 DoOutputs(cast);
             }
-            videoService.CloseWindow();
+            videoService.CloseWindow(); //closes the window of the game
         }
 
         /// <summary>
