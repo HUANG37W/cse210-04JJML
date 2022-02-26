@@ -64,6 +64,5 @@ namespace Unit04.Game.Casting
         {
             return red;
         }
-
     }
 }

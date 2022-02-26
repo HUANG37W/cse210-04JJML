@@ -71,15 +71,9 @@ namespace Unit04.Game.Directing
             Actor player = cast.GetFirstActor("player");
             List<Actor> skyDrops = cast.GetActors("skyDrops");
             
-
-
-            // foreach (Actor actor in cast.GetFirstActor("player"))
-            // {
-                int maxX = videoService.GetWidth();
-                int maxY = videoService.GetHeight();
-                player.MoveNext(maxX, maxY , true);
-
-            // }
+            int maxX = videoService.GetWidth();
+            int maxY = videoService.GetHeight();
+            player.MoveNext(maxX, maxY , true);
             
             foreach (SkyDrops drop in skyDrops)
             {
@@ -87,6 +81,7 @@ namespace Unit04.Game.Directing
             }
             
             Random random = new Random();
+            /// random range of selecting the next type of SkyDrop
             int nextSkyDrop = random.Next(1,25);
 
             /// adding skydrops - gem or stone according to list size.
@@ -98,6 +93,7 @@ namespace Unit04.Game.Directing
             {
                 cast.AddActor("skyDrops", new SkyDrops(false));
             }
+
             /// collision logic adds 20 for gem, lose 25 for stone
             foreach (SkyDrops drops in skyDrops)
             {
@@ -127,13 +123,13 @@ namespace Unit04.Game.Directing
             videoService.ClearBuffer();
             videoService.DrawActors(actors);
             videoService.FlushBuffer();
-            
         }
 
         /// <summary>
         /// Checks if a SkyDrop collides with the Player.
         /// </summary>
         /// <param name="first, second">The given cast.</param>
+        /// <returns>T/F that there was a collision between Player and a SkyDrop</returns>
          private bool IsCollision(Actor first, Actor second)
         {
             int size = Constants.CELL_SIZE;
