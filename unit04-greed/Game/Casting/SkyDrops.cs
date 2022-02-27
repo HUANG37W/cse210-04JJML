@@ -15,7 +15,7 @@ namespace Unit04.Game.Casting
     {
         private string _type;
 
-        
+        // sets skydrop to gem or stone
         public SkyDrops(bool isGem)
         {
             if (isGem)
@@ -38,7 +38,8 @@ namespace Unit04.Game.Casting
             SetPosition(new Point(random.Next(Constants.MAX_X),random.Next(35, 60))); 
             SetVelocity(new Point(0, random.Next(5, 8)));
         }
-
+        /// <summary>
+        ///Returns type of skydrop; gem or stone/// </summary>
         public string GetDropType()
         {
             return _type;
