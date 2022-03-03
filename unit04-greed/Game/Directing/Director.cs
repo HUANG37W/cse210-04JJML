@@ -111,7 +111,21 @@ namespace Unit04.Game.Directing
                     }
                 }
             }
-        }    
+            CleanUpSkyDrops(skyDrops, cast);
+        }
+
+        private void CleanUpSkyDrops(List<Actor> skydrops, Cast cast)
+        {
+            foreach (SkyDrops skydrop in skydrops)
+            {
+                if (skydrop.GetPosition().GetY() > Constants.MAX_Y)
+                {
+                    cast.RemoveActor("skyDrops", skydrop);
+                }
+            }
+        }
+
+
                 
         /// <summary>
         /// Draws the actors on the screen.
