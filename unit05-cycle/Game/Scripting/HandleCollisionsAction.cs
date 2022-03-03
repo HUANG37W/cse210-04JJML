@@ -10,8 +10,8 @@ namespace Unit05.Game.Scripting
     /// <summary>
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
-    /// The responsibility of HandleCollisionsAction is to handle the situation when the snake 
-    /// collides with the food, or the snake collides with its segments, or the game is over.
+    /// The responsibility of HandleCollisionsAction is to handle the situation when the Cycle 
+    /// collides with the food, or the Cycle collides with its segments, or the game is over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
@@ -37,33 +37,33 @@ namespace Unit05.Game.Scripting
         }
 
         /// <summary>
-        /// Updates the score nd moves the food if the snake collides with it.
+        /// Updates the score nd moves the food if the Cycle collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         private void HandleFoodCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
+            Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
             Score score = (Score)cast.GetFirstActor("score");
-            Food food = (Food)cast.GetFirstActor("food");
+            // Food food = (Food)cast.GetFirstActor("food");
             
-            if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-            {
-                int points = food.GetPoints();
-                snake.GrowTail(points);
-                score.AddPoints(points);
-                food.Reset();
-            }
+            // if (Cycle.GetHead().GetPosition().Equals(food.GetPosition()))
+            // {
+            //     int points = food.GetPoints();
+            //     Cycle.GrowTail(points);
+            //     score.AddPoints(points);
+            //     food.Reset();
+            // }
         }
 
         /// <summary>
-        /// Sets the game over flag if the snake collides with one of its segments.
+        /// Sets the game over flag if the Cycle collides with one of its segments.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Actor head = snake.GetHead();
-            List<Actor> body = snake.GetBody();
+            Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
+            Actor head = cycle.GetHead();
+            List<Actor> body = cycle.GetBody();
 
             foreach (Actor segment in body)
             {
@@ -78,9 +78,9 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == true)
             {
-                Snake snake = (Snake)cast.GetFirstActor("snake");
-                List<Actor> segments = snake.GetSegments();
-                Food food = (Food)cast.GetFirstActor("food");
+                Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
+                List<Actor> segments = cycle.GetSegments();
+                // Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
                 int x = (Constants.MAX_X / 2) - 40;
@@ -97,7 +97,7 @@ namespace Unit05.Game.Scripting
                 {
                     segment.SetColor(Constants.WHITE);
                 }
-                food.SetColor(Constants.WHITE);
+                // food.SetColor(Constants.WHITE);
             }
         }
 
