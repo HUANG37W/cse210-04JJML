@@ -10,8 +10,8 @@ namespace Unit05.Game.Scripting
     /// <summary>
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
-    /// The responsibility of HandleCollisionsAction is to handle the situation when the Cycle 
-    /// collides with the food, or the Cycle collides with its segments, or the game is over.
+    /// The responsibility of HandleCollisionsAction is to handle the situation when the Cycler 
+    /// collides with the food, or the Cycler collides with its segments, or the game is over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
@@ -37,31 +37,31 @@ namespace Unit05.Game.Scripting
         }
 
         /// <summary>
-        /// Updates the score nd moves the food if the Cycle collides with it.
+        /// Updates the score nd moves the food if the Cycler collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         private void HandleFoodCollisions(Cast cast)
         {
-            Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
+            Cycler cycle = (Cycler)cast.GetFirstActor("cycle");
             Score score = (Score)cast.GetFirstActor("score");
             // Food food = (Food)cast.GetFirstActor("food");
             
-            // if (Cycle.GetHead().GetPosition().Equals(food.GetPosition()))
+            // if (Cycler.GetHead().GetPosition().Equals(food.GetPosition()))
             // {
             //     int points = food.GetPoints();
-            //     Cycle.GrowTail(points);
+            //     Cycler.GrowTail(points);
             //     score.AddPoints(points);
             //     food.Reset();
             // }
         }
 
         /// <summary>
-        /// Sets the game over flag if the Cycle collides with one of its segments.
+        /// Sets the game over flag if the Cycler collides with one of its segments.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
+            Cycler cycle = (Cycler)cast.GetFirstActor("cycle");
             Actor head = cycle.GetHead();
             List<Actor> body = cycle.GetBody();
 
@@ -78,7 +78,7 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == true)
             {
-                Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
+                Cycler cycle = (Cycler)cast.GetFirstActor("cycle");
                 List<Actor> segments = cycle.GetSegments();
                 // Food food = (Food)cast.GetFirstActor("food");
 

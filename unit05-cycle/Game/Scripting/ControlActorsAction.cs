@@ -5,9 +5,9 @@ using Unit05.Game.Services;
 namespace Unit05.Game.Scripting
 {
     /// <summary>
-    /// <para>An input action that controls the Cycle.</para>
+    /// <para>An input action that controls the Cycler.</para>
     /// <para>
-    /// The responsibility of ControlActorsAction is to get the direction and move the Cycle's head.
+    /// The responsibility of ControlActorsAction is to get the direction and move the Cycler's head.
     /// </para>
     /// </summary>
     public class ControlActorsAction : Action
@@ -50,8 +50,8 @@ namespace Unit05.Game.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
             }
 
-            Cycle cycle = (Cycle)cast.GetFirstActor("cycle");
-            cycle.TurnHead(direction);
+            Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            cycler.TurnHead(direction);
 
         }
     }
