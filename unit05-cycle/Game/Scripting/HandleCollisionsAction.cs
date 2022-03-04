@@ -61,9 +61,9 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Cycler cycle = (Cycler)cast.GetFirstActor("cycle");
-            Actor head = cycle.GetHead();
-            List<Actor> body = cycle.GetBody();
+            Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            Actor head = cycler.GetHead();
+            List<Actor> body = cycler.GetBody();
 
             foreach (Actor segment in body)
             {
@@ -78,7 +78,7 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == true)
             {
-                Cycler cycle = (Cycler)cast.GetFirstActor("cycle");
+                Cycler cycle = (Cycler)cast.GetFirstActor("cycler");
                 List<Actor> segments = cycle.GetSegments();
                 // Food food = (Food)cast.GetFirstActor("food");
 
