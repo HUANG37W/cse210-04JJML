@@ -49,8 +49,11 @@ namespace Unit05.Game.Scripting
             {
                 direction = new Point(0, Constants.CELL_SIZE);
             }
+            
+            
 
             Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            CyclerTwo cyclerTwo = (CyclerTwo)cast.GetFirstActor("cyclerTwo");
             cycler.TurnHead(direction);
 
         }
