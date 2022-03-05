@@ -5,7 +5,7 @@ using System.Linq;
 namespace Unit05.Game.Casting
 {
     /// <summary>
-    /// <para>A long limbless reptile.</para>
+    /// <para>The first Cycler which should spawn on the left.</para>
     /// <para>The responsibility of Cycler is to move itself.</para>
     /// </summary>
     public class Cycler : Actor
@@ -105,6 +105,7 @@ namespace Unit05.Game.Casting
 
             for (int i = 0; i < Constants.Cycler_LENGTH; i++)
             {
+                //position new Point affects the trail's behavi
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
