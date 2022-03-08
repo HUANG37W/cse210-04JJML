@@ -36,6 +36,11 @@ namespace Unit05
 
             Score score = new Score();
             Score score2 = new Score();
+            score.SetColor(Constants.RED);
+            score.SetText("Player 1:");
+
+            score2.SetColor(Constants.GREEN);
+            score2.SetText("Player 2:");
 
             Point position = new Point(100,100);
             Point position2 = new Point(300,500);
