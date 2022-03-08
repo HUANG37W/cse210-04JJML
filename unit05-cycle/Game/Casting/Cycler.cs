@@ -48,27 +48,6 @@ namespace Unit05.Game.Casting
         }
         
 
-        /// <summary>
-        /// Grows the Cycler's tail by the given number of segments.
-        /// </summary>
-        /// <param name="numberOfSegments">The number of segments to grow.</param>
-        // public void GrowTail(int numberOfSegments)
-        // {
-        //         Actor tail = segments.Last<Actor>();
-        //         Actor head = segments[0];
-        //         Point velocity = head.GetVelocity();
-        //         Point position = head.GetPosition();
-                
-        //        // head = new position and add head to list of segments
-
-        //         Actor segment = new Actor();
-        //         segment.SetPosition(position);
-        //         segment.SetText("#");
-        //         segment.SetColor(GetColor());
-        //         segments.Insert(1, segment);
-        //     // }
-        // }
-
         /// <inheritdoc/>
         public override void MoveNext()
 
