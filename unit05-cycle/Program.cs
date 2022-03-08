@@ -26,14 +26,22 @@ namespace Unit05
             Score score2 = new Score();
             cycler.SetColor(Constants.RED);
             cycler2.SetColor(Constants.GREEN);
+            score.SetColor(Constants.RED);
+            score2.SetColor(Constants.GREEN);
+            score.SetText("Player One");
+            score2.SetText("Player Two");
             
             // int x = Constants.MIN_X + 100;
             // int y = Constants.MAX_Y - 100 ;
 
             Point position = new Point(100,100);
             Point position2 = new Point(300,500);
+            Point spos = new Point(20,20);
+            Point spos2 = new Point(800,20);
             cycler.SetPosition(position);
             cycler2.SetPosition(position2);
+            score.SetPosition(spos);
+            score2.SetPosition(spos2);
            
             cast.AddActor("cycler", cycler);
             cast.AddActor("cycler2", cycler2);
