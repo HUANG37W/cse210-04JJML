@@ -52,40 +52,41 @@ namespace Unit05.Game.Casting
         /// Grows the Cycler's tail by the given number of segments.
         /// </summary>
         /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public void GrowTail(int numberOfSegments)
-        {
-                Actor tail = segments.Last<Actor>();
-                Actor head = segments[0];
-                Point velocity = head.GetVelocity();
-                Point position = head.GetPosition();
+        // public void GrowTail(int numberOfSegments)
+        // {
+        //         Actor tail = segments.Last<Actor>();
+        //         Actor head = segments[0];
+        //         Point velocity = head.GetVelocity();
+        //         Point position = head.GetPosition();
                 
-               // head = new position and add head to list of segments
+        //        // head = new position and add head to list of segments
 
-                Actor segment = new Actor();
-                segment.SetPosition(position);
-                segment.SetText("#");
-                segment.SetColor(GetColor());
-                segments.Insert(1, segment);
-            // }
-        }
+        //         Actor segment = new Actor();
+        //         segment.SetPosition(position);
+        //         segment.SetText("#");
+        //         segment.SetColor(GetColor());
+        //         segments.Insert(1, segment);
+        //     // }
+        // }
 
         /// <inheritdoc/>
         public override void MoveNext()
 
         {
-            Actor head = segments[0];
-            Point position = head.GetPosition();
+            Actor segment = new Actor();
 
-            
+            Actor tail = segments.Last<Actor>();
+            Actor head = segments[0];
+            Point velocity = head.GetVelocity();
+            Point position = head.GetPosition();
+            segment.SetPosition(position);
+            segment.SetText("#");
+            segment.SetColor(GetColor());
+            segments.Insert(1, segment);
+           
             GetHead().MoveNext();
 
-            // for (int i = segments.Count - 1; i > 0; i++)
-            // {
-            //     Actor trailing = segments[i];
-            //     Actor previous = segments[^1];
-            //     Point velocity = previous.GetVelocity();
-            //     trailing.SetVelocity(velocity);
-            // }
+            
         }
 
         /// <summary>

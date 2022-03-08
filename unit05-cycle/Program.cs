@@ -22,22 +22,23 @@ namespace Unit05
             Cast cast = new Cast();
             Cycler cycler = new Cycler();
             Cycler cycler2 = new Cycler();
+            Score score = new Score();
+            Score score2 = new Score();
             cycler.SetColor(Constants.RED);
             cycler2.SetColor(Constants.GREEN);
             
-            int x = Constants.MIN_X + 100;
-            int y = Constants.MAX_Y - 100 ;
+            // int x = Constants.MIN_X + 100;
+            // int y = Constants.MAX_Y - 100 ;
 
-            Point position = new Point(x, y);
-
+            Point position = new Point(100,100);
             Point position2 = new Point(300,500);
             cycler.SetPosition(position);
             cycler2.SetPosition(position2);
-           ;
+           
             cast.AddActor("cycler", cycler);
             cast.AddActor("cycler2", cycler2);
-            cast.AddActor("score", new Score());
-            cast.AddActor("score2", new Score());
+            cast.AddActor("score", score);
+            cast.AddActor("score2", score2);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
