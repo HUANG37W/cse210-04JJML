@@ -2,6 +2,7 @@
 using Unit05.Game.Directing;
 using Unit05.Game.Scripting;
 using Unit05.Game.Services;
+using Unit05.Game;
 
 
 namespace Unit05
@@ -16,12 +17,27 @@ namespace Unit05
         /// </summary>
         /// <param name="args">The given arguments.</param>
         static void Main(string[] args)
-        {
+        {   
             // create the cast
             Cast cast = new Cast();
-            // cast.AddActor("food", new Food());
-            cast.AddActor("cycler", new Cycler());
+            Cycler cycler = new Cycler();
+            Cycler cycler2 = new Cycler();
+            cycler.SetColor(Constants.RED);
+            cycler2.SetColor(Constants.GREEN);
+            
+            int x = Constants.MIN_X + 100;
+            int y = Constants.MAX_Y - 100 ;
+
+            Point position = new Point(x, y);
+
+            Point position2 = new Point(300,500);
+            cycler.SetPosition(position);
+            cycler2.SetPosition(position2);
+           ;
+            cast.AddActor("cycler", cycler);
+            cast.AddActor("cycler2", cycler2);
             cast.AddActor("score", new Score());
+            cast.AddActor("score2", new Score());
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();

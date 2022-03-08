@@ -20,11 +20,10 @@ namespace Unit05.Game
         public static int MIN_X = 0;
         public static int MIN_Y = 0;
 
-        public static int FRAME_RATE = 15;
+        public static int FRAME_RATE = 10;
         public static int FONT_SIZE = 15;
         public static string CAPTION = "Cycler";
-        public static int Cycler_LENGTH = 8;
-
+        
         public static Color RED = new Color(255, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
         public static Color YELLOW = new Color(255, 255, 0);

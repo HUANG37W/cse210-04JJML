@@ -30,7 +30,7 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == false)
             {
-                HandleFoodCollisions(cast);
+                // HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
@@ -40,20 +40,20 @@ namespace Unit05.Game.Scripting
         /// Updates the score nd moves the food if the Cycler collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
-        private void HandleFoodCollisions(Cast cast)
-        {
-            Cycler cycle = (Cycler)cast.GetFirstActor("cycle");
-            Score score = (Score)cast.GetFirstActor("score");
-            // Food food = (Food)cast.GetFirstActor("food");
+        // private void HandleFoodCollisions(Cast cast)
+        // {
+        //     Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+        //     Score score = (Score)cast.GetFirstActor("score");
+        //     // Food food = (Food)cast.GetFirstActor("food");
             
-            // if (Cycler.GetHead().GetPosition().Equals(food.GetPosition()))
-            // {
-            //     int points = food.GetPoints();
-            //     Cycler.GrowTail(points);
-            //     score.AddPoints(points);
-            //     food.Reset();
-            // }
-        }
+        //     // if (Cycler.GetHead().GetPosition().Equals(food.GetPosition()))
+        //     // {
+        //     //     int points = food.GetPoints();
+        //     //     Cycler.GrowTail(points);
+        //     //     score.AddPoints(points);
+        //     //     food.Reset();
+        //     // }
+        // }
 
         /// <summary>
         /// Sets the game over flag if the Cycler collides with one of its segments.
@@ -62,24 +62,29 @@ namespace Unit05.Game.Scripting
         private void HandleSegmentCollisions(Cast cast)
         {
             Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
             Actor head = cycler.GetHead();
+            Actor head2 = cycler2.GetHead();
             List<Actor> body = cycler.GetBody();
+            List<Actor> body2 = cycler2.GetBody();
 
-            foreach (Actor segment in body)
-            {
-                if (segment.GetPosition().Equals(head.GetPosition()))
-                {
-                    isGameOver = true;
-                }
-            }
+            // foreach (Actor segment in body)
+            // {
+            //     if (segment.GetPosition().Equals(head.GetPosition()))
+            //     {
+            //         isGameOver = false;
+            //     }
+            // }
         }
 
         private void HandleGameOver(Cast cast)
         {
             if (isGameOver == true)
             {
-                Cycler cycle = (Cycler)cast.GetFirstActor("cycler");
-                List<Actor> segments = cycle.GetSegments();
+                Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+                List<Actor> segments = cycler.GetSegments();
+                Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
+                // List<Actor> segments = cycler2.GetSegments();
                 // Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message

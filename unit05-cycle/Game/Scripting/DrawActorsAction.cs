@@ -25,15 +25,19 @@ namespace Unit05.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
+            Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
             List<Actor> segments = cycler.GetSegments();
+            List<Actor> segments2 = cycler2.GetSegments();
             Actor score = cast.GetFirstActor("score");
+            Actor score2 = cast.GetFirstActor("score2");
             // Actor food = cast.GetFirstActor("food");
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
             videoService.DrawActors(segments);
+            videoService.DrawActors(segments2);
             videoService.DrawActor(score);
-            // videoService.DrawActor(food);
+            videoService.DrawActor(score2);
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }

@@ -29,7 +29,7 @@ namespace Unit05.Game.Casting
         /// Gets the actor's color.
         /// </summary>
         /// <returns>The color.</returns>
-        public Color GetColor()
+        public virtual Color GetColor()
         {
             return color;
         }
@@ -87,7 +87,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         /// <param name="color">The given color.</param>
         /// <exception cref="ArgumentException">When color is null.</exception>
-        public void SetColor(Color color)
+        public virtual void SetColor(Color color)
         {
             if (color == null)
             {
