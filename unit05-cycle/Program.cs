@@ -20,19 +20,22 @@ namespace Unit05
         {   
             // create the cast
             Cast cast = new Cast();
-            Cycler cycler = new Cycler();
-            Cycler cycler2 = new Cycler();
+            Cycler cycler = new Cycler(Constants.MAX_X / 4, Constants.RED);
+            Cycler cycler2 = new Cycler(Constants.MAX_X / 4 * 3, Constants.GREEN);
+            //cycler.SetColor(Constants.RED);
+            //cycler2.SetColor(Constants.GREEN);
+            
+            //int x = Constants.MIN_X + 100;
+            //int y = Constants.MAX_Y - 100;
+
+            // Point position = new Point(x, y);
+
+            // Point position2 = new Point(300,500);
+            // cycler.SetPosition(position);
+            // cycler2.SetPosition(position2);
+
             Score score = new Score();
             Score score2 = new Score();
-            cycler.SetColor(Constants.RED);
-            cycler2.SetColor(Constants.GREEN);
-            score.SetColor(Constants.RED);
-            score2.SetColor(Constants.GREEN);
-            score.SetText("Player One");
-            score2.SetText("Player Two");
-            
-            // int x = Constants.MIN_X + 100;
-            // int y = Constants.MAX_Y - 100 ;
 
             Point position = new Point(100,100);
             Point position2 = new Point(300,500);

@@ -15,9 +15,10 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Cycler.
         /// </summary>
-        public Cycler()
+        public Cycler(int x, Color color)
         {
-            PrepareBody();
+            PrepareBody(x);
+            SetColor(color);
         }
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace Unit05.Game.Casting
             Point velocity = head.GetVelocity();
             Point position = head.GetPosition();
             segment.SetPosition(position);
-            segment.SetText("#");
+            segment.SetText("o");
             segment.SetColor(GetColor());
             segments.Insert(1, segment);
            
@@ -80,7 +81,7 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the Cycler body for moving.
         /// </summary>
-        private void PrepareBody()
+        private void PrepareBody(int x)
         {
             
             Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
@@ -88,6 +89,7 @@ namespace Unit05.Game.Casting
             
             Actor segment = new Actor();
             segment.SetPosition(GetPosition());
+            segment.GetPosition();
             segment.SetVelocity(velocity);
             segment.SetText(text);
             segment.SetColor(GetColor());

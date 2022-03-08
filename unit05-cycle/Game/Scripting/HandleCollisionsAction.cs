@@ -30,30 +30,10 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == false)
             {
-                // HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
         }
-
-        /// <summary>
-        /// Updates the score nd moves the food if the Cycler collides with it.
-        /// </summary>
-        /// <param name="cast">The cast of actors.</param>
-        // private void HandleFoodCollisions(Cast cast)
-        // {
-        //     Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
-        //     Score score = (Score)cast.GetFirstActor("score");
-        //     // Food food = (Food)cast.GetFirstActor("food");
-            
-        //     // if (Cycler.GetHead().GetPosition().Equals(food.GetPosition()))
-        //     // {
-        //     //     int points = food.GetPoints();
-        //     //     Cycler.GrowTail(points);
-        //     //     score.AddPoints(points);
-        //     //     food.Reset();
-        //     // }
-        // }
 
         /// <summary>
         /// Sets the game over flag if the Cycler collides with one of its segments.
@@ -85,7 +65,6 @@ namespace Unit05.Game.Scripting
                 List<Actor> segments = cycler.GetSegments();
                 Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
                 // List<Actor> segments = cycler2.GetSegments();
-                // Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
                 int x = (Constants.MAX_X / 2) - 40;
@@ -102,7 +81,6 @@ namespace Unit05.Game.Scripting
                 {
                     segment.SetColor(Constants.WHITE);
                 }
-                // food.SetColor(Constants.WHITE);
             }
         }
 
