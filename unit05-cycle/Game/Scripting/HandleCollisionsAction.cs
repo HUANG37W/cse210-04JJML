@@ -68,13 +68,13 @@ namespace Unit05.Game.Scripting
             List<Actor> body = cycler.GetBody();
             List<Actor> body2 = cycler2.GetBody();
 
-            // foreach (Actor segment in body)
-            // {
-            //     if (segment.GetPosition().Equals(head.GetPosition()))
-            //     {
-            //         isGameOver = false;
-            //     }
-            // }
+            foreach (Actor segment in body)
+            {
+                if (segment.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver = false;
+                }
+            }
         }
 
         private void HandleGameOver(Cast cast)
