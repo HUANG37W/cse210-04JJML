@@ -20,8 +20,8 @@ namespace Unit05
         {   
             // create the cast
             Cast cast = new Cast();
-            Cycler cycler = new Cycler(Constants.MAX_X / 4, Constants.MAX_Y - 100, Constants.RED);
-            Cycler cycler2 = new Cycler(Constants.MAX_X / 4 * 3, Constants.MIN_Y + 100, Constants.GREEN);
+            Cycler cycler = new Cycler(Constants.MAX_X / 4, Constants.RED);
+            Cycler cycler2 = new Cycler(Constants.MAX_X / 4 * 3, Constants.GREEN);
             //cycler.SetColor(Constants.RED);
             //cycler2.SetColor(Constants.GREEN);
             
@@ -34,10 +34,18 @@ namespace Unit05
             // cycler.SetPosition(position);
             // cycler2.SetPosition(position2);
 
+            Score score = new Score();
+            Score score2 = new Score();
+
+            Point position = new Point(100,100);
+            Point position2 = new Point(300,500);
+            cycler.SetPosition(position);
+            cycler2.SetPosition(position2);
+           
             cast.AddActor("cycler", cycler);
             cast.AddActor("cycler2", cycler2);
-            cast.AddActor("score", new Score());
-            cast.AddActor("score2", new Score());
+            cast.AddActor("score", score);
+            cast.AddActor("score2", score2);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
