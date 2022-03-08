@@ -52,7 +52,31 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    isGameOver = false;
+                    isGameOver = true;
+                }
+            }
+
+            foreach (Actor segment in body)
+            {
+                if (segment.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver = true;
+                }
+            }
+
+             foreach (Actor segment in body2)
+            {
+                if (segment.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver = true;
+                }
+            }
+
+             foreach (Actor segment in body2)
+            {
+                if (segment.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver = true;
                 }
             }
         }
