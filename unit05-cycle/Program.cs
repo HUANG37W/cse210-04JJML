@@ -39,8 +39,12 @@ namespace Unit05
 
             Point position = new Point(100,100);
             Point position2 = new Point(300,500);
+            Point spos = new Point(20,20);
+            Point spos2 = new Point(800,20);
             cycler.SetPosition(position);
             cycler2.SetPosition(position2);
+            score.SetPosition(spos);
+            score2.SetPosition(spos2);
            
             cast.AddActor("cycler", cycler);
             cast.AddActor("cycler2", cycler2);
