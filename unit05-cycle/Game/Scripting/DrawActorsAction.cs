@@ -30,7 +30,6 @@ namespace Unit05.Game.Scripting
             List<Actor> segments2 = cycler2.GetSegments();
             Actor score = cast.GetFirstActor("score");
             Actor score2 = cast.GetFirstActor("score2");
-            // Actor food = cast.GetFirstActor("food");
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
