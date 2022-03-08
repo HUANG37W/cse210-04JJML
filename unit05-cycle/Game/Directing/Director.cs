@@ -38,8 +38,6 @@ namespace Unit05.Game.Directing
             {
                 ExecuteActions("input", cast, script);
                 ExecuteActions("update", cast, script);
-                Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
-                
                 ExecuteActions("output", cast, script);
             }
             videoService.CloseWindow();
