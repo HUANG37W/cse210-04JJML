@@ -49,6 +49,8 @@ namespace Unit05.Game.Scripting
             {
                 direction = new Point(0, Constants.CELL_SIZE);
             }
+            
+            
 
             Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
             // Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");

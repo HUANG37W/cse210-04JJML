@@ -5,7 +5,7 @@ using System.Linq;
 namespace Unit05.Game.Casting
 {
     /// <summary>
-    /// <para>A long limbless reptile.</para>
+    /// <para>The first Cycler which should spawn on the left.</para>
     /// <para>The responsibility of Cycler is to move itself.</para>
     /// </summary>
     public class Cycler : Actor
