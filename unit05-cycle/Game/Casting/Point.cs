@@ -67,12 +67,12 @@ namespace Unit05.Game.Casting
         /// Reverses the point by inverting both x and y values.
         /// </summary>
         /// <returns>A new point that is reversed.</returns>
-        public Point Reverse()
-        {
-            int x = this.x * -1;
-            int y = this.y * -1;
-            return new Point(x, y);
-        }
+        // public Point Reverse()
+        // {
+        //     int x = this.x * -1;
+        //     int y = this.y * -1;
+        //     return new Point(x, y);
+        // }
         
         /// <summary>
         /// Scales the point by multiplying the x and y values by the provided factor.

@@ -14,7 +14,7 @@ namespace Unit05.Game.Scripting
         private VideoService videoService;
 
         /// <summary>
-        /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
+        /// Constructs a new instance of DrawActorsAction using the given KeyboardService.
         /// </summary>
         public DrawActorsAction(VideoService videoService)
         {
@@ -31,6 +31,7 @@ namespace Unit05.Game.Scripting
             Actor score = cast.GetFirstActor("score");
             Actor score2 = cast.GetFirstActor("score2");
             List<Actor> messages = cast.GetActors("messages");
+            List<Actor> caption = cast.GetActors(Constants.CAPTION);
             
             videoService.ClearBuffer();
             videoService.DrawActors(segments);
@@ -38,6 +39,7 @@ namespace Unit05.Game.Scripting
             videoService.DrawActor(score);
             videoService.DrawActor(score2);
             videoService.DrawActors(messages);
+            videoService.DrawActors(caption);
             videoService.FlushBuffer();
         }
     }
