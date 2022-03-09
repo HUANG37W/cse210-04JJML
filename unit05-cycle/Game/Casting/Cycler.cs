@@ -11,13 +11,14 @@ namespace Unit05.Game.Casting
     public class Cycler : Actor
     {
         private List<Actor> segments = new List<Actor>();
+        private Point position = new Point(0, 0);
 
         /// <summary>
         /// Constructs a new instance of a Cycler.
         /// </summary>
-        public Cycler(int x, Color color)
+        public Cycler(int x, int y, Color color)
         {
-            PrepareBody(x);
+            PrepareBody(x,y);
             SetColor(color);
         }
 
@@ -51,7 +52,6 @@ namespace Unit05.Game.Casting
 
         /// <inheritdoc/>
         public override void MoveNext()
-
         {
             Actor segment = new Actor();
 
@@ -81,14 +81,15 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the Cycler body for moving.
         /// </summary>
-        private void PrepareBody(int x)
+        private void PrepareBody(int x, int y)
         {
             
             Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
+            Point position = new Point(x, y);
             string text = "8";
             
             Actor segment = new Actor();
-            segment.SetPosition(GetPosition());
+            segment.SetPosition(position);
             segment.GetPosition();
             segment.SetVelocity(velocity);
             segment.SetText(text);

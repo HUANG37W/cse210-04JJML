@@ -104,6 +104,8 @@ namespace Unit05.Game.Scripting
                 foreach (Actor segment in segments)
                 {
                     segment.SetColor(Constants.WHITE);
+                    cycler.SetColor(Constants.WHITE);
+                    cycler2.SetColor(Constants.WHITE);
                 }
             }
         }
