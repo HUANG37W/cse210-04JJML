@@ -97,7 +97,7 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x =Constants.MAX_Y/2 ;
+                    int x =Constants.MAX_X/2 ;
                     int y =0;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
