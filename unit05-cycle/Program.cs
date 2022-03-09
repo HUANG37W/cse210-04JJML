@@ -20,8 +20,8 @@ namespace Unit05
         {   
             // create the cast
             Cast cast = new Cast();
-            Cycler cycler = new Cycler(Constants.MAX_X / 4, Constants.RED);
-            Cycler cycler2 = new Cycler(Constants.MAX_X / 4 * 3, Constants.GREEN);
+            Cycler cycler = new Cycler(100,Constants.MAX_Y/4, Constants.RED);
+            Cycler cycler2 = new Cycler(100,Constants.MAX_Y*3/4, Constants.GREEN);
             //cycler.SetColor(Constants.RED);
             //cycler2.SetColor(Constants.GREEN);
             
