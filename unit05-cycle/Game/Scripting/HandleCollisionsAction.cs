@@ -88,7 +88,7 @@ namespace Unit05.Game.Scripting
                 Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
                 List<Actor> segments = cycler.GetSegments();
                 Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
-                // List<Actor> segments = cycler2.GetSegments();
+                List<Actor> segments2 = cycler2.GetSegments();
 
                 // create a "game over" message
                 int x = (Constants.MAX_X / 2) - 40;
@@ -102,11 +102,19 @@ namespace Unit05.Game.Scripting
 
                 // make everything white
                 foreach (Actor segment in segments)
-                {
+                {   
+                    // segments2.SetColor(Constants.WHITE);
                     segment.SetColor(Constants.WHITE);
                     cycler.SetColor(Constants.WHITE);
                     cycler2.SetColor(Constants.WHITE);
                 }
+                foreach (Actor segment in segments2)
+                {   
+                    // segments2.SetColor(Constants.WHITE);
+                    segment.SetColor(Constants.WHITE);
+                    // cycler.SetColor(Constants.WHITE);
+                    cycler2.SetColor(Constants.WHITE);
+                }    
             }
         }
 
