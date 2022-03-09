@@ -22,6 +22,11 @@ namespace Unit05
             Cast cast = new Cast();
             Cycler cycler = new Cycler(100,Constants.MAX_Y/4, Constants.BLUE);
             Cycler cycler2 = new Cycler(100,Constants.MAX_Y*3/4, Constants.ORANGE);
+            Actor head = cycler.GetHead();
+            Actor head2 = cycler2.GetHead();
+            head.SetColor(Constants.WHITE);
+
+            
             //cycler.SetColor(Constants.RED);
             //cycler2.SetColor(Constants.GREEN);
             

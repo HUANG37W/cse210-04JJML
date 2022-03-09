@@ -132,16 +132,14 @@ namespace Unit05.Game.Scripting
                 // make everything white
                 foreach (Actor segment in segments)
                 {   
-                    // segments2.SetColor(Constants.WHITE);
+                    
                     segment.SetColor(Constants.WHITE);
                     cycler.SetColor(Constants.WHITE);
-                    cycler2.SetColor(Constants.WHITE);
+                   
                 }
                 foreach (Actor segment in segments2)
                 {   
-                    // segments2.SetColor(Constants.WHITE);
                     segment.SetColor(Constants.WHITE);
-                    // cycler.SetColor(Constants.WHITE);
                     cycler2.SetColor(Constants.WHITE);
                 }    
             }
