@@ -52,6 +52,13 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
+                    int x =Constants.MAX_X/2 ;
+                    int y =0;
+                    Point position = new Point(x, y);
+                    Actor message = new Actor();
+                    message.SetText("Player One SUICIDE");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
                     isGameOver = true;
                 }
             }
@@ -60,6 +67,13 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
+                    int x =Constants.MAX_X/2 ;
+                    int y =0;
+                    Point position = new Point(x, y);
+                    Actor message = new Actor();
+                    message.SetText("Player One Wins");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
                     isGameOver = true;
                 }
             }
@@ -68,6 +82,13 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
+                    int x =Constants.MAX_X/2 ;
+                    int y =0;
+                    Point position = new Point(x, y);
+                    Actor message = new Actor();
+                    message.SetText("Player Two SUICIDE");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
                     isGameOver = true;
                 }
             }
@@ -76,9 +97,17 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
+                    int x =Constants.MAX_Y/2 ;
+                    int y =0;
+                    Point position = new Point(x, y);
+                    Actor message = new Actor();
+                    message.SetText("Player Twe Wins");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
                     isGameOver = true;
                 }
             }
+
         }
 
         private void HandleGameOver(Cast cast)
