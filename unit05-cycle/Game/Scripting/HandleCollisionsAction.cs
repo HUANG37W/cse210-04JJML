@@ -129,6 +129,7 @@ namespace Unit05.Game.Scripting
                 message.SetText("Game Over!");
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
+                
 
                 // make everything white
                 foreach (Actor segment in segments)
@@ -138,6 +139,10 @@ namespace Unit05.Game.Scripting
                     cycler.SetColor(Constants.WHITE);
                     Actor head = cycler.GetHead();
                     head.SetColor(Constants.WHITE);
+                    // segment2.SetColor(Constants.WHITE);
+                    // cycler2.SetColor(Constants.WHITE);
+                    // Actor head2 = cycler.GetHead();
+                    // head2.SetColor(Constants.WHITE);
                    
                 }
                 
