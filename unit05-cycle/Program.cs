@@ -20,8 +20,8 @@ namespace Unit05
         {   
             // creates the cast
             Cast cast = new Cast();
-            Cycler cycler = new Cycler(100,Constants.MAX_Y/4, Constants.BLUE);
-            Cycler cycler2 = new Cycler(100,Constants.MAX_Y*3/4, Constants.ORANGE);
+            Cycler cycler = new Cycler(100, Constants.MAX_Y/4, Constants.BLUE);
+            Cycler cycler2 = new Cycler(100, Constants.MAX_Y*3/4, Constants.ORANGE);
             // cycler.GetSegments();
             
             // creates Player 1's scoreboard and set its color to Blue
