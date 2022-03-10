@@ -18,7 +18,10 @@ namespace Unit05.Game.Scripting
     public class HandleCollisionsAction : Action
     {
         private bool isGameOver = false;
-         private bool isGameOver2 = false;
+        private bool isGameOver2 = false;
+
+        // set the position of game winner message used when someone wins the game
+        Point winMsgPosition = new Point(Constants.MAX_X/2 - 40, Constants.MAX_Y/2 - 50);
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -54,12 +57,9 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 - 40;
-                    int y =Constants.MAX_Y/2 - 50;
-                    Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("PLAYER 1 SUICIDE!");
-                    message.SetPosition(position);
+                    message.SetPosition(winMsgPosition);
                     cast.AddActor("messages", message);
                     isGameOver = true && isGameOver2 == false;
                 }
@@ -69,12 +69,9 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 - 40;
-                    int y = Constants.MAX_Y/2 - 50;
-                    Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("PLAYER 1 WINS!");
-                    message.SetPosition(position);
+                    message.SetPosition(winMsgPosition);
                     cast.AddActor("messages", message);
                     isGameOver2 = true;
                 }
@@ -84,12 +81,9 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 - 40;
-                    int y = Constants.MAX_Y/2 - 50;
-                    Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("PLAYER 2 SUICIDE!");
-                    message.SetPosition(position);
+                    message.SetPosition(winMsgPosition);
                     cast.AddActor("messages", message);
                     isGameOver2 = true;
                 }
@@ -99,12 +93,9 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x = Constants.MAX_X/2 - 40;
-                    int y = Constants.MAX_Y/2  - 50;
-                    Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("PLAYER 2 WINS!");
-                    message.SetPosition(position);
+                    message.SetPosition(winMsgPosition);
                     cast.AddActor("messages", message);
                     isGameOver = true;
                 }
