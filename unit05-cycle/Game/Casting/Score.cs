@@ -4,17 +4,17 @@ using System;
 namespace Unit05.Game.Casting
 {
     /// <summary>
-    /// <para>A tasty item that snakes like to eat.</para>
-    /// <para>
-    /// The responsibility of Food is to select a random position and points that it's worth.
-    /// </para>
+    /// This is a class for a scoreboard. Right now our scores are used to just
+    /// display which player is which and to display a gameOver message.
+    /// The score class has room to be used to actually keep score if we can make the
+    /// game replayable.
     /// </summary>
     public class Score : Actor
     {
         private int points = 0;
 
         /// <summary>
-        /// Constructs a new instance of an Food.
+        /// Constructs a new instance of a score.
         /// </summary>
         public Score()
         {
