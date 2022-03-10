@@ -135,12 +135,16 @@ namespace Unit05.Game.Scripting
                     
                     segment.SetColor(Constants.WHITE);
                     cycler.SetColor(Constants.WHITE);
+                    Actor head = cycler.GetHead();
+                    head.SetColor(Constants.WHITE);
                    
                 }
                 foreach (Actor segment in segments2)
                 {   
                     segment.SetColor(Constants.WHITE);
                     cycler2.SetColor(Constants.WHITE);
+                    Actor head2 = cycler.GetHead();
+                    head2.SetColor(Constants.WHITE);
                 }    
             }
         }
