@@ -52,8 +52,8 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x =Constants.MAX_X/2 - 40;
+                    int y =Constants.MAX_Y/2 - 50;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("Player One SUICIDE");
@@ -67,8 +67,8 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x =Constants.MAX_X/2 - 40;
+                    int y = Constants.MAX_Y/2 - 50;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("Player One Wins");
@@ -82,8 +82,8 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x =Constants.MAX_X/2 - 40;
+                    int y = Constants.MAX_Y/2 - 50;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("Player Two SUICIDE");
@@ -97,8 +97,8 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x = Constants.MAX_X/2 - 40;
+                    int y = Constants.MAX_Y/2  - 50;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
                     message.SetText("Player Twe Wins");
