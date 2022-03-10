@@ -11,7 +11,8 @@ namespace Unit05.Game.Scripting
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
     /// The responsibility of HandleCollisionsAction is to handle the situation when the Cycler 
-    /// collides with the food, or the Cycler collides with its segments, or the game is over.
+    /// collides with the trail of other Cycler, or the Cycler collides with its own trail segments, 
+    /// both result with game over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
@@ -52,11 +53,11 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x = Constants.MAX_X/2 ;
+                    int y = 0;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
-                    message.SetText("Player One SUICIDE");
+                    message.SetText("PLAYER ONE SUICIDE!");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
                     isGameOver = true;
@@ -67,11 +68,11 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x = Constants.MAX_X/2 ;
+                    int y = 0;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
-                    message.SetText("Player One Wins");
+                    message.SetText("PLAYER ONE WINS!");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
                     isGameOver = true;
@@ -82,11 +83,11 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x = Constants.MAX_X/2 ;
+                    int y = 0;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
-                    message.SetText("Player Two SUICIDE");
+                    message.SetText("PLAYER TWO SUICIDE!");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
                     isGameOver = true;
@@ -97,11 +98,11 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    int x =Constants.MAX_X/2 ;
-                    int y =0;
+                    int x = Constants.MAX_X/2 ;
+                    int y = 0;
                     Point position = new Point(x, y);
                     Actor message = new Actor();
-                    message.SetText("Player Twe Wins");
+                    message.SetText("PLAYER TWO WINS!");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
                     isGameOver = true;
@@ -114,6 +115,7 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == true)
             {
+                //creates instances of both cyclers
                 Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
                 List<Actor> segments = cycler.GetSegments();
                 Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");

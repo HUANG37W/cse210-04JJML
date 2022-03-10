@@ -4,11 +4,6 @@ using Unit05.Game.Casting;
 
 namespace Unit05.Game.Scripting
 {
-    // TODO: Implement the MoveActorsAction class here
-
-    // 1) Add the class declaration. Use the following class comment. Make sure you
-    //    inherit from the Action class.
-
     /// <summary>
     /// <para>An update action that moves all the actors.</para>
     /// <para>
@@ -18,17 +13,14 @@ namespace Unit05.Game.Scripting
 
     public class MoveActorsAction : Action
     {
-    
-        // 2) Create the class constructor. Use the following method comment.
         /// <summary>
         /// Constructs a new instance of MoveActorsAction.
         /// </summary>
         public MoveActorsAction()
-        {
-            //constructor tasks optional
+        {            
         }
 
-        // 3) Override the Execute(Cast cast, Script script) method. Use the following 
+        //    Override the Execute(Cast cast, Script script) method. Use the following 
         //    method comment. You custom implementation should do the following:
         //    a) get all the actors from the cast
         //    b) loop through all the actors

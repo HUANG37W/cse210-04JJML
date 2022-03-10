@@ -15,6 +15,8 @@ namespace Unit05.Game.Casting
 
         /// <summary>
         /// Constructs a new instance of a Cycler.
+        /// Prepares the body of the Cylcer and 
+        /// sets what color its trail will be.
         /// </summary>
         public Cycler(int x, int y, Color color)
         {
@@ -60,9 +62,9 @@ namespace Unit05.Game.Casting
             Point velocity = head.GetVelocity();
             Point position = head.GetPosition();
             segment.SetPosition(position);
-            head.SetText("@@");
+            head.SetText("@@"); //use as the cycler head
             head.SetColor(Constants.GREEN);
-            segment.SetText("o");
+            segment.SetText("o"); //sets a nice symbol for the cycler's trail
             segment.SetColor(GetColor());
             segments.Insert(1, segment);
            
@@ -87,16 +89,14 @@ namespace Unit05.Game.Casting
         {
             
             Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
-            Point position = new Point(x, y);
-            string text = "8";
+            Point position = new Point(x, y); //use for correct position of cycler on the screen
             
             Actor segment = new Actor();
             segment.SetPosition(position);
             segment.GetPosition();
             segment.SetVelocity(velocity);
-            segment.SetText(text);
             segment.SetColor(GetColor());
-            segments.Add(segment);
+            segments.Add(segment); //adds segment to cycler's trail (grows the trail)
             
         }
     }
