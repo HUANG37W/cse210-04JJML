@@ -61,7 +61,7 @@ namespace Unit05.Game.Casting
             Point position = head.GetPosition();
             segment.SetPosition(position);
             head.SetText("@@");
-            head.SetColor(Constants.GREEN);
+            head.SetColor(GetColor());
             segment.SetText("o");
             segment.SetColor(GetColor());
             segments.Insert(1, segment);

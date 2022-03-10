@@ -17,6 +17,7 @@ namespace Unit05.Game.Scripting
     public class HandleCollisionsAction : Action
     {
         private bool isGameOver = false;
+         private bool isGameOver2 = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -28,7 +29,7 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (isGameOver == false)
+            if (isGameOver == false && isGameOver2 == false)
             {
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
@@ -59,7 +60,7 @@ namespace Unit05.Game.Scripting
                     message.SetText("Player One SUICIDE");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
-                    isGameOver = true;
+                    isGameOver = true && isGameOver2 == false;
                 }
             }
 
@@ -74,7 +75,7 @@ namespace Unit05.Game.Scripting
                     message.SetText("Player One Wins");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
-                    isGameOver = true;
+                    isGameOver2 = true;
                 }
             }
 
@@ -89,7 +90,7 @@ namespace Unit05.Game.Scripting
                     message.SetText("Player Two SUICIDE");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
-                    isGameOver = true;
+                    isGameOver2 = true;
                 }
             }
 
@@ -116,8 +117,8 @@ namespace Unit05.Game.Scripting
             {
                 Cycler cycler = (Cycler)cast.GetFirstActor("cycler");
                 List<Actor> segments = cycler.GetSegments();
-                Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
-                List<Actor> segments2 = cycler2.GetSegments();
+                // Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
+                // List<Actor> segments2 = cycler2.GetSegments();
 
                 // create a "game over" message
                 int x = (Constants.MAX_X / 2) - 40;
@@ -139,10 +140,30 @@ namespace Unit05.Game.Scripting
                     head.SetColor(Constants.WHITE);
                    
                 }
-                foreach (Actor segment in segments2)
+
+            if (isGameOver2 == true)
+            {
+            
+                Cycler cycler2 = (Cycler)cast.GetFirstActor("cycler2");
+                List<Actor> segments2 = cycler2.GetSegments();
+
+                // create a "game over" message
+                // int x = (Constants.MAX_X / 2) - 40;
+                // int y = Constants.MAX_Y / 2;
+                // Point position2 = new Point(x, y);
+
+                // Actor message2 = new Actor();
+                // message2.SetText("Game Over!");
+                // message2.SetPosition(position);
+                // cast.AddActor("messages", message2);
+
+                // make everything white
+                
+                } 
+                foreach (Actor segment in segments)
                 {   
                     segment.SetColor(Constants.WHITE);
-                    cycler2.SetColor(Constants.WHITE);
+                    cycler.SetColor(Constants.WHITE);
                     Actor head2 = cycler.GetHead();
                     head2.SetColor(Constants.WHITE);
                 }    

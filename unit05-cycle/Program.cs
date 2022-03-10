@@ -22,22 +22,9 @@ namespace Unit05
             Cast cast = new Cast();
             Cycler cycler = new Cycler(100,Constants.MAX_Y/4, Constants.BLUE);
             Cycler cycler2 = new Cycler(100,Constants.MAX_Y*3/4, Constants.ORANGE);
-            // Actor head = cycler.GetHead();
-            // Actor head2 = cycler2.GetHead();
-            // head.SetColor(Constants.WHITE);
-
+            // cycler.GetSegments();
             
-            //cycler.SetColor(Constants.RED);
-            //cycler2.SetColor(Constants.GREEN);
             
-            //int x = Constants.MIN_X + 100;
-            //int y = Constants.MAX_Y - 100;
-
-            // Point position = new Point(x, y);
-
-            // Point position2 = new Point(300,500);
-            // cycler.SetPosition(position);
-            // cycler2.SetPosition(position2);
 
             Score score = new Score();
             Score score2 = new Score();
