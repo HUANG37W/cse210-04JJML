@@ -19,12 +19,9 @@ namespace Unit05.Game.Scripting
         public MoveActorsAction()
         {            
         }
-
-        //    Override the Execute(Cast cast, Script script) method. Use the following 
-        //    method comment. You custom implementation should do the following:
-        //    a) get all the actors from the cast
-        //    b) loop through all the actors
-        //    c) call the MoveNext() method on each actor.
+        /// <summary>
+        /// Gets all the actors from the cast. Loop through actors and calls MoveNext method.
+        /// </summary>
         public void Execute(Cast cast, Script script)
         {
             List<Actor> actors = cast.GetAllActors();
