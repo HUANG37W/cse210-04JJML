@@ -1,6 +1,6 @@
 using System;
 
-namespace Unit06.Game
+namespace Unit06.Game.Casting
 {
     /// <summary>
     /// <para>A thing that participates in the game.</para>
@@ -9,8 +9,8 @@ namespace Unit06.Game
     /// space.
     /// </para>
     /// </summary>
-    public class Arena : Actor
+    public class Field : Actor
     {
-        
+        //not sure if we need a Field class.
     }
 }

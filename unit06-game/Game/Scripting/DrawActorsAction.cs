@@ -32,12 +32,6 @@ namespace Unit06.Game.Scripting
             // Actor food = cast.GetFirstActor("food");
             // List<Actor> messages = cast.GetActors("messages");
             
-            videoService.ClearBuffer();
-            videoService.DrawActors(segments);
-            videoService.DrawActor(score);
-            videoService.DrawActor(food);
-            videoService.DrawActors(messages);
-            videoService.FlushBuffer();
         }
     }
 }

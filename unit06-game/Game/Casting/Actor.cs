@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Unit06.Game
+namespace Unit06.Game.Casting
 {
     /// <summary>
     /// <para>A thing that participates in the game.</para>
@@ -14,9 +14,9 @@ namespace Unit06.Game
     {
         private string text = "";
         private int fontSize = 15;
-        // private Color color = Constants.WHITE;
-        // private Point position = new Point(0, 0);
-        // private Point velocity = new Point(0, 0);
+        private Color color = Constants.WHITE;
+        private Point position = new Point(0, 0);
+        private Point velocity = new Point(0, 0);
 
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -29,9 +29,9 @@ namespace Unit06.Game
         /// Gets the actor's color.
         /// </summary>
         /// <returns>The color.</returns>
-        // public virtual Color GetColor()
+        public virtual Color GetColor()
         {
-            // return color;
+            return color;
         }
 
         /// <summary>

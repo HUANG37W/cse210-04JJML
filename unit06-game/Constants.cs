@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unit06.Game.Casting;
 
 
 namespace Unit06
@@ -10,7 +11,7 @@ namespace Unit06
         // ----------------------------------------------------------------------------------------- 
 
         // GAME
-        public static string GAME_NAME = "Little Fighters";
+        public static string GAME_NAME = "Kingdom Battle";
         public static int FRAME_RATE = 60;
 
         // SCREEN
@@ -180,6 +181,14 @@ namespace Unit06
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
         public static string WAS_GOOD_GAME = "GAME OVER";
+
+
+        public static int MAX_X = 900;
+        public static int MAX_Y = 600;
+        public static int MIN_X = 0;
+        public static int MIN_Y = 0;
+        public static int CELL_SIZE = 1;
+        public static string CAPTION = "Fighter";
 
     }
 }

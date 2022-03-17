@@ -1,6 +1,6 @@
 using System;
 
-namespace Unit06.Game
+namespace Unit06.Game.Casting
 {
     /// <summary>
     /// <para>A thing that participates in the game.</para>
@@ -11,6 +11,14 @@ namespace Unit06.Game
     /// </summary>
     public class Fighter : Actor
     {
+        private Point position = new Point(0,0);
+
+        public Fighter(int y, Color color)
+        {
+
+        }
+
         
+
     }
 }
