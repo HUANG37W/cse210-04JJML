@@ -15,10 +15,18 @@ namespace Unit06.Game.Casting
 
         public Fighter(int y, Color color)
         {
-
+            //constructor
         }
 
-        
+        public override void MoveNext()
+        {
+            Actor fighter = new Actor();
+
+            Point velocity = fighter.GetVelocity();
+            Point position = fighter.GetPosition();
+
+
+        }
 
     }
 }
