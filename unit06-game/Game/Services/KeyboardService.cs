@@ -21,7 +21,7 @@ namespace Unit06.Game.Services
         /// </summary>
         public KeyboardService()
         {
-            //player 2 key definitions
+            //player 1 key definitions
             keys["w"] = KeyboardKey.KEY_W;
             keys["a"] = KeyboardKey.KEY_A;
             keys["s"] = KeyboardKey.KEY_S;
