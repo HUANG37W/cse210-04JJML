@@ -21,11 +21,11 @@ namespace Unit06
             Cast cast = new Cast();
             
             // creates a test fighter on the screen
-            Fighter fighter = new Fighter(100, Constants.WHITE);
+            Fighter fighter = new Fighter(100, 100, Constants.WHITE);
 
              // creates the services
             KeyboardService keyboardService = new KeyboardService();
-            VideoService videoService = new VideoService(false);
+            VideoService videoService = new VideoService(False);
            
             // creates the script
             Script script = new Script();

@@ -54,7 +54,7 @@ namespace Unit06.Game.Directing
             List<Action> actions = script.GetActions(group);
             foreach(Action action in actions)
             {
-                action.Execute(cast, script);
+                action.Execute(cast, script, callback);
             }
         }
     }

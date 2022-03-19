@@ -90,11 +90,11 @@ namespace Unit06
 
         // HUD
         public static int HUD_MARGIN = 15;
-        public static string LEVEL_GROUP = "level";
-        public static string LIVES_GROUP = "lives";
+        public static string LIVES1_GROUP = "lives1";
+        public static string LIVES2_GROUP = "lives2";
         public static string SCORE_GROUP = "score";
-        public static string LEVEL_FORMAT = "LEVEL: {0}";
-        public static string LIVES_FORMAT = "LIVES: {0}";
+        public static string LIVES1_FORMAT = "LIVES 1: {0}";
+        public static string LIVES2_FORMAT = "LIVES 2: {0}";
         public static string SCORE_FORMAT = "SCORE: {0}";
 
         // BALL

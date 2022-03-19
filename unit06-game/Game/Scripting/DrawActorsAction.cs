@@ -24,6 +24,18 @@ namespace Unit06.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
+
+            Fighter fighter = (Fighter)cast.GetFirstActor("Fighter");
+            
+
+            videoService.ClearBuffer();
+
+            videoService.DrawActor(fighter);
+            
+            videoService.FlushBuffer();
+
+
+
             // ADD FIGHTER AND OTHER ACTORS TO CAST AND DRAW THEM HERE
 
             // Snake snake = (Snake)cast.GetFirstActor("snake");
@@ -31,6 +43,7 @@ namespace Unit06.Game.Scripting
             // Actor score = cast.GetFirstActor("score");
             // Actor food = cast.GetFirstActor("food");
             // List<Actor> messages = cast.GetActors("messages");
+            
             
         }
     }

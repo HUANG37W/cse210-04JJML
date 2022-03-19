@@ -24,7 +24,7 @@ namespace Unit06.Game.Scripting
         }
 
         /// <inheritdoc/>
-        public void Execute(Cast cast, Script script)
+        public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             // left
             if (keyboardService.IsKeyDown("j"))
@@ -49,9 +49,6 @@ namespace Unit06.Game.Scripting
             {
                 direction = new Point(0, Constants.CELL_SIZE);
             }
-
-            // Snake snake = (Snake)cast.GetFirstActor("snake");
-            // snake.TurnHead(direction);
 
         }
     }
