@@ -19,6 +19,9 @@ namespace Unit06.Game.Casting
 
         private Image image;
 
+        //  /// <summary>
+        // /// Constructs a new instance of Fighter.
+        // /// </summary>
         public Fighter(Body body, Image image, bool debug = false) : base(debug) 
         {
             this.body = body;
@@ -56,46 +59,46 @@ namespace Unit06.Game.Casting
         /// Gets the position.
         /// </summary>
         /// <returns>The position.</returns>
-        public Point GetPosition()
-        {
-            return position;
-        }
+        // public Point GetPosition()
+        // {
+        //     return position;
+        // }
 
-        /// <summary>
-        /// Gets the size.
-        /// </summary>
-        /// <returns>The size.</returns>
-        public Point GetSize()
-        {
-            return size;
-        }
-        public override void MoveNext()
-        {
-            Actor fighter = new Actor();
+        // /// <summary>
+        // /// Gets the size.
+        // /// </summary>
+        // /// <returns>The size.</returns>
+        // public Point GetSize()
+        // {
+        //     return size;
+        // }
+        // public override void MoveNext()
+        // {
+        //     Actor fighter = new Actor();
 
-            Point velocity = fighter.GetVelocity();
-            Point position = fighter.GetPosition();
-            fighter.SetPosition(position);
-            fighter.SetText("o");
-            fighter.SetColor(GetColor());
+        //     Point velocity = fighter.GetVelocity();
+        //     Point position = fighter.GetPosition();
+        //     fighter.SetPosition(position);
+        //     fighter.SetText("o");
+        //     fighter.SetColor(GetColor());
 
-        }
+        // }
 
-        private void SpawnFighter(int x, int y)
-        {
+        // private void SpawnFighter(int x, int y)
+        // {
 
-            Point position = new Point(x, y);
-            //Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
+        //     Point position = new Point(x, y);
+        //     //Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
 
-            Actor fighter = new Actor();
-            //fighter.SetText("o");
-            fighter.SetPosition(position);
-            fighter.GetPosition();
+        //     Actor fighter = new Actor();
+        //     //fighter.SetText("o");
+        //     fighter.SetPosition(position);
+        //     fighter.GetPosition();
             
 
-        }
+        // }
 
         
 
-    }
+    // }
 }

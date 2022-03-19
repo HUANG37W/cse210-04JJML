@@ -22,7 +22,7 @@ namespace Unit06.Game.Scripting
         }
 
         /// <inheritdoc/>
-        public void Execute(Cast cast, Script script)
+        public void Execute(Cast cast, Script script, ActionCallback callback)
         {
 
             Fighter fighter = (Fighter)cast.GetFirstActor("Fighter");

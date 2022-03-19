@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Unit06.Game.Casting
 {
@@ -11,6 +12,11 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Field : Actor
     {
-        //not sure if we need a Field class.
+        //Field will just upload a background picture for the battlefield
+
+        public Field(Image image, bool debug = false) : base(debug)
+        {
+            //constructor
+        }
     }
 }
