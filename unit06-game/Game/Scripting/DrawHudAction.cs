@@ -18,7 +18,6 @@ namespace Unit06.Game.Scripting
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             DrawLabel(cast, Constants.LIVES1_GROUP, Constants.LIVES1_FORMAT, stats.GetTeam1Lives());
             DrawLabel(cast, Constants.LIVES2_GROUP, Constants.LIVES2_FORMAT, stats.GetTeam2Lives());
-            //DrawLabel(cast, Constants.SCORE_GROUP, Constants.SCORE_FORMAT, stats.GetScore());
         }
 
         // **********************************************************************************************
@@ -30,7 +29,7 @@ namespace Unit06.Game.Scripting
             string theValueToDisplay = string.Format(format, data);
             Label label = (Label)cast.GetFirstActor(group);
             Text text = label.GetText();
-            text.SetValue(string.Format(format, data)); //add data as a parameter somehow?
+            text.SetValue(string.Format(format, data));
             Point position = label.GetPosition();
             videoService.DrawText(text, position);
             

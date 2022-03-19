@@ -36,7 +36,7 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Moves the racket to its next position.
+        /// Moves the Selector to its next position.
         /// </summary>
         public void MoveNext()
         {
@@ -47,25 +47,25 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Swings the racket to the left.
+        /// Swings the Selector to the left.
         /// </summary>
         public void SwingLeft()
         {
-            Point velocity = new Point(-Constants.RACKET_VELOCITY, 0);
+            Point velocity = new Point(-Constants.SELECTOR_VELOCITY, 0);
             body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Swings the racket to the right.
+        /// Swings the Selector to the right.
         /// </summary>
         public void SwingRight()
         {
-            Point velocity = new Point(Constants.RACKET_VELOCITY, 0);
+            Point velocity = new Point(Constants.SELECTOR_VELOCITY, 0);
             body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Stops the racket from moving.
+        /// Stops the Selector from moving.
         /// </summary>
         public void StopMoving()
         {

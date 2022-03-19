@@ -4,18 +4,18 @@ using Unit06.Game.Services;
 
 namespace Unit06.Game.Scripting
 {
-    public class DrawBallAction : Action
+    public class DrawFighterAction : Action
     {
         private VideoService videoService;
         
-        public DrawBallAction(VideoService videoService)
+        public DrawFighterAction(VideoService videoService)
         {
             this.videoService = videoService;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.BALL_GROUP);
+            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
             Body body = fighter.GetBody();
 
             // if (fighter.IsDebug())

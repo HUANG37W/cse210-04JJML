@@ -1,0 +1,76 @@
+using Unit06.Game.Casting;
+using Unit06.Game.Services;
+
+
+namespace Unit06.Game.Scripting
+{
+    public class CollideBordersAction : Action
+    {
+        private AudioService audioService;
+        private PhysicsService physicsService;
+        
+        public CollideBordersAction(PhysicsService physicsService, AudioService audioService)
+        {
+            this.physicsService = physicsService;
+            this.audioService = audioService;
+        }
+
+        public void Execute(Cast cast, Script script, ActionCallback callback)
+        {
+            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            Body body = fighter.GetBody();
+            Point position = body.GetPosition();
+            int x = position.GetX();
+            int y = position.GetY();
+            //Sound bounceSound = new Sound(Constants.BOUNCE_SOUND);
+            //Sound overSound = new Sound(Constants.OVER_SOUND);
+
+            if (x < Constants.FIELD_LEFT)
+            {
+                Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+                stats.RemoveTeam1Life();
+
+                if (stats.GetTeam1Lives() > 0)
+                {
+                    //keep game going
+
+                    /// callback.OnNext(Constants.TRY_AGAIN);
+                }
+                else
+                {
+                    // Do stuff to show that Team 2 Wins!
+
+                    /// callback.OnNext(Constants.GAME_OVER);
+                    /// audioService.PlaySound(overSound);
+                }
+
+                //ball.BounceX();
+                //audioService.PlaySound(bounceSound);
+            }
+
+            else if (x >= Constants.FIELD_RIGHT - Constants.FIGHTER_WIDTH)
+            {
+                Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+                stats.RemoveTeam2Life();
+
+                if (stats.GetTeam2Lives() > 0)
+                {
+                    //keep game going
+
+                    /// callback.OnNext(Constants.TRY_AGAIN);
+                }
+                else
+                {
+                    // Do stuff to show that Team 1 Wins!
+                    
+                    /// callback.OnNext(Constants.GAME_OVER);
+                    /// audioService.PlaySound(overSound);
+                }
+
+                //ball.BounceX();
+                //audioService.PlaySound(bounceSound);
+            }
+
+        }
+    }
+}

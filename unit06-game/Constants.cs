@@ -47,8 +47,11 @@ namespace Unit06
         public static Color PURPLE = new Color(255, 0, 255);
 
         // KEYS
+        public static string UP = "up";
+        public static string DOWN = "down";
         public static string LEFT = "left";
         public static string RIGHT = "right";
+
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";
@@ -97,27 +100,27 @@ namespace Unit06
         public static string LIVES2_FORMAT = "LIVES 2: {0}";
         public static string SCORE_FORMAT = "SCORE: {0}";
 
-        // BALL
-        public static string BALL_GROUP = "balls";
-        public static string BALL_IMAGE = "Assets/Images/000.png";
-        public static int BALL_WIDTH = 28;
-        public static int BALL_HEIGHT = 28;
-        public static int BALL_VELOCITY = 6;
+        // FIGHTER
+        public static string FIGHTER_GROUP = "fighters";
+        public static string FIGHTER_IMAGE = "Assets/Images/000.png";
+        public static int FIGHTER_WIDTH = 28;
+        public static int FIGHTER_HEIGHT = 28;
+        public static int FIGHTER_VELOCITY = 2;
 
-        // RACKET
-        public static string RACKET_GROUP = "rackets";
+        // Selector
+        public static string SELECTOR_GROUP = "selectors";
         
-        public static List<string> RACKET_IMAGES
+        public static List<string> SELECTOR_IMAGES
             = new List<string>() {
                 "Assets/Images/100.png",
                 "Assets/Images/101.png",
                 "Assets/Images/102.png"
             };
 
-        public static int RACKET_WIDTH = 106;
-        public static int RACKET_HEIGHT = 28;
-        public static int RACKET_RATE = 6;
-        public static int RACKET_VELOCITY = 7;
+        public static int SELECTOR_WIDTH = 106;
+        public static int SELECTOR_HEIGHT = 28;
+        public static int SELECTOR_RATE = 6;
+        public static int SELECTOR_VELOCITY = 7;
 
         // BRICK
         public static string BRICK_GROUP = "bricks";

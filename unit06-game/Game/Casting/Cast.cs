@@ -1,15 +1,10 @@
 using System.Collections.Generic;
 
 
-
 namespace Unit06.Game.Casting
 {
     /// <summary>
-    /// <para>A collection of actors.</para>
-    /// <para>
-    /// The responsibility of a cast is to keep track of a collection of actors. It has methods for 
-    /// adding, removing and getting them by a group name.
-    /// </para>
+    /// A collection of actors.
     /// </summary>
     public class Cast
     {
@@ -37,6 +32,29 @@ namespace Unit06.Game.Casting
             if (!actors[group].Contains(actor))
             {
                 actors[group].Add(actor);
+            }
+        }
+
+        /// <summary>
+        /// Clears the actors in the given group.
+        /// </summary>
+        /// <param name="group">The given group.</param>
+        public void ClearActors(string group)
+        {
+            if (actors.ContainsKey(group))
+            {
+                actors[group] = new List<Actor>();
+            }
+        }
+
+        /// <summary>
+        /// Clears all the actors in the cast.
+        /// </summary>
+        public void ClearAllActors()
+        {
+            foreach(string group in actors.Keys)
+            {
+                actors[group] = new List<Actor>();
             }
         }
 
