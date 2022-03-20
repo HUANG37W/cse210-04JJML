@@ -3,26 +3,30 @@ using Unit06.Game.Casting;
 using Unit06.Game.Scripting;
 using Unit06.Game.Services;
 
-/// NEED TO CHANGE THINGS HERE FOR THE CYCLE GAME
 
 namespace Unit06.Game.Directing
 {
     /// <summary>
-    /// <para>A person who directs the game.</para>
-    /// <para>
-    /// The responsibility of a Director is to control the sequence of play.
-    /// </para>
+    /// A person who directs the game.
     /// </summary>
-    public class Director
+    public class Director : ActionCallback
     {
+<<<<<<< HEAD
         private VideoService videoService = null;
         private Cast cast;
         private Script script;
         private SceneManager sceneManager;
         private VideoService videoService1;
 
+=======
+        private Cast cast;
+        private Script script;
+        private SceneManager sceneManager;
+        private VideoService videoService;
+        
+>>>>>>> 84531f4e3a84481ff436f0a1b154bb4c518fd82d
         /// <summary>
-        /// Constructs a new instance of Director using the given KeyboardService and VideoService.
+        /// Constructs a new instance of Director using the given VideoService.
         /// </summary>
         /// <param name="videoService">The given VideoService.</param>
         public Director(VideoService videoService)
@@ -33,35 +37,36 @@ namespace Unit06.Game.Directing
             this.sceneManager = new SceneManager();
         }
 
+        /// </inheritdoc>
+        public void OnNext(string scene)
+        {
+            sceneManager.PrepareScene(scene, cast, script);
+        }
+        
         /// <summary>
         /// Starts the game by running the main game loop for the given cast and script.
         /// </summary>
-        /// <param name="cast">The given cast.</param>
-        /// <param name="script">The given script.</param>
-        public void StartGame(Cast cast, Script script)
+        public void StartGame()
         {
-            videoService.OpenWindow();
+            OnNext(Constants.NEW_GAME);
+            ExecuteActions(Constants.INITIALIZE);
+            ExecuteActions(Constants.LOAD);
             while (videoService.IsWindowOpen())
             {
-                ExecuteActions("input", cast, script);
-                ExecuteActions("update", cast, script);
-                ExecuteActions("output", cast, script);
+                ExecuteActions(Constants.INPUT);
+                ExecuteActions(Constants.UPDATE);
+                ExecuteActions(Constants.OUTPUT);
             }
-            videoService.CloseWindow();
+            ExecuteActions(Constants.UNLOAD);
+            ExecuteActions(Constants.RELEASE);
         }
 
-        /// <summary>
-        /// Calls execute for each action in the given group.
-        /// </summary>
-        /// <param name="group">The group name.</param>
-        /// <param name="cast">The cast of actors.</param>
-        /// <param name="script">The script of actions.</param>
-        private void ExecuteActions(string group, Cast cast, Script script)
+        private void ExecuteActions(string group)
         {
             List<Action> actions = script.GetActions(group);
             foreach(Action action in actions)
             {
-                action.Execute(cast, script, callback);
+                action.Execute(cast, script, this);
             }
         }
     }
