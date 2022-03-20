@@ -11,20 +11,11 @@ namespace Unit06.Game.Directing
     /// </summary>
     public class Director : ActionCallback
     {
-<<<<<<< HEAD
-        private VideoService videoService = null;
-        private Cast cast;
-        private Script script;
-        private SceneManager sceneManager;
-        private VideoService videoService1;
-
-=======
         private Cast cast;
         private Script script;
         private SceneManager sceneManager;
         private VideoService videoService;
         
->>>>>>> 84531f4e3a84481ff436f0a1b154bb4c518fd82d
         /// <summary>
         /// Constructs a new instance of Director using the given VideoService.
         /// </summary>
