@@ -1,6 +1,19 @@
 using System;
 
-namespace Unit06.Game.Casting;
+namespace Unit06.Game.Casting
+{
+    public class Arrows
+    {
+
+
+    }
+
+
+
+
+}
+
+
 
 //THIS IS A NICE TO HAVE: LOW PRIORITY RIGHT NOW
 
