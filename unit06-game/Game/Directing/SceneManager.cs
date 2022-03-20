@@ -204,7 +204,7 @@ namespace Unit06.Game.Directing
         }
 
         /// <summary>
-        /// Adds team 1's lives to the cast to be be put on top left of HUD
+        /// Adds player 1's lives to the cast to be be put on top left of HUD
         /// </summary>
         private void AddLives1(Cast cast)
         {
@@ -219,7 +219,7 @@ namespace Unit06.Game.Directing
         }
 
         /// <summary>
-        /// Adds team 2's lives to the cast to be be put on top left of HUD
+        /// Adds player 2's lives to the cast to be be put on top left of HUD
         /// </summary>
         private void AddLives2(Cast cast)
         {
@@ -238,8 +238,8 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.SELECTOR_GROUP);
         
-            int x = Constants.CENTER_X - Constants.SELECTOR_WIDTH / 2;
-            int y = Constants.SCREEN_HEIGHT - Constants.SELECTOR_HEIGHT / 2;
+            int x = Constants.SELECTOR_WIDTH / 4;
+            int y = Constants.SCREEN_HEIGHT / 2;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.SELECTOR_WIDTH, Constants.SELECTOR_HEIGHT);

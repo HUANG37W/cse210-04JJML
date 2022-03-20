@@ -21,7 +21,7 @@ namespace Unit06.Game.Casting
         /// <summary>
         /// Adds one level.
         /// </summary>
-        public void AddTeam1Lives()
+        public void AddPlayer1Lives()
         {
             lives1++;
         }
@@ -29,33 +29,33 @@ namespace Unit06.Game.Casting
         /// <summary>
         /// Adds an extra life.
         /// </summary>
-        public void AddTeam2Lives()
+        public void AddPlayer2Lives()
         {
             lives2++;
         }
 
         /// <summary>
-        /// Gets the level.
+        /// Gets player 1's lives.
         /// </summary>
         /// <returns>The level.</returns>
-        public int GetTeam1Lives()
+        public int GetPlayer1Lives()
         {
             return lives1;
         }
 
         /// <summary>
-        /// Gets the lives.
+        /// Gets player 2's lives.
         /// </summary>
         /// <returns>The lives.</returns>
-        public int GetTeam2Lives()
+        public int GetPlayer2Lives()
         {
             return lives2;
         }
 
         /// <summary>
-        /// Removes a life from team 1.
+        /// Removes a life from player 1.
         /// </summary>
-        public void RemoveTeam1Life()
+        public void RemovePlayer1Life()
         {
             lives1--;
             if (lives1 <= 0)
@@ -65,9 +65,9 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Removes a life from team 2.
+        /// Removes a life from player 2.
         /// </summary>
-        public void RemoveTeam2Life()
+        public void RemovePlayer2Life()
         {
             lives2--;
             if (lives2 <= 0)

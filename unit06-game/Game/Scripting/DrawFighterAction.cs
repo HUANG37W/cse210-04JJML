@@ -16,7 +16,7 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            Body body = fighter.GetBody();
+            //Body body = fighter.GetBody();
 
             // if (fighter.IsDebug())
             // {
@@ -26,9 +26,9 @@ namespace Unit06.Game.Scripting
             //     videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
             // }
 
-            Image image = fighter.GetImage();
-            Point position = body.GetPosition();
-            videoService.DrawImage(image, position);
+            // Image image = fighter.GetImage();
+            // Point position = body.GetPosition();
+            // videoService.DrawImage(image, position);
         }
     }
 }

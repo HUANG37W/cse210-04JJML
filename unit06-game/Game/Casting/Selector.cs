@@ -47,18 +47,18 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Swings the Selector to the left.
+        /// Moves the selector up 1 row.
         /// </summary>
-        public void SwingLeft()
+        public void MoveUp()
         {
             Point velocity = new Point(-Constants.SELECTOR_VELOCITY, 0);
             body.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Swings the Selector to the right.
+        /// Moves the Selector down 1 row.
         /// </summary>
-        public void SwingRight()
+        public void MoveDown()
         {
             Point velocity = new Point(Constants.SELECTOR_VELOCITY, 0);
             body.SetVelocity(velocity);

@@ -96,8 +96,8 @@ namespace Unit06
         public static string LIVES1_GROUP = "lives1";
         public static string LIVES2_GROUP = "lives2";
         public static string SCORE_GROUP = "score";
-        public static string LIVES1_FORMAT = "LIVES 1: {0}";
-        public static string LIVES2_FORMAT = "LIVES 2: {0}";
+        public static string LIVES1_FORMAT = "Player 1 - {0} lives";
+        public static string LIVES2_FORMAT = "Player 2 - {0} lives";
         public static string SCORE_FORMAT = "SCORE: {0}";
 
         // FIGHTER
@@ -125,59 +125,6 @@ namespace Unit06
         // BRICK
         public static string BRICK_GROUP = "bricks";
         
-        public static Dictionary<string, List<string>> BRICK_IMAGES
-            = new Dictionary<string, List<string>>() {
-                { "b", new List<string>() {
-                    "Assets/Images/010.png",
-                    "Assets/Images/011.png",
-                    "Assets/Images/012.png",
-                    "Assets/Images/013.png",
-                    "Assets/Images/014.png",
-                    "Assets/Images/015.png",
-                    "Assets/Images/016.png",
-                    "Assets/Images/017.png",
-                    "Assets/Images/018.png"
-                } },
-                { "g", new List<string>() {
-                    "Assets/Images/020.png",
-                    "Assets/Images/021.png",
-                    "Assets/Images/022.png",
-                    "Assets/Images/023.png",
-                    "Assets/Images/024.png",
-                    "Assets/Images/025.png",
-                    "Assets/Images/026.png",
-                    "Assets/Images/027.png",
-                    "Assets/Images/028.png"
-                } },
-                { "p", new List<string>() {
-                    "Assets/Images/030.png",
-                    "Assets/Images/031.png",
-                    "Assets/Images/032.png",
-                    "Assets/Images/033.png",
-                    "Assets/Images/034.png",
-                    "Assets/Images/035.png",
-                    "Assets/Images/036.png",
-                    "Assets/Images/037.png",
-                    "Assets/Images/038.png"
-                } },
-                { "y", new List<string>() {
-                    "Assets/Images/040.png",
-                    "Assets/Images/041.png",
-                    "Assets/Images/042.png",
-                    "Assets/Images/043.png",
-                    "Assets/Images/044.png",
-                    "Assets/Images/045.png",
-                    "Assets/Images/046.png",
-                    "Assets/Images/047.png",
-                    "Assets/Images/048.png"
-                } }
-        };
-
-        public static int BRICK_WIDTH = 80;
-        public static int BRICK_HEIGHT = 28;
-        public static double BRICK_DELAY = 0.5;
-        public static int BRICK_RATE = 4;
-        public static int BRICK_POINTS = 50;
 
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";
