@@ -16,8 +16,8 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-            DrawLabel(cast, Constants.LIVES1_GROUP, Constants.LIVES1_FORMAT, stats.GetTeam1Lives());
-            DrawLabel(cast, Constants.LIVES2_GROUP, Constants.LIVES2_FORMAT, stats.GetTeam2Lives());
+            DrawLabel(cast, Constants.LIVES1_GROUP, Constants.LIVES1_FORMAT, stats.GetPlayer1Lives());
+            DrawLabel(cast, Constants.LIVES2_GROUP, Constants.LIVES2_FORMAT, stats.GetPlayer2Lives());
         }
 
         // **********************************************************************************************

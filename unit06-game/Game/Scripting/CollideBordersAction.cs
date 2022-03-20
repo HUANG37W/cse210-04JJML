@@ -28,9 +28,9 @@ namespace Unit06.Game.Scripting
             if (x < Constants.FIELD_LEFT)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-                stats.RemoveTeam1Life();
+                stats.RemovePlayer1Life();
 
-                if (stats.GetTeam1Lives() > 0)
+                if (stats.GetPlayer1Lives() > 0)
                 {
                     //keep game going
 
@@ -38,7 +38,7 @@ namespace Unit06.Game.Scripting
                 }
                 else
                 {
-                    // Do stuff to show that Team 2 Wins!
+                    // Do stuff to show that Player 2 Wins!
 
                     /// callback.OnNext(Constants.GAME_OVER);
                     /// audioService.PlaySound(overSound);
@@ -51,9 +51,9 @@ namespace Unit06.Game.Scripting
             else if (x >= Constants.FIELD_RIGHT - Constants.FIGHTER_WIDTH)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-                stats.RemoveTeam2Life();
+                stats.RemovePlayer2Life();
 
-                if (stats.GetTeam2Lives() > 0)
+                if (stats.GetPlayer2Lives() > 0)
                 {
                     //keep game going
 
@@ -61,7 +61,7 @@ namespace Unit06.Game.Scripting
                 }
                 else
                 {
-                    // Do stuff to show that Team 1 Wins!
+                    // Do stuff to show that Player 1 Wins!
                     
                     /// callback.OnNext(Constants.GAME_OVER);
                     /// audioService.PlaySound(overSound);
