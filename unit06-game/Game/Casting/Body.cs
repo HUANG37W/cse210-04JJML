@@ -84,5 +84,6 @@ namespace Unit06.Game.Casting
         {
             this.velocity = velocity;
         }
+        
     }
 }

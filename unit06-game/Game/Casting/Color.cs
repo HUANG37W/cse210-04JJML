@@ -11,9 +11,9 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Color
     {
-        private int red = 0;
-        private int green = 0;
-        private int blue = 0;
+        private int red;
+        private int green;
+        private int blue;
         private int alpha = 255;
 
         /// <summary>

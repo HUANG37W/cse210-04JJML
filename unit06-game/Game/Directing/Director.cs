@@ -16,6 +16,10 @@ namespace Unit06.Game.Directing
     public class Director
     {
         private VideoService videoService = null;
+        private Cast cast;
+        private Script script;
+        private SceneManager sceneManager;
+        private VideoService videoService1;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -24,6 +28,9 @@ namespace Unit06.Game.Directing
         public Director(VideoService videoService)
         {
             this.videoService = videoService;
+            this.cast = new Cast();
+            this.script = new Script();
+            this.sceneManager = new SceneManager();
         }
 
         /// <summary>

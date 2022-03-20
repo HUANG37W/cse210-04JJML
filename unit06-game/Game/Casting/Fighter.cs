@@ -16,26 +16,22 @@ namespace Unit06.Game.Casting
         // private Point size;
         private static Random random = new Random();
         private Body body;
+        private Animation animation;
+        private int points;
 
         private Image image;
 
         //  /// <summary>
         // /// Constructs a new instance of Fighter.
         // /// </summary>
-        public Fighter(Body body, Image image, bool debug = false) : base(debug) 
+        public Fighter(Body body, Animation animation, bool debug = false) : base(debug) 
         {
             this.body = body;
-            this.image = image;
+            this.animation = animation;
+            this.points = points;
         }
 
-        //  /// <summary>
-        // /// Constructs a new instance of Rectangle.
-        // /// </summary>
-        // public Fighter(Point position, Point size)
-        // {
-        //     this.position = position;
-        //     this.size = size;
-        // }
+        
 
         /// <summary>
         /// Gets the body.
@@ -53,6 +49,37 @@ namespace Unit06.Game.Casting
         public Image GetImage()
         {
             return image;
+        }
+        /// <summary>
+        /// Gets the animation.
+        /// </summary>
+        /// <returns>The animation.</returns>
+        public Animation GetAnimation()
+        {
+            return animation;
+        }
+        public int GetPoints()
+        {
+            return points;
+        }
+
+        /// <summary>
+        /// Moves the fighter to its next position.
+        /// </summary>
+        public void MoveNext()
+        {
+            Point position = body.GetPosition();
+            Point velocity = body.GetVelocity();
+            Point newPosition = position.Add(velocity);
+            body.SetPosition(newPosition);
+        }
+        /// <summary>
+        /// Stops the fighter from moving.
+        /// </summary>
+        public void StopMoving()
+        {
+            Point velocity = new Point(0, 0);
+            body.SetVelocity(velocity);
         }
 
         /// <summary>
@@ -100,5 +127,5 @@ namespace Unit06.Game.Casting
 
         
 
-    // }
+    }
 }
