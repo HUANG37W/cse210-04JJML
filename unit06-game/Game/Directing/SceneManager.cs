@@ -15,7 +15,7 @@ namespace Unit06.Game.Directing
         //public static MouseService MouseService = new RaylibMouseService();
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
-            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.BLACK);
+            Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.GREEN);
 
         public SceneManager()
         {
@@ -247,7 +247,7 @@ namespace Unit06.Game.Directing
         
             Body body = new Body(position, size, velocity);
             Animation animation = new Animation(Constants.SELECTOR_IMAGES, Constants.SELECTOR_RATE, 0);
-            Selector selector = new Selector(body, animation, false);
+            Selector selector = new Selector(body, animation, true);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
         }

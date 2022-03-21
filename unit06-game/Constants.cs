@@ -45,6 +45,7 @@ namespace Unit06
         public static Color BLACK = new Color(0, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
         public static Color PURPLE = new Color(255, 0, 255);
+        public static Color GREEN = new Color(87,131,12);
 
         // KEYS
         public static string UP = "up";

@@ -25,11 +25,14 @@ namespace Unit06.Game.Scripting
                 Point pos = rectangle.GetPosition();
                 videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
             }
-
-            Animation animation = selector.GetAnimation();
-            Image image = animation.NextImage();
-            Point position = body.GetPosition();
-            videoService.DrawImage(image, position);
+            else
+            {
+                Animation animation = selector.GetAnimation();
+                Image image = animation.NextImage();
+                Point position = body.GetPosition();
+                videoService.DrawImage(image, position);
+            }
+            
         }
     }
 }

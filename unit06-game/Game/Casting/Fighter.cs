@@ -14,10 +14,10 @@ namespace Unit06.Game.Casting
     {
         // private Point position;
         // private Point size;
-        private static Random random = new Random();
-        private Body body;
-        private Animation animation;
-        private int points;
+        protected static Random random = new Random();
+        protected Body body;
+        protected Animation animation;
+        protected int points;
 
         private Image image;
 
