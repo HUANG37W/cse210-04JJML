@@ -28,7 +28,7 @@ namespace Unit06
 
         // FONT
         public static string FONT_FILE = "Assets/Fonts/zorque.otf";
-        public static int FONT_SIZE = 32;
+        public static int FONT_SIZE = 22;
 
         // SOUND
         public static string SWORD_CLASH_SOUND = "Assets/Sounds/ENTER NAME";

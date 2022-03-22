@@ -50,8 +50,8 @@ namespace Unit06.Game.Directing
             AddStats(cast);
             AddLives1(cast);
             AddLives2(cast);
-            //AddBall(cast);
-            //AddBricks(cast);
+            //AddBowFighter(cast);
+            //AddBear(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
 
@@ -75,8 +75,8 @@ namespace Unit06.Game.Directing
 
         // private void PrepareNextLevel(Cast cast, Script script)
         // {
-        //     AddBall(cast);
-        //     AddBricks(cast);
+        //     AddFightercast);
+        //     AddBowFighter(cast);
         //     AddSelector(cast);
         //     AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
@@ -139,7 +139,7 @@ namespace Unit06.Game.Directing
         // casting methods
         // -----------------------------------------------------------------------------------------
 
-        // private void AddBall(Cast cast)
+        // private void AddFighter(Cast cast)
         // {
         //     cast.ClearActors(Constants.FIGHTER_GROUP);
         
@@ -154,7 +154,7 @@ namespace Unit06.Game.Directing
         //     Image image = new Image(Constants.FIGHTER_IMAGE);
         //     Ball ball = new Ball(body, image, false);
         
-        //     cast.AddActor(Constants.FIGHTER_GROUP, ball);
+        //     cast.AddActor(Constants.FIGHTER_GROUP, fighter);
         // }
 
         // private void AddBricks(Cast cast)
