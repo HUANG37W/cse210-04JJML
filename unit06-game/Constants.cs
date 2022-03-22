@@ -116,7 +116,14 @@ namespace Unit06
                 // "Assets/Images/100.png",
                 // "Assets/Images/101.png",
                 // "Assets/Images/102.png",
-                "Assets/Images/arrow.png"
+                "Assets/Images/arrow1.png"
+            };
+        public static List<string> SELECTOR2_IMAGES
+            = new List<string>() {
+                // "Assets/Images/100.png",
+                // "Assets/Images/101.png",
+                // "Assets/Images/102.png",
+                "Assets/Images/arrow2.png"
             };
 
         public static int SELECTOR_WIDTH = 28;
