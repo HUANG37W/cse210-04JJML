@@ -247,7 +247,7 @@ namespace Unit06.Game.Directing
 
             BuildAddSelector(x1, y1, cast);
 
-            int x2 = Constants.SELECTOR_WIDTH / 2;
+            int x2 = Constants.SELECTOR_WIDTH / 4;
             int y2 = Constants.SCREEN_HEIGHT / 3;
             
             BuildAddSelector(x2, y2, cast);
@@ -262,7 +262,7 @@ namespace Unit06.Game.Directing
         
             Body body = new Body(position, size, velocity);
             Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0,Constants.SELECTOR_RATE);
-            Selector selector = new Selector(body, animation, true);
+            Selector selector = new Selector(body, animation, false);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
 
