@@ -242,13 +242,13 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.SELECTOR_GROUP);
         
-            int x1 = Constants.SELECTOR_WIDTH / 4;
-            int y1 = Constants.SCREEN_HEIGHT / 3;
+            int x1 = Constants.SCREEN_WIDTH * (9/10);
+            int y1 = Constants.SCREEN_HEIGHT / 2;
 
             BuildAddSelector(x1, y1, cast);
 
-            int x2 = Constants.SELECTOR_WIDTH / 2;
-            int y2 = Constants.SCREEN_HEIGHT / 3;
+            int x2 = Constants.SCREEN_WIDTH - Constants.SELECTOR_WIDTH;
+            int y2 = Constants.SCREEN_HEIGHT / 2;
             
             BuildAddSelector(x2, y2, cast);
         
