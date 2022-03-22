@@ -14,17 +14,17 @@ namespace Unit06.Game.Scripting
             Body body = selector.GetBody();
             Point position = body.GetPosition();
             Point velocity = body.GetVelocity();
-            int x = position.GetX();
+            int y = position.GetY();
 
             position = position.Add(velocity);
-            if (x < 0)
+            if (y < 0)
             {
-                position = new Point(0, position.GetY());
+                position = new Point(position.GetX(), 0);
             }
-            else if (x > Constants.SCREEN_WIDTH - Constants.SELECTOR_WIDTH)
+            else if (y > Constants.SCREEN_HEIGHT - Constants.SELECTOR_HEIGHT)
             {
-                position = new Point(Constants.SCREEN_WIDTH - Constants.SELECTOR_WIDTH, 
-                    position.GetY());
+                position = new Point(Constants.SCREEN_HEIGHT - Constants.SELECTOR_HEIGHT, 
+                    position.GetX());
             }
 
             body.SetPosition(position);       

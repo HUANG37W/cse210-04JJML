@@ -12,7 +12,7 @@ namespace Unit06.Game.Directing
     {
         public static AudioService AudioService = new RaylibAudioService();
         public static KeyboardService KeyboardService = new RaylibKeyboardService();
-        //public static MouseService MouseService = new RaylibMouseService();
+        // public static MouseService MouseService = new RaylibMouseService();
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.GREEN);
@@ -27,10 +27,10 @@ namespace Unit06.Game.Directing
             {
                 PrepareNewGame(cast, script);
             }
-            // else if (scene == Constants.NEXT_LEVEL)
-            // {
-            //     PrepareNextLevel(cast, script);
-            // }
+            else if (scene == Constants.NEXT_LEVEL)
+            {
+                PrepareNextLevel(cast, script);
+            }
             else if (scene == Constants.TRY_AGAIN)
             {
                 PrepareTryAgain(cast, script);
@@ -59,37 +59,37 @@ namespace Unit06.Game.Directing
             AddInitActions(script);
             AddLoadActions(script);
 
-            //ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.NEXT_LEVEL);
-            //script.AddAction(Constants.INPUT, a);
+            ChangeSceneAction a = new ChangeSceneAction(KeyboardService, Constants.NEXT_LEVEL);
+            script.AddAction(Constants.INPUT, a);
 
             AddOutputActions(script);
             AddUnloadActions(script);
             AddReleaseActions(script);
         }
 
-        // private void ActivateBall(Cast cast)
-        // {
-        //     Ball ball = (Ball)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-        //     ball.Release();
-        // }
+        private void ActivateSelector(Cast cast)
+        {
+            Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+            selector.MoveNext();
+        }
 
-        // private void PrepareNextLevel(Cast cast, Script script)
-        // {
-        //     AddFightercast);
-        //     AddBowFighter(cast);
-        //     AddSelector(cast);
-        //     AddDialog(cast, Constants.PREP_TO_LAUNCH);
+        private void PrepareNextLevel(Cast cast, Script script)
+        {
+            // AddFighter(cast);
+            // AddBowFighter(cast);
+            AddSelector(cast);
+            AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
-        //     script.ClearAllActions();
+            script.ClearAllActions();
 
-        //     TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
-        //     script.AddAction(Constants.INPUT, ta);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
+            script.AddAction(Constants.INPUT, ta);
 
-        //     AddOutputActions(script);
+            AddOutputActions(script);
 
-        //     PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
-        //     script.AddAction(Constants.OUTPUT, sa);
-        // }
+            PlaySoundAction sa = new PlaySoundAction(AudioService, Constants.WELCOME_SOUND);
+            script.AddAction(Constants.OUTPUT, sa);
+        }
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
@@ -99,8 +99,8 @@ namespace Unit06.Game.Directing
 
             script.ClearAllActions();
             
-            //TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
-            //script.AddAction(Constants.INPUT, ta);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.IN_PLAY, 2, DateTime.Now);
+            script.AddAction(Constants.INPUT, ta);
             
             AddUpdateActions(script);
             AddOutputActions(script);
@@ -129,8 +129,8 @@ namespace Unit06.Game.Directing
 
             script.ClearAllActions();
 
-            //TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
-            //script.AddAction(Constants.INPUT, ta);
+            TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
+            script.AddAction(Constants.INPUT, ta);
 
             AddOutputActions(script);
         }
@@ -238,15 +238,16 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.SELECTOR_GROUP);
         
+            
             int x = Constants.SELECTOR_WIDTH / 4;
-            int y = Constants.SCREEN_HEIGHT / 2;
+            int y = Constants.SCREEN_HEIGHT / 3;
         
             Point position = new Point(x, y);
             Point size = new Point(Constants.SELECTOR_WIDTH, Constants.SELECTOR_HEIGHT);
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.SELECTOR_IMAGES, Constants.SELECTOR_RATE, 0);
+            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
             Selector selector = new Selector(body, animation, true);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);

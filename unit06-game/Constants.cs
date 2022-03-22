@@ -113,13 +113,14 @@ namespace Unit06
         
         public static List<string> SELECTOR_IMAGES
             = new List<string>() {
-                "Assets/Images/100.png",
-                "Assets/Images/101.png",
-                "Assets/Images/102.png"
+                // "Assets/Images/100.png",
+                // "Assets/Images/101.png",
+                // "Assets/Images/102.png",
+                "Assets/Images/arrow.png"
             };
 
-        public static int SELECTOR_WIDTH = 106;
-        public static int SELECTOR_HEIGHT = 28;
+        public static int SELECTOR_WIDTH = 28;
+        public static int SELECTOR_HEIGHT = 58;
         public static int SELECTOR_RATE = 6;
         public static int SELECTOR_VELOCITY = 3;
 
@@ -130,7 +131,7 @@ namespace Unit06
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";
         public static string ENTER_TO_START = "PRESS ENTER TO START";
-        public static string PREP_TO_LAUNCH = "PREPARING TO LAUNCH";
+        public static string PREP_TO_LAUNCH = "PREPARE TO FIGHT";
         public static string WAS_GOOD_GAME = "GAME OVER";
 
 
