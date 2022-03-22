@@ -247,7 +247,7 @@ namespace Unit06.Game.Directing
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
+            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0,Constants.SELECTOR_RATE);
             Selector selector = new Selector(body, animation, true);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
