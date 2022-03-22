@@ -15,22 +15,24 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            Body body = selector.GetBody();
+            foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
+            {
+                Body body = selector.GetBody();
 
-            if (selector.IsDebug())
-            {
-                Rectangle rectangle = body.GetRectangle();
-                Point size = rectangle.GetSize();
-                Point pos = rectangle.GetPosition();
-                videoService.DrawRectangle(size, pos, Constants.BLACK, false);
-            }
-            else
-            {
-                Animation animation = selector.GetAnimation();
-                Image image = animation.NextImage();
-                Point position = body.GetPosition();
-                videoService.DrawImage(image, position);
+                if (selector.IsDebug())
+                {
+                    Rectangle rectangle = body.GetRectangle();
+                    Point size = rectangle.GetSize();
+                    Point pos = rectangle.GetPosition();
+                    videoService.DrawRectangle(size, pos, Constants.BLACK, false);
+                }
+                else
+                {
+                    Animation animation = selector.GetAnimation();
+                    Image image = animation.NextImage();
+                    Point position = body.GetPosition();
+                    videoService.DrawImage(image, position);
+                }
             }
             
         }

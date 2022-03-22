@@ -71,6 +71,10 @@ namespace Unit06.Game.Directing
         {
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
             selector.MoveNext();
+
+            Selector selector2 = (Selector)cast.GetFirstActor
+            (Constants.SELECTOR_GROUP);
+            selector2.MoveNext();
         }
 
         private void PrepareNextLevel(Cast cast, Script script)
@@ -238,11 +242,21 @@ namespace Unit06.Game.Directing
         {
             cast.ClearActors(Constants.SELECTOR_GROUP);
         
+            int x1 = Constants.SELECTOR_WIDTH / 4;
+            int y1 = Constants.SCREEN_HEIGHT / 3;
+
+            BuildAddSelector(x1, y1, cast);
+
+            int x2 = Constants.SELECTOR_WIDTH / 2;
+            int y2 = Constants.SCREEN_HEIGHT / 3;
             
-            int x = Constants.SELECTOR_WIDTH / 4;
-            int y = Constants.SCREEN_HEIGHT / 3;
+            BuildAddSelector(x2, y2, cast);
         
-            Point position = new Point(x, y);
+        }
+
+        private void BuildAddSelector(int x, int y, Cast cast)
+        {
+            Point position = new Point(x, y); //sets the position of Selector 1
             Point size = new Point(Constants.SELECTOR_WIDTH, Constants.SELECTOR_HEIGHT);
             Point velocity = new Point(0, 0);
         
@@ -251,6 +265,7 @@ namespace Unit06.Game.Directing
             Selector selector = new Selector(body, animation, true);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
+
         }
 
         // private void AddScore(Cast cast)
