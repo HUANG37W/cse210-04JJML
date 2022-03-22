@@ -47,12 +47,19 @@ namespace Unit06
         public static Color PURPLE = new Color(255, 0, 255);
         public static Color GREEN = new Color(87,131,12);
 
-        // KEYS
-        public static string UP = "up";
-        public static string DOWN = "down";
-        public static string LEFT = "left";
-        public static string RIGHT = "right";
+        // Player 1 KEYS
+        public static string P1DOWN = "s";
+        public static string P1LEFT = "a";
+        public static string P1RIGHT = "d";
+        public static string P1UP = "w";
 
+        // Player 2 KEYS
+        public static string P2DOWN = "k";
+        public static string P2LEFT = "j";
+        public static string P2RIGHT = "l";
+        public static string P2UP = "i";
+
+        //general KEYS
         public static string SPACE = "space";
         public static string ENTER = "enter";
         public static string PAUSE = "p";

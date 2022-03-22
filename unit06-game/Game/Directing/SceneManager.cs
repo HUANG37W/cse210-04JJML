@@ -71,6 +71,10 @@ namespace Unit06.Game.Directing
         {
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
             selector.MoveNext();
+
+            Selector selector2 = (Selector)cast.GetFirstActor
+            (Constants.SELECTOR_GROUP);
+            selector2.MoveNext();
         }
 
         private void PrepareNextLevel(Cast cast, Script script)
@@ -249,6 +253,7 @@ namespace Unit06.Game.Directing
             Body body = new Body(position, size, velocity);
             Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0,Constants.SELECTOR_RATE);
             Selector selector = new Selector(body, animation, true);
+            Selector selector2 = new Selector (body, animation, true);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
         }

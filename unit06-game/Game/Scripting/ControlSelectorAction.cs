@@ -16,11 +16,11 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            if (keyboardService.IsKeyDown(Constants.UP))
+            if (keyboardService.IsKeyDown(Constants.P1UP))
             {
                 selector.MoveUp();
             }
-            else if (keyboardService.IsKeyDown(Constants.DOWN))
+            else if (keyboardService.IsKeyDown(Constants.P1DOWN))
             {
                 selector.MoveDown();
             }
