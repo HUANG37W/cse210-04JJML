@@ -18,11 +18,11 @@ namespace Unit06.Game.Scripting
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
             if (keyboardService.IsKeyDown(Constants.UP))
             {
-                //move the selector up one row
+                selector.MoveUp();
             }
             else if (keyboardService.IsKeyDown(Constants.DOWN))
             {
-                //move the selector down one row
+                selector.MoveDown();
             }
             else
             {

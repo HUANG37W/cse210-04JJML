@@ -51,7 +51,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveUp()
         {
-            Point velocity = new Point(-Constants.SELECTOR_VELOCITY, 0);
+            Point velocity = new Point(0, Constants.SELECTOR_VELOCITY);
             body.SetVelocity(velocity);
         }
 
@@ -60,7 +60,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveDown()
         {
-            Point velocity = new Point(Constants.SELECTOR_VELOCITY, 0);
+            Point velocity = new Point(0, -Constants.SELECTOR_VELOCITY);
             body.SetVelocity(velocity);
         }
 

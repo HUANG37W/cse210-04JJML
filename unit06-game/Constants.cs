@@ -121,7 +121,7 @@ namespace Unit06
         public static int SELECTOR_WIDTH = 106;
         public static int SELECTOR_HEIGHT = 28;
         public static int SELECTOR_RATE = 6;
-        public static int SELECTOR_VELOCITY = 7;
+        public static int SELECTOR_VELOCITY = 3;
 
         // BRICK
         public static string BRICK_GROUP = "bricks";
