@@ -16,6 +16,12 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+            //Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+
+            // foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
+            // {
+                
+            // }
             if (keyboardService.IsKeyDown(Constants.P1UP))
             {
                 selector.MoveUp();
@@ -28,6 +34,21 @@ namespace Unit06.Game.Scripting
             {
                 selector.StopMoving();
             }
+            
+            
+            // if (keyboardService.IsKeyDown(Constants.P2UP))
+            // {
+            //     selector2.MoveUp();
+            // }
+            // else if (keyboardService.IsKeyDown(Constants.P2DOWN))
+            // {
+            //     selector2.MoveDown();
+            // }
+            // else
+            // {
+            //     selector2.StopMoving();
+            // }
+            
         }
     }
 }
