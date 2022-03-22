@@ -14,12 +14,12 @@ namespace Unit06.Game.Casting
     {
         // private Point position;
         // private Point size;
-        protected static Random random = new Random();
+        //protected static Random random = new Random();
         protected Body body;
         protected Animation animation;
         protected int points;
 
-        private Image image;
+        //private Image image;
 
         //  /// <summary>
         // /// Constructs a new instance of Fighter.
@@ -28,7 +28,7 @@ namespace Unit06.Game.Casting
         {
             this.body = body;
             this.animation = animation;
-            this.points = points;
+            //this.points = points;
         }
 
         
@@ -46,10 +46,12 @@ namespace Unit06.Game.Casting
         /// Gets the image.
         /// </summary>
         /// <returns>The image.</returns>
-        public Image GetImage()
-        {
-            return image;
-        }
+        // public Image GetImage()
+        // {
+        //     return image;
+        // }
+
+
         /// <summary>
         /// Gets the animation.
         /// </summary>

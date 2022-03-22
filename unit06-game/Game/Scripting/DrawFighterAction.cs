@@ -15,20 +15,27 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            //Body body = fighter.GetBody();
+            
+            foreach (Fighter fighter in cast.GetActors(Constants.FIGHTER_GROUP))
+            {
+                Body body = fighter.GetBody();
 
-            // if (fighter.IsDebug())
-            // {
-            //     Rectangle rectangle = body.GetRectangle();
-            //     Point size = rectangle.GetSize();
-            //     Point pos = rectangle.GetPosition();
-            //     videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
-            // }
+                if (fighter.IsDebug())
+                {
+                    Rectangle rectangle = body.GetRectangle();
+                    Point size = rectangle.GetSize();
+                    Point pos = rectangle.GetPosition();
+                    videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
+                }
+                else
+                {
+                    Animation animation = fighter.GetAnimation();
+                    Image image = animation.NextImage();
+                    Point position = body.GetPosition();
+                    videoService.DrawImage(image, position);
+                }
+            }
 
-            // Image image = fighter.GetImage();
-            // Point position = body.GetPosition();
-            // videoService.DrawImage(image, position);
         }
     }
 }
