@@ -108,7 +108,7 @@ namespace Unit06.Game.Directing
 
         private void PrepareInPlay(Cast cast, Script script)
         {
-            //ActivateBall(cast);
+            ActivateSelector(cast);
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
@@ -123,7 +123,7 @@ namespace Unit06.Game.Directing
 
         private void PrepareGameOver(Cast cast, Script script)
         {
-            //AddBall(cast);
+            // AddBall(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
 
@@ -306,9 +306,9 @@ namespace Unit06.Game.Directing
         {
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
-            script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
-            //script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawSelectorAction(VideoService));
+            //script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
+            // script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
@@ -326,9 +326,9 @@ namespace Unit06.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            script.AddAction(Constants.UPDATE, new MoveFighterAction());
+            // script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
-            script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
+            // script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideSelectorAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CheckOverAction());     

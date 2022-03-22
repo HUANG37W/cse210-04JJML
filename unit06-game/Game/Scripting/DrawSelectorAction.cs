@@ -23,7 +23,7 @@ namespace Unit06.Game.Scripting
                 Rectangle rectangle = body.GetRectangle();
                 Point size = rectangle.GetSize();
                 Point pos = rectangle.GetPosition();
-                videoService.DrawRectangle(size, pos, Constants.BLACK, true);
+                videoService.DrawRectangle(size, pos, Constants.BLACK, false);
             }
             else
             {
