@@ -115,8 +115,8 @@ namespace Unit06
             = new List<string>() {
                 // "Assets/Images/100.png",
                 // "Assets/Images/101.png",
-                // "Assets/Images/102.png",
-                "Assets/Images/arrow.png"
+                "Assets/Images/102.png",
+                // "Assets/Images/arrow.png"
             };
 
         public static int SELECTOR_WIDTH = 28;
