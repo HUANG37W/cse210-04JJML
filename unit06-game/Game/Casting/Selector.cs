@@ -40,10 +40,12 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveNext()
         {
-            Point position = body.GetPosition();
-            Point velocity = body.GetVelocity();
-            Point newPosition = position.Add(velocity);
-            body.SetPosition(newPosition);
+            // Point position = body.GetPosition();
+
+            // // Point velocity = body.GetVelocity();
+            // Point newPosition = position.Add(velocity);
+            // body.SetPosition(newPosition);
+            return;
         }
 
         /// <summary>
@@ -51,8 +53,13 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveUp()
         {
-            Point velocity = new Point(0, -Constants.SELECTOR_VELOCITY);
-            body.SetVelocity(velocity);
+            if (body.GetPosition().GetY() - Constants.TRACK_DISTANCE < 0)
+                return;
+
+            Point pDes = new Point(body.GetPosition().GetX(),body.GetPosition().GetY() - Constants.TRACK_DISTANCE);
+
+            body.GetPosition().Jumpto(pDes);
+            
         }
 
         /// <summary>
@@ -60,8 +67,12 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveDown()
         {
-            Point velocity = new Point(0, Constants.SELECTOR_VELOCITY);
-            body.SetVelocity(velocity);
+            if (body.GetPosition().GetY() + Constants.TRACK_DISTANCE > Constants.SCREEN_HEIGHT)
+                return;
+
+            Point pDes = new Point(body.GetPosition().GetX(),body.GetPosition().GetY() + Constants.TRACK_DISTANCE);
+
+            body.GetPosition().Jumpto(pDes);
         }
 
         /// <summary>

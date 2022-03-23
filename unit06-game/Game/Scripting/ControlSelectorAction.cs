@@ -13,63 +13,37 @@ namespace Unit06.Game.Scripting
             this.keyboardService = keyboardService;
         }
 
-        // public void Execute(Cast cast, Script script, ActionCallback callback)
-        // {
-
-        //     // foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
-        //     // {
-                
-        //     // }
-        //     Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-        //     //Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-        //     if (keyboardService.IsKeyDown(Constants.P1UP))
-        //     {
-        //         selector.MoveUp();
-        //     }
-        //     else if (keyboardService.IsKeyDown(Constants.P1DOWN))
-        //     {
-        //         selector.MoveDown();
-        //     }
-        //     else
-        //     {
-        //         selector.StopMoving();
-        //     }
-            
-            
-            // if (keyboardService.IsKeyDown(Constants.P2UP))
-            // {
-            //     selector2.MoveUp();
-            // }
-            // else if (keyboardService.IsKeyDown(Constants.P2DOWN))
-            // {
-            //     selector2.MoveDown();
-            // }
-            // else
-            // {
-            //     selector2.StopMoving();
-            // }
+       
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
 
-            // foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
-            // {
-                
-            // }
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            //Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            if (keyboardService.IsKeyDown(Constants.P1UP))
+            Selector selector2 = (Selector)cast.GetActors(Constants.SELECTOR_GROUP)[1];
+            if (keyboardService.IsKeyReleased(Constants.P1UP))
             {
                 selector.MoveUp();
             }
-             else if (keyboardService.IsKeyDown(Constants.P1DOWN))
+             else if (keyboardService.IsKeyReleased(Constants.P1DOWN))
             {
                 selector.MoveDown();
             }
             else
             {
                 selector.StopMoving();  
-            }      
+            } 
+            if (keyboardService.IsKeyReleased(Constants.P2UP))
+            {
+                selector2.MoveUp();
+            }
+             else if (keyboardService.IsKeyReleased(Constants.P2DOWN))
+            {
+                selector2.MoveDown();
+            }
+            else
+            {
+                selector2.StopMoving();  
+            }           
         }
     }
 }

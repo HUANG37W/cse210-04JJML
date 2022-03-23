@@ -85,5 +85,10 @@ namespace Unit06.Game.Casting
             int y = this.y * factor;
             return new Point(x, y);
         }
+        public void Jumpto(Point pDes)
+        {
+            x = pDes.x;
+            y = pDes.y;
+        }
     }
 }

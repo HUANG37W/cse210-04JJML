@@ -229,23 +229,27 @@ namespace Unit06.Game.Directing
             int x1 = Constants.SCREEN_WIDTH * (9/10);
             int y1 = Constants.SCREEN_HEIGHT / 2;
 
-            BuildAddSelector(x1, y1, cast);
+            BuildAddSelector(x1, y1, cast, false);
 
             int x2 = Constants.SCREEN_WIDTH - 2 * Constants.SELECTOR_WIDTH;
             int y2 = Constants.SCREEN_HEIGHT / 2;
             
-            BuildAddSelector(x2, y2, cast);
+            BuildAddSelector(x2, y2, cast, true);
         
         }
 
-        private void BuildAddSelector(int x, int y, Cast cast)
+        private void BuildAddSelector(int x, int y, Cast cast, bool is_S2)
         {
             Point position = new Point(x, y); //sets the position of Selector
             Point size = new Point(Constants.SELECTOR_WIDTH, Constants.SELECTOR_HEIGHT);
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
+            Animation animation;
+            if(is_S2)
+                animation = new Animation(Constants.SELECTOR2_IMAGES, 0, Constants.SELECTOR_RATE);
+            else    
+                animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
             Selector selector = new Selector(body, animation, false);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);

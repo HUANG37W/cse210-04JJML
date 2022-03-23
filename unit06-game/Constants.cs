@@ -138,6 +138,12 @@ namespace Unit06
         public static int SELECTOR_RATE = 6;
         public static int SELECTOR_VELOCITY = 3;
 
+        public static int TOP_TRACK_Y = 540;
+        public static int MID_TRACK_Y = 340;
+        public static int BOTTOM_TRACK_Y = 140;
+        public static int TRACK_DISTANCE = 200;
+        
+
         // BRICK
         public static string BRICK_GROUP = "bricks";
         
