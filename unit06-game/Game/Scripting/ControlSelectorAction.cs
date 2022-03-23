@@ -13,27 +13,27 @@ namespace Unit06.Game.Scripting
             this.keyboardService = keyboardService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
-        {
-            Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            //Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+        // public void Execute(Cast cast, Script script, ActionCallback callback)
+        // {
 
-            // foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
-            // {
+        //     // foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
+        //     // {
                 
-            // }
-            if (keyboardService.IsKeyDown(Constants.P1UP))
-            {
-                selector.MoveUp();
-            }
-            else if (keyboardService.IsKeyDown(Constants.P1DOWN))
-            {
-                selector.MoveDown();
-            }
-            else
-            {
-                selector.StopMoving();
-            }
+        //     // }
+        //     Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+        //     //Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+        //     if (keyboardService.IsKeyDown(Constants.P1UP))
+        //     {
+        //         selector.MoveUp();
+        //     }
+        //     else if (keyboardService.IsKeyDown(Constants.P1DOWN))
+        //     {
+        //         selector.MoveDown();
+        //     }
+        //     else
+        //     {
+        //         selector.StopMoving();
+        //     }
             
             
             // if (keyboardService.IsKeyDown(Constants.P2UP))
@@ -48,7 +48,28 @@ namespace Unit06.Game.Scripting
             // {
             //     selector2.StopMoving();
             // }
-            
+
+        public void Execute(Cast cast, Script script, ActionCallback callback)
+        {
+
+            // foreach (Selector selector in cast.GetActors(Constants.SELECTOR_GROUP))
+            // {
+                
+            // }
+            Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+            //Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
+            if (keyboardService.IsKeyDown(Constants.P1UP))
+            {
+                selector.MoveUp();
+            }
+             else if (keyboardService.IsKeyDown(Constants.P1DOWN))
+            {
+                selector.MoveDown();
+            }
+            else
+            {
+                selector.StopMoving();  
+            }      
         }
     }
 }
