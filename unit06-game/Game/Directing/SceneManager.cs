@@ -231,7 +231,7 @@ namespace Unit06.Game.Directing
 
             BuildAddSelector(x1, y1, cast);
 
-            int x2 = Constants.SCREEN_WIDTH - Constants.SELECTOR_WIDTH;
+            int x2 = Constants.SCREEN_WIDTH - 2 * Constants.SELECTOR_WIDTH;
             int y2 = Constants.SCREEN_HEIGHT / 2;
             
             BuildAddSelector(x2, y2, cast);
