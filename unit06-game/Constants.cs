@@ -110,9 +110,9 @@ namespace Unit06
 
         // FIGHTER
         public static string FIGHTER_GROUP = "fighters";
-        public static string FIGHTER_IMAGE = "Assets/Images/000.png";
-        public static int FIGHTER_WIDTH = 28;
-        public static int FIGHTER_HEIGHT = 28;
+        public static string FIGHTER_IMAGE = "Assets/Images/fighterRectangle.png";
+        public static int FIGHTER_WIDTH = 18;
+        public static int FIGHTER_HEIGHT = 38;
         public static int FIGHTER_VELOCITY = 2;
 
         // Selector

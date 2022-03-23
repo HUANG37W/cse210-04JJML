@@ -143,23 +143,7 @@ namespace Unit06.Game.Directing
         // casting methods
         // -----------------------------------------------------------------------------------------
 
-        // private void AddFighter(Cast cast)
-        // {
-        //     cast.ClearActors(Constants.FIGHTER_GROUP);
         
-        //     int x = Constants.CENTER_X - Constants.FIGHTER_WIDTH / 2;
-        //     int y = Constants.SCREEN_HEIGHT - Constants.Selector_HEIGHT - Constants.FIGHTER_HEIGHT;
-        
-        //     Point position = new Point(x, y);
-        //     Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
-        //     Point velocity = new Point(0, 0);
-        
-        //     Body body = new Body(position, size, velocity);
-        //     Image image = new Image(Constants.FIGHTER_IMAGE);
-        //     Ball ball = new Ball(body, image, false);
-        
-        //     cast.AddActor(Constants.FIGHTER_GROUP, fighter);
-        // }
 
         // private void AddBricks(Cast cast)
         // {
@@ -256,15 +240,39 @@ namespace Unit06.Game.Directing
 
         private void BuildAddSelector(int x, int y, Cast cast)
         {
-            Point position = new Point(x, y); //sets the position of Selector 1
+            Point position = new Point(x, y); //sets the position of Selector
             Point size = new Point(Constants.SELECTOR_WIDTH, Constants.SELECTOR_HEIGHT);
             Point velocity = new Point(0, 0);
         
             Body body = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0,Constants.SELECTOR_RATE);
+            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
             Selector selector = new Selector(body, animation, false);
         
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
+
+        }
+        
+        private void AddFighter(Cast cast)
+        {
+            cast.ClearActors(Constants.FIGHTER_GROUP);
+        
+            int x1 = Constants.SCREEN_WIDTH / 2;
+            int y1 = Constants.SCREEN_HEIGHT / 4;
+
+            BuildAddFighter(x1, y1, cast);
+        }
+
+        private void BuildAddFighter(int x, int y, Cast cast)
+        {
+            Point position = new Point(x, y); //sets the initial position of the fighter
+            Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
+            Point velocity = new Point(0, 0);
+        
+            Body fighterBody = new Body(position, size, velocity);
+            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
+            Fighter fighter = new Fighter(fighterBody, animation, true);
+        
+            cast.AddActor(Constants.FIGHTER_GROUP, fighter);
 
         }
 
@@ -323,7 +331,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawSelectorAction(VideoService));
             //script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
-            // script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
@@ -341,7 +349,7 @@ namespace Unit06.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            // script.AddAction(Constants.UPDATE, new MoveFighterAction());
+            //script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
             // script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
