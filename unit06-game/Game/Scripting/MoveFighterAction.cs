@@ -14,7 +14,25 @@ namespace Unit06.Game.Scripting
             Point position = body.GetPosition();
             Point velocity = body.GetVelocity();
             position = position.Add(velocity);
+            int y = position.GetY();
+            int x = position.GetX();
             body.SetPosition(position);
+
+            /// position of selector
+            position = position.Add(velocity);
+            if (x < 0)
+            {
+                position = new Point(0,position.GetY());
+            }
+            else if (x > Constants.SCREEN_WIDTH - Constants.FIGHTER_WIDTH)
+            {
+                position = new Point(Constants.SCREEN_HEIGHT - Constants.SELECTOR_HEIGHT, 
+                    position.GetX());
+            }
+
+            body.SetPosition(position);  
+
         }
+        
     }
 }
