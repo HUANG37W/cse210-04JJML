@@ -12,7 +12,6 @@ namespace Unit06.Game.Directing
     {
         public static AudioService AudioService = new RaylibAudioService();
         public static KeyboardService KeyboardService = new RaylibKeyboardService();
-        // public static MouseService MouseService = new RaylibMouseService();
         public static PhysicsService PhysicsService = new RaylibPhysicsService();
         public static VideoService VideoService = new RaylibVideoService(Constants.GAME_NAME,
             Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.GREEN);
@@ -47,13 +46,13 @@ namespace Unit06.Game.Directing
 
         private void PrepareNewGame(Cast cast, Script script)
         {
+            //Adds HUD items and Selectors to the cast
             AddStats(cast);
             AddLives1(cast);
             AddLives2(cast);
-            //AddBowFighter(cast);
-            //AddBear(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
+            //note: Fighters are added to the cast via the SpawnFightersAction class
 
             script.ClearAllActions();
             AddInitActions(script);
@@ -78,8 +77,6 @@ namespace Unit06.Game.Directing
 
         private void PrepareNextLevel(Cast cast, Script script)
         {
-            // AddFighter(cast);
-            // AddBowFighter(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
@@ -96,7 +93,6 @@ namespace Unit06.Game.Directing
 
         private void PrepareTryAgain(Cast cast, Script script)
         {
-            //AddBall(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.PREP_TO_LAUNCH);
 
@@ -127,7 +123,6 @@ namespace Unit06.Game.Directing
 
         private void PrepareGameOver(Cast cast, Script script)
         {
-            // AddBall(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
 
@@ -185,6 +180,9 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.LIVES2_GROUP, label);   
         }
 
+        /// <summary>
+        /// Sets positions of Selectors and calls to BuildAddSelector(s).
+        /// </summary>
         private void AddSelector(Cast cast)
         {
             cast.ClearActors(Constants.SELECTOR_GROUP);
@@ -201,6 +199,10 @@ namespace Unit06.Game.Directing
         
         }
 
+        /// <summary>
+        /// Applies position, size, and velocity to the Selectors.
+        /// Adds the Selectors to the cast.
+        /// </summary>
         private void BuildAddSelector(int x, int y, Cast cast, bool is_S2)
         {
             Point position = new Point(x, y); //sets the position of Selector
@@ -273,20 +275,20 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.STATS_GROUP, stats);
         }
 
-        private List<List<string>> LoadLevel(string filename)
-        {
-            List<List<string>> data = new List<List<string>>();
-            using(StreamReader reader = new StreamReader(filename))
-            {
-                while (!reader.EndOfStream)
-                {
-                    string row = reader.ReadLine();
-                    List<string> columns = new List<string>(row.Split(',', StringSplitOptions.TrimEntries));
-                    data.Add(columns);
-                }
-            }
-            return data;
-        }
+        // private List<List<string>> LoadLevel(string filename)
+        // {
+        //     List<List<string>> data = new List<List<string>>();
+        //     using(StreamReader reader = new StreamReader(filename))
+        //     {
+        //         while (!reader.EndOfStream)
+        //         {
+        //             string row = reader.ReadLine();
+        //             List<string> columns = new List<string>(row.Split(',', StringSplitOptions.TrimEntries));
+        //             data.Add(columns);
+        //         }
+        //     }
+        //     return data;
+        // }
 
         // -----------------------------------------------------------------------------------------
         // scriptig methods
@@ -308,7 +310,6 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawSelectorAction(VideoService));
-            //script.AddAction(Constants.OUTPUT, new DrawBricksAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
@@ -330,6 +331,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
             script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
+            
             // script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideSelectorAction(PhysicsService, AudioService));

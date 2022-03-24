@@ -71,6 +71,9 @@ namespace Unit06
         public static string IN_PLAY = "in_play";
         public static string GAME_OVER = "game_over";
 
+        public static string PLACE_FIGHTER = "place_fighter";
+        //maybe use this to implement into time delay for spawning fighters?
+
         // LEVELS
         public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
         public static int BASE_LEVELS = 5;
