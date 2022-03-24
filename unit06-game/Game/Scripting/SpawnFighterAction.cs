@@ -15,12 +15,12 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Selector selector1 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            Point sp1 = new Point(Constants.SELECTOR_WIDTH, selector1.GetBody().GetPosition().GetY());
+            Point sp1 = new Point(Constants.SELECTOR_WIDTH + 50, selector1.GetBody().GetPosition().GetY());
 
             Selector selector2 = (Selector)cast.GetActors(Constants.SELECTOR_GROUP)[1];
-            Point sp2 = new Point(Constants.SCREEN_WIDTH - Constants.SELECTOR_WIDTH, selector2.GetBody().GetPosition().GetY());
+            Point sp2 = new Point(Constants.SCREEN_WIDTH - 50, selector2.GetBody().GetPosition().GetY());
             //Point P1 = selector.GetPosition(); //keep track of Selector1's position.
-
+            // Constants.SCREEN_WIDTH + Constants.SELECTOR_WIDTH
             // Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
             // Fighter f2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP2);
 
