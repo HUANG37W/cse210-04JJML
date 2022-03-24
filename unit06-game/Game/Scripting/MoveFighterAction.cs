@@ -18,7 +18,7 @@ namespace Unit06.Game.Scripting
             int x = position.GetX();
             body.SetPosition(position);
 
-            /// position of selector
+            /// need code to match position of selector 
             position = position.Add(velocity);
             if (x < 0)
             {
