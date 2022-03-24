@@ -123,8 +123,9 @@ namespace Unit06
 
         public static int FIGHTER_WIDTH = 28;
         public static int FIGHTER_HEIGHT = 58;
-        public static int FIGHTERR_RATE = 6;
-        public static int FIGHTERR_VELOCITY = 3;
+        public static int FIGHTER_RATE = 6;
+        public static int FIGHTER_VELOCITY = 3;
+        public static int FIGHTER2_VELOCITY = -3;
 
         
         

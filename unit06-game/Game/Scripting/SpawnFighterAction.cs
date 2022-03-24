@@ -15,17 +15,18 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             // Actor selector = cast.GetActors(Constants.FIGHTER_GROUP);
-            // Point P1 = selector.GetPosition(); //keep track of Selector1's position.
+            //Point P1 = selector.GetPosition(); //keep track of Selector1's position.
 
-            // Fighter f1 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP1);
+            Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
             // Fighter f2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP2);
 
             if (keyboardService.IsKeyPressed("e"))
             {
+                Body body = f.GetBody();
                 //spawn a fighter on the left or player 1 side of the field
-                
-                // f1.SetPosition(); //set fighter's spawning position to be that of corresponding selector
-                // cast.AddActor(Constants.FIGHTER_GROUP1, f1);
+                f.GetBody();
+                //f.SetPosition(); //set fighter's spawning position to be that of corresponding selector
+                cast.AddActor(Constants.FIGHTER_GROUP, f);
                 
             }
 
