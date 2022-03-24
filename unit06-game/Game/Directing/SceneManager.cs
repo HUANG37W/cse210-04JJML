@@ -72,8 +72,7 @@ namespace Unit06.Game.Directing
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
             selector.MoveNext();
 
-            Selector selector2 = (Selector)cast.GetFirstActor
-            (Constants.SELECTOR_GROUP);
+            Selector selector2 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
             selector2.MoveNext();
         }
 
@@ -259,11 +258,13 @@ namespace Unit06.Game.Directing
         private void AddFighter(Cast cast)
         {
             cast.ClearActors(Constants.FIGHTER_GROUP);
-        
-            int x1 = Constants.SCREEN_WIDTH / 2;
-            int y1 = Constants.SCREEN_HEIGHT / 4;
 
-            BuildAddFighter(x1, y1, cast);
+            
+        
+            // int x1 = Constants.SCREEN_WIDTH / 2;
+            // int y1 = Constants.SCREEN_HEIGHT / 4;
+
+            // BuildAddFighter(x1, y1, cast);
         }
 
         private void BuildAddFighter(int x, int y, Cast cast)
@@ -279,6 +280,15 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.FIGHTER_GROUP, fighter);
 
         }
+        private void ActivateFighter(Cast cast)
+        {
+            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            fighter.MoveNext();
+
+            Fighter fighter2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            fighter2.MoveNext();
+        }
+    
 
         // private void AddScore(Cast cast)
         // {

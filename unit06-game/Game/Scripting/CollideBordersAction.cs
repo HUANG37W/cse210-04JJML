@@ -24,6 +24,16 @@ namespace Unit06.Game.Scripting
             int y = position.GetY();
             //Sound bounceSound = new Sound(Constants.BOUNCE_SOUND);
             //Sound overSound = new Sound(Constants.OVER_SOUND);
+            
+
+            // This is possibly for the second player when having to collid with the border.
+            Fighter fighter2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            Body body2 = fighter.GetBody();
+            Point position2 = body.GetPosition();
+            int x2 = position.GetX();
+            int y2 = position.GetY();
+            //Sound bounceSound = new Sound(Constants.BOUNCE_SOUND);
+            //Sound overSound = new Sound(Constants.OVER_SOUND);
 
             if (x < Constants.FIELD_LEFT)
             {
