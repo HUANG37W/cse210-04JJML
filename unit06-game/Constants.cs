@@ -108,12 +108,28 @@ namespace Unit06
         public static string LIVES2_FORMAT = "Player 2 - {0} lives";
         public static string SCORE_FORMAT = "SCORE: {0}";
 
-        // FIGHTER
+        // FIGHTERS FOR PLAYER 1
         public static string FIGHTER_GROUP = "fighters";
-        public static string FIGHTER_IMAGE = "Assets/Images/fighterRectangle.png";
-        public static int FIGHTER_WIDTH = 18;
-        public static int FIGHTER_HEIGHT = 38;
-        public static int FIGHTER_VELOCITY = 2;
+
+
+        public static List<string> FIGHTER_IMAGES
+            = new List<string>() {
+                "Assets/Images/fighterRectangle.png"
+            };
+        public static List<string> FIGHTER2_IMAGES
+            = new List<string>() {
+                "Assets/Images/fighterRectangle.png"
+            };
+
+        public static int FIGHTER_WIDTH = 28;
+        public static int FIGHTER_HEIGHT = 58;
+        public static int FIGHTERR_RATE = 6;
+        public static int FIGHTERR_VELOCITY = 3;
+
+        
+        
+
+       
 
         // Selector
         public static string SELECTOR_GROUP = "selectors";
