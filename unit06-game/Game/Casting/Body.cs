@@ -10,7 +10,7 @@ namespace Unit06.Game.Casting
         private Point velocity;
 
         /// <summary>
-        /// Constructs a new instance of Actor.
+        /// Constructs a new instance of Body.
         /// </summary>
         public Body(Point position, Point size, Point velocity)
         {
