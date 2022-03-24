@@ -112,6 +112,7 @@ namespace Unit06.Game.Directing
         private void PrepareInPlay(Cast cast, Script script)
         {
             ActivateSelector(cast);
+            ActivateFighter(cast);
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
@@ -141,43 +142,6 @@ namespace Unit06.Game.Directing
         // -----------------------------------------------------------------------------------------
         // casting methods
         // -----------------------------------------------------------------------------------------
-
-        
-
-        // private void AddBricks(Cast cast)
-        // {
-        //     cast.ClearActors(Constants.BRICK_GROUP);
-
-        //     Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-        //     int level = stats.GetLevel() % Constants.BASE_LEVELS;
-        //     string filename = string.Format(Constants.LEVEL_FILE, level);
-        //     List<List<string>> rows = LoadLevel(filename);
-
-        //     for (int r = 0; r < rows.Count; r++)
-        //     {
-        //         for (int c = 0; c < rows[r].Count; c++)
-        //         {
-        //             int x = Constants.FIELD_LEFT + c * Constants.BRICK_WIDTH;
-        //             int y = Constants.FIELD_TOP + r * Constants.BRICK_HEIGHT;
-
-        //             string color = rows[r][c][0].ToString();
-        //             int frames = (int)Char.GetNumericValue(rows[r][c][1]);
-        //             int points = Constants.BRICK_POINTS;
-
-        //             Point position = new Point(x, y);
-        //             Point size = new Point(Constants.BRICK_WIDTH, Constants.BRICK_HEIGHT);
-        //             Point velocity = new Point(0, 0);
-        //             List<string> images = Constants.BRICK_IMAGES[color].GetRange(0, frames);
-
-        //             Body body = new Body(position, size, velocity);
-        //             Animation animation = new Animation(images, Constants.BRICK_RATE, 1);
-                    
-        //             Brick brick = new Brick(body, animation, points, false);
-        //             cast.AddActor(Constants.BRICK_GROUP, brick);
-        //         }
-        //     }
-        // }
-
         private void AddDialog(Cast cast, string message)
         {
             cast.ClearActors(Constants.DIALOG_GROUP);
@@ -255,9 +219,9 @@ namespace Unit06.Game.Directing
 
         }
         
-        private void AddFighter(Cast cast)
-        {
-            cast.ClearActors(Constants.FIGHTER_GROUP);
+        // private void AddFighter(Cast cast)
+        // {
+        //     cast.ClearActors(Constants.FIGHTER_GROUP);
 
             
         
@@ -265,28 +229,28 @@ namespace Unit06.Game.Directing
             // int y1 = Constants.SCREEN_HEIGHT / 4;
 
             // BuildAddFighter(x1, y1, cast);
-        }
+        // }
 
-        private void BuildAddFighter(int x, int y, Cast cast)
-        {
-            Point position = new Point(x, y); //sets the initial position of the fighter
-            Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
-            Point velocity = new Point(0, 0);
+        // private void BuildAddFighter(int x, int y, Cast cast)
+        // {
+        //     Point position = new Point(x, y); //sets the initial position of the fighter
+        //     Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
+        //     Point velocity = new Point(0, 0);
         
-            Body fighterBody = new Body(position, size, velocity);
-            Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
-            Fighter fighter = new Fighter(fighterBody, animation, true);
+        //     Body fighterBody = new Body(position, size, velocity);
+        //     Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
+        //     Fighter fighter = new Fighter(fighterBody, animation, true);
         
-            cast.AddActor(Constants.FIGHTER_GROUP, fighter);
-
-        }
+        //     cast.AddActor(Constants.FIGHTER_GROUP, fighter);
+        // }
         private void ActivateFighter(Cast cast)
         {
-            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            fighter.MoveNext();
+            List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
 
-            Fighter fighter2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            fighter2.MoveNext();
+            foreach (Fighter f in fighters)
+            {
+                f.MoveNext();
+            }
         }
     
 
@@ -363,8 +327,9 @@ namespace Unit06.Game.Directing
 
         private void AddUpdateActions(Script script)
         {
-            //script.AddAction(Constants.UPDATE, new MoveFighterAction());
+            script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
+            script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
             // script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CollideSelectorAction(PhysicsService, AudioService));

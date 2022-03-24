@@ -1,4 +1,5 @@
 using Unit06.Game.Casting;
+using System.Collections.Generic;
 namespace Unit06.Game.Scripting
 {
     public class MoveFighterAction : Action
@@ -9,29 +10,35 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            Body body = fighter.GetBody();
-            Point position = body.GetPosition();
-            Point velocity = body.GetVelocity();
-            position = position.Add(velocity);
-            int y = position.GetY();
-            int x = position.GetX();
-            body.SetPosition(position);
+            // Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            // Body body = fighter.GetBody();
+            // Point position = body.GetPosition();
+            // Point velocity = body.GetVelocity();
+            // position = position.Add(velocity);
+            // int y = position.GetY();
+            // int x = position.GetX();
+            // body.SetPosition(position);
 
-            /// need code to match position of selector 
-            position = position.Add(velocity);
-            if (x < 0)
+            // /// need code to match position of selector 
+            // position = position.Add(velocity);
+            // if (x < 0)
+            // {
+            //     position = new Point(0,position.GetY());
+            // }
+            // else if (x > Constants.SCREEN_WIDTH - Constants.FIGHTER_WIDTH)
+            // {
+            //     position = new Point(Constants.SCREEN_HEIGHT - Constants.SELECTOR_HEIGHT, 
+            //         position.GetX());
+            // }
+
+            // body.SetPosition(position);  
+
+            List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
+
+            foreach (Fighter f in fighters)
             {
-                position = new Point(0,position.GetY());
+                f.MoveNext();
             }
-            else if (x > Constants.SCREEN_WIDTH - Constants.FIGHTER_WIDTH)
-            {
-                position = new Point(Constants.SCREEN_HEIGHT - Constants.SELECTOR_HEIGHT, 
-                    position.GetX());
-            }
-
-            body.SetPosition(position);  
-
         }
         
     }

@@ -118,7 +118,7 @@ namespace Unit06
             };
         public static List<string> FIGHTER2_IMAGES
             = new List<string>() {
-                "Assets/Images/fighterRectangle.png"
+                "Assets/Images/fighter2Rectangle.png"
             };
 
         public static int FIGHTER_WIDTH = 28;
