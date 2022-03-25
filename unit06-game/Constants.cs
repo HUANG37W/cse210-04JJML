@@ -74,10 +74,6 @@ namespace Unit06
         public static string PLACE_FIGHTER = "place_fighter";
         //maybe use this to implement into time delay for spawning fighters?
 
-        // LEVELS
-        public static string LEVEL_FILE = "Assets/Data/level-{0:000}.txt";
-        public static int BASE_LEVELS = 5;
-
         // ----------------------------------------------------------------------------------------- 
         // SCRIPTING CONSTANTS
         // ----------------------------------------------------------------------------------------- 
@@ -97,10 +93,8 @@ namespace Unit06
 
         // STATS
         public static string STATS_GROUP = "stats";
-        public static int DEFAULT_HEALTH = 100;
         // public static int MAXIMUM_LIVES = 5;
 
-        public static int SWORD_DMG = 10;
 
         // HUD
         public static int HUD_MARGIN = 15;
@@ -111,46 +105,50 @@ namespace Unit06
         public static string LIVES2_FORMAT = "Player 2 - {0} lives";
         public static string SCORE_FORMAT = "SCORE: {0}";
 
-        // FIGHTERS FOR PLAYER 1
+
+        /// FIGHTERS ///
+        // SWORD_FIGHTERS
         public static string FIGHTER_GROUP = "fighters";
 
-
-        public static List<string> FIGHTER_IMAGES
+        public static List<string> SWORD_FIGHTER_IMAGES
             = new List<string>() {
                 "Assets/Images/fighterRectangle.png"
             };
-        public static List<string> FIGHTER2_IMAGES
+        public static List<string> SWORD_FIGHTER2_IMAGES
             = new List<string>() {
                 "Assets/Images/fighter2Rectangle.png"
             };
 
-        public static int FIGHTER_WIDTH = 28;
-        public static int FIGHTER_HEIGHT = 58;
-        public static int FIGHTER_RATE = 6;
-        public static int FIGHTER_VELOCITY = 3;
-        public static int FIGHTER2_VELOCITY = -3;
+        public static int SWORD_FIGHTER_WIDTH = 28;
+        public static int SWORD_FIGHTER_HEIGHT = 58;
+        public static int SWORD_FIGHTER_RATE = 6;
+        public static int SWORD_FIGHTER_VELOCITY = 2; public static int FIGHTER2_VELOCITY = -2;
+        public static int SWORD_FIGHTER_HP = 100;
+        public static int SWORD_DAMAGE = 25;
 
-        
-        
+        // BOW_FIGHTERS
+        public static int BOW_FIGHTER_VELOCITY = 1; public static int BOW_FIGHTER2_VELOCITY = -1;
+        public static int BOW_FIGHTER_HP = 70;
+        public static int ARROW_DAMAGE = 20;
 
-       
+        // BEAR_FIGHTERS
+        public static int BEAR_VELOCITY = 1; public static int BEAR2_VELOCITY = -1;
+        public static int BEAR_HP = 250;
+        public static int BEAR_ATTACK_DAMAGE = 45;
 
-        // Selector
+
+        // Selectors
         public static string SELECTOR_GROUP = "selectors";
         
         public static List<string> SELECTOR_IMAGES
             = new List<string>() {
-                // "Assets/Images/100.png",
-                // "Assets/Images/101.png",
-                // "Assets/Images/102.png",
                 "Assets/Images/arrow1.png"
+                //Selector Image when ready to spawn a fighter
             };
         public static List<string> SELECTOR2_IMAGES
             = new List<string>() {
-                // "Assets/Images/100.png",
-                // "Assets/Images/101.png",
-                // "Assets/Images/102.png",
                 "Assets/Images/arrow2.png"
+                //Selector Image when ready to spawn fighter
             };
 
         public static int SELECTOR_WIDTH = 28;
@@ -164,10 +162,6 @@ namespace Unit06
         public static int TRACK_DISTANCE = 200;
         
 
-        // BRICK
-        public static string BRICK_GROUP = "bricks";
-        
-
         // DIALOG
         public static string DIALOG_GROUP = "dialogs";
         public static string ENTER_TO_START = "PRESS ENTER TO START";
@@ -175,6 +169,7 @@ namespace Unit06
         public static string WAS_GOOD_GAME = "GAME OVER";
 
 
+        // MISC CONSTANTS
         public static int MAX_X = 900;
         public static int MAX_Y = 600;
         public static int MIN_X = 0;

@@ -58,7 +58,7 @@ namespace Unit06.Game.Scripting
                 //audioService.PlaySound(bounceSound);
             }
 
-            else if (x >= Constants.FIELD_RIGHT - Constants.FIGHTER_WIDTH)
+            else if (x >= Constants.FIELD_RIGHT - Constants.SWORD_FIGHTER_WIDTH)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
                 stats.RemovePlayer2Life();

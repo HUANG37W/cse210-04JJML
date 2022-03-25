@@ -15,7 +15,7 @@ namespace Unit06.Game.Scripting
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Selector selector1 = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
-            Point sp1 = new Point(Constants.SELECTOR_WIDTH + 50, selector1.GetBody().GetPosition().GetY());
+            Point sp1 = new Point(50, selector1.GetBody().GetPosition().GetY());
 
             Selector selector2 = (Selector)cast.GetActors(Constants.SELECTOR_GROUP)[1];
             Point sp2 = new Point(Constants.SCREEN_WIDTH - 50, selector2.GetBody().GetPosition().GetY());
@@ -29,13 +29,13 @@ namespace Unit06.Game.Scripting
             if (keyboardService.IsKeyPressed("e"))
             {
                 //sets the pixel size and velocity values
-                Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
-                Point velocity = new Point(Constants.FIGHTER_VELOCITY, 0);
+                Point size = new Point(Constants.SWORD_FIGHTER_WIDTH, Constants.SWORD_FIGHTER_HEIGHT);
+                Point velocity = new Point(Constants.SWORD_FIGHTER_VELOCITY, 0);
 
 
                 //sets the position, size, and velocity to the fighter
                 Body fighterBody = new Body(sp1, size, velocity);
-                Animation animation = new Animation(Constants.FIGHTER_IMAGES, 0, Constants.SELECTOR_RATE);
+                Animation animation = new Animation(Constants.SWORD_FIGHTER_IMAGES, 0, Constants.SELECTOR_RATE);
                 Fighter f = new Fighter(fighterBody, animation);
                 Body body = f.GetBody();
                 cast.AddActor(Constants.FIGHTER_GROUP, f); //adds fighter f to the cast
@@ -44,12 +44,12 @@ namespace Unit06.Game.Scripting
             else if (keyboardService.IsKeyPressed("u"))
             {
                 //sets the pixel size and velocity values
-                Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
+                Point size = new Point(Constants.SWORD_FIGHTER_WIDTH, Constants.SWORD_FIGHTER_HEIGHT);
                 Point velocity = new Point(Constants.FIGHTER2_VELOCITY, 0);
 
                 //sets the position, size, and velocity to the fighter
                 Body fighterBody = new Body(sp2, size, velocity);
-                Animation animation = new Animation(Constants.FIGHTER2_IMAGES, 0, Constants.SELECTOR_RATE);
+                Animation animation = new Animation(Constants.SWORD_FIGHTER2_IMAGES, 0, Constants.SELECTOR_RATE);
                 Fighter f = new Fighter(fighterBody, animation);
                 Body body = f.GetBody();
                 cast.AddActor(Constants.FIGHTER_GROUP, f); //adds fighter f to the cast
