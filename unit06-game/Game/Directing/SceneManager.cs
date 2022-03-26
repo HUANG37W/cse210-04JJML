@@ -332,9 +332,8 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
             script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
             
-            // script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
-            //script.AddAction(Constants.UPDATE, new CollideBrickAction(PhysicsService, AudioService));
-            //script.AddAction(Constants.UPDATE, new CollideSelectorAction(PhysicsService, AudioService));
+            //script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
+            script.AddAction(Constants.UPDATE, new CollideFightersAction(PhysicsService, AudioService));
             //script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }

@@ -19,6 +19,8 @@ namespace Unit06.Game.Casting
         protected Animation animation;
         protected int points;
 
+        private Image image;
+
         //private Image image;
 
         //  /// <summary>
@@ -30,8 +32,6 @@ namespace Unit06.Game.Casting
             this.animation = animation;
             //this.points = points;
         }
-
-        
 
         /// <summary>
         /// Gets the body.
@@ -46,11 +46,10 @@ namespace Unit06.Game.Casting
         /// Gets the image.
         /// </summary>
         /// <returns>The image.</returns>
-        // public Image GetImage()
-        // {
-        //     return image;
-        // }
-
+        public Image GetImage()
+        {
+            return image;
+        }
 
         /// <summary>
         /// Gets the animation.
@@ -83,51 +82,6 @@ namespace Unit06.Game.Casting
             Point velocity = new Point(0, 0);
             body.SetVelocity(velocity);
         }
-
-        /// <summary>
-        /// Gets the position.
-        /// </summary>
-        /// <returns>The position.</returns>
-        // public Point GetPosition()
-        // {
-        //     return position;
-        // }
-
-        // /// <summary>
-        // /// Gets the size.
-        // /// </summary>
-        // /// <returns>The size.</returns>
-        // public Point GetSize()
-        // {
-        //     return size;
-        // }
-        // public override void MoveNext()
-        // {
-        //     Actor fighter = new Actor();
-
-        //     Point velocity = fighter.GetVelocity();
-        //     Point position = fighter.GetPosition();
-        //     fighter.SetPosition(position);
-        //     fighter.SetText("o");
-        //     fighter.SetColor(GetColor());
-
-        // }
-
-        // private void SpawnFighter(int x, int y)
-        // {
-
-        //     Point position = new Point(x, y);
-        //     //Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
-
-        //     Actor fighter = new Actor();
-        //     //fighter.SetText("o");
-        //     fighter.SetPosition(position);
-        //     fighter.GetPosition();
-            
-
-        // }
-
-        
 
     }
 }
