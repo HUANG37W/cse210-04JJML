@@ -19,11 +19,8 @@ namespace Unit06.Game.Scripting
 
             Selector selector2 = (Selector)cast.GetActors(Constants.SELECTOR_GROUP)[1];
             Point sp2 = new Point(Constants.SCREEN_WIDTH - 50, selector2.GetBody().GetPosition().GetY());
-            //Point P1 = selector.GetPosition(); //keep track of Selector1's position.
-            // Constants.SCREEN_WIDTH + Constants.SELECTOR_WIDTH
-            // Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            // Fighter f2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP2);
-
+             //keep track of Selector positions.
+            
             
 
             if (keyboardService.IsKeyPressed("e"))
@@ -33,7 +30,7 @@ namespace Unit06.Game.Scripting
                 Point velocity = new Point(Constants.SWORD_FIGHTER_VELOCITY, 0);
 
 
-                //sets the position, size, and velocity to the fighter
+                //sets the point sp1, size, and velocity to the fighter
                 Body fighterBody = new Body(sp1, size, velocity);
                 Animation animation = new Animation(Constants.SWORD_FIGHTER_IMAGES, 0, Constants.SELECTOR_RATE);
                 Fighter f = new Fighter(fighterBody, animation);
@@ -43,11 +40,11 @@ namespace Unit06.Game.Scripting
 
             else if (keyboardService.IsKeyPressed("u"))
             {
-                //sets the pixel size and velocity values
+                //sets the pixel size and velocity values to size and velocity
                 Point size = new Point(Constants.SWORD_FIGHTER_WIDTH, Constants.SWORD_FIGHTER_HEIGHT);
                 Point velocity = new Point(Constants.FIGHTER2_VELOCITY, 0);
 
-                //sets the position, size, and velocity to the fighter
+                //sets the point sp2, size, and velocity to the player2 fighter
                 Body fighterBody = new Body(sp2, size, velocity);
                 Animation animation = new Animation(Constants.SWORD_FIGHTER2_IMAGES, 0, Constants.SELECTOR_RATE);
                 Fighter f = new Fighter(fighterBody, animation);
