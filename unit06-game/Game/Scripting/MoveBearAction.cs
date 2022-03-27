@@ -2,19 +2,19 @@ using Unit06.Game.Casting;
 using System.Collections.Generic;
 namespace Unit06.Game.Scripting
 {
-    public class MoveFighterAction : Action
+    public class MoveBearAction : Action
     {
-        public MoveFighterAction()
+        public MoveBearAction()
         {
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
+            List<Actor> bears = cast.GetActors(Constants.BEAR_GROUP);
 
-            foreach (Fighter f in fighters)
+            foreach (Bear b in bears)
             {
-                f.MoveNext();
+                b.MoveNext();
             }
         }
         

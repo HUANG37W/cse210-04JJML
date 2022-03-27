@@ -132,6 +132,21 @@ namespace Unit06
         public static int ARROW_DAMAGE = 20;
 
         // BEAR_FIGHTERS
+
+        public static string BEAR_GROUP = "bears";
+
+        public static List<string> BROWN_BEAR_IMAGES
+            = new List<string>() {
+                "Assets/Images/br.png"
+            };
+        public static List<string> BLACK_BEAR_IMAGES
+            = new List<string>() {
+                "Assets/Images/b.png"
+            };
+
+        public static int BEAR_WIDTH = 25;
+        public static int BEAR_HEIGHT = 15;
+        public static int BEAR_RATE = 6;
         public static int BEAR_VELOCITY = 1; public static int BEAR2_VELOCITY = -1;
         public static int BEAR_HP = 250;
         public static int BEAR_ATTACK_DAMAGE = 45;

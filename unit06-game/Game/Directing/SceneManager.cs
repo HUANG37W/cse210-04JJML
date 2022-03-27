@@ -52,7 +52,8 @@ namespace Unit06.Game.Directing
             AddLives2(cast);
             AddSelector(cast);
             AddDialog(cast, Constants.ENTER_TO_START);
-            //note: Fighters are added to the cast via the SpawnFightersAction class
+            ///note: Fighters are added to the cast via the SpawnFightersAction class
+            /// activated in PrepareInPlay
 
             script.ClearAllActions();
             AddInitActions(script);
@@ -109,6 +110,7 @@ namespace Unit06.Game.Directing
         {
             ActivateSelector(cast);
             ActivateFighter(cast);
+            ActivateBear(cast);
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
@@ -255,7 +257,16 @@ namespace Unit06.Game.Directing
             }
         }
     
+        private void ActivateBear(Cast cast)
+        {
 
+            List<Actor> bears = cast.GetActors(Constants.BEAR_GROUP);
+
+            foreach(Bear b in bears)
+            {
+                b.MoveNext();
+            }
+        }
         // private void AddScore(Cast cast)
         // {
         //     cast.ClearActors(Constants.SCORE_GROUP);
@@ -311,6 +322,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawSelectorAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawBearAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
@@ -330,7 +342,9 @@ namespace Unit06.Game.Directing
         {
             script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
+            script.AddAction(Constants.UPDATE, new MoveBearAction());
             script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new SpawnBearAction(KeyboardService));
             
             //script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideFightersAction(PhysicsService, AudioService));
