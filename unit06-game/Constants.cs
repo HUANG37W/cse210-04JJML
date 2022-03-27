@@ -127,6 +127,23 @@ namespace Unit06
         public static int SWORD_DAMAGE = 25;
 
         // BOW_FIGHTERS
+
+        public static string BOW_FIGHTER_GROUP = "bow_fighters";
+
+        public static List<string> BOW_FIGHTER_IMAGES
+            = new List<string>() {
+                "Assets/Images/fighterRectangle.png"
+            };
+        public static List<string> BOW_FIGHTER2_IMAGES
+            = new List<string>() {
+                "Assets/Images/fighter2Rectangle.png"
+            };
+
+        public static int BOW_FIGHTER_WIDTH = 28;
+        public static int BOW_FIGHTER_HEIGHT = 58;
+        public static int BOW_FIGHTER_RATE = 6;
+    
+
         public static int BOW_FIGHTER_VELOCITY = 1; public static int BOW_FIGHTER2_VELOCITY = -1;
         public static int BOW_FIGHTER_HP = 70;
         public static int ARROW_DAMAGE = 20;
