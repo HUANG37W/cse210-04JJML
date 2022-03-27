@@ -137,11 +137,11 @@ namespace Unit06
 
         public static List<string> BROWN_BEAR_IMAGES
             = new List<string>() {
-                "Assets/Images/br.png"
+                "Assets/Images/rbrnbear.png"
             };
         public static List<string> BLACK_BEAR_IMAGES
             = new List<string>() {
-                "Assets/Images/b.png"
+                "Assets/Images/lbkbear.png"
             };
 
         public static int BEAR_WIDTH = 25;
