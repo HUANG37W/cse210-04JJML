@@ -42,7 +42,7 @@ namespace Unit06.Game.Scripting
             {
                 //sets the pixel size and velocity values to size and velocity
                 Point size = new Point(Constants.BEAR_WIDTH, Constants.BEAR_HEIGHT);
-                Point velocity = new Point(Constants.BEAR_VELOCITY, 0);
+                Point velocity = new Point(Constants.BEAR2_VELOCITY, 0);
 
                 //sets the point b2, size, and velocity to the player2 bear
                 Body bearBody = new Body(b2, size, velocity);
