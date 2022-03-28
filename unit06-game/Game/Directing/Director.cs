@@ -54,6 +54,7 @@ namespace Unit06.Game.Directing
 
         private void ExecuteActions(string group)
         {
+            //This will make sure that each action is called properly 
             List<Action> actions = script.GetActions(group);
             foreach(Action action in actions)
             {
