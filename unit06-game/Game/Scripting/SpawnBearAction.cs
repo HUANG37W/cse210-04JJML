@@ -18,7 +18,7 @@ namespace Unit06.Game.Scripting
             Point b1 = new Point(50, selector1.GetBody().GetPosition().GetY());
 
             Selector selector2 = (Selector)cast.GetActors(Constants.SELECTOR_GROUP)[1];
-            Point b2 = new Point(Constants.SCREEN_WIDTH - 50, selector2.GetBody().GetPosition().GetY());
+            Point b2 = new Point(Constants.SCREEN_WIDTH - 120, selector2.GetBody().GetPosition().GetY());
              //keep track of Selector positions.
             
             

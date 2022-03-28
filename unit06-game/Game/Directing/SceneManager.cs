@@ -111,6 +111,7 @@ namespace Unit06.Game.Directing
             ActivateSelector(cast);
             ActivateFighter(cast);
             ActivateBear(cast);
+            ActivateBowFighter(cast);
             cast.ClearActors(Constants.DIALOG_GROUP);
 
             script.ClearAllActions();
@@ -222,31 +223,6 @@ namespace Unit06.Game.Directing
             cast.AddActor(Constants.SELECTOR_GROUP, selector);
 
         }
-        
-        // private void AddFighter(Cast cast)
-        // {
-        //     cast.ClearActors(Constants.FIGHTER_GROUP);
-
-            
-        
-            // int x1 = Constants.SCREEN_WIDTH / 2;
-            // int y1 = Constants.SCREEN_HEIGHT / 4;
-
-            // BuildAddFighter(x1, y1, cast);
-        // }
-
-        // private void BuildAddFighter(int x, int y, Cast cast)
-        // {
-        //     Point position = new Point(x, y); //sets the initial position of the fighter
-        //     Point size = new Point(Constants.FIGHTER_WIDTH, Constants.FIGHTER_HEIGHT);
-        //     Point velocity = new Point(0, 0);
-        
-        //     Body fighterBody = new Body(position, size, velocity);
-        //     Animation animation = new Animation(Constants.SELECTOR_IMAGES, 0, Constants.SELECTOR_RATE);
-        //     Fighter fighter = new Fighter(fighterBody, animation, true);
-        
-        //     cast.AddActor(Constants.FIGHTER_GROUP, fighter);
-        // }
         private void ActivateFighter(Cast cast)
         {
             List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
@@ -265,6 +241,17 @@ namespace Unit06.Game.Directing
             foreach(Bear b in bears)
             {
                 b.MoveNext();
+            }
+        }
+
+        private void ActivateBowFighter(Cast cast)
+        {
+
+            List<Actor> bowfighters = cast.GetActors(Constants.BOW_FIGHTER_GROUP);
+
+            foreach(BowFighter bf in bowfighters)
+            {
+                bf.MoveNext();
             }
         }
         // private void AddScore(Cast cast)
@@ -323,6 +310,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.OUTPUT, new DrawSelectorAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawBearAction(VideoService));
+            script.AddAction(Constants.OUTPUT, new DrawBowFighterAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawDialogAction(VideoService));
             script.AddAction(Constants.OUTPUT, new EndDrawingAction(VideoService));
         }
@@ -343,8 +331,10 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
             script.AddAction(Constants.UPDATE, new MoveBearAction());
+            script.AddAction(Constants.UPDATE, new MoveBowFighterAction());
             script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
             script.AddAction(Constants.UPDATE, new SpawnBearAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new SpawnBowFighterAction(KeyboardService));
             
             //script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideFightersAction(PhysicsService, AudioService));
