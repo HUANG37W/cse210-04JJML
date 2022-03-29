@@ -130,7 +130,7 @@ namespace Unit06
 
         // BOW_FIGHTERS
 
-        public static string BOW_FIGHTER_GROUP = "bowfighters";
+        // public static string BOW_FIGHTER_GROUP = "bowfighters";
 
         public static List<string> BOW_FIGHTER_IMAGES
             = new List<string>() {
@@ -152,7 +152,7 @@ namespace Unit06
 
         // BEAR_FIGHTERS
 
-        public static string BEAR_GROUP = "bears";
+        // public static string BEAR_GROUP = "bears";
 
         public static List<string> BROWN_BEAR_IMAGES
             = new List<string>() {

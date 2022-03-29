@@ -64,7 +64,7 @@ namespace Unit06.Game.Scripting
                 Animation animation = new Animation(Constants.BLACK_BEAR_IMAGES, 0, Constants.BEAR_RATE);
                 Bear b = new Bear(bearBody, animation);
                 Body body = b.GetBody();
-                cast.AddActor(Constants.BEAR_GROUP, b); //adds bear b to the cast
+                cast.AddActor(Constants.FIGHTER_GROUP, b); //adds bear b to the cast
             }
 
             else if (keyboardService.IsKeyPressed("o"))
@@ -78,7 +78,7 @@ namespace Unit06.Game.Scripting
                 Animation animation = new Animation(Constants.BROWN_BEAR_IMAGES, 0, Constants.SELECTOR_RATE);
                 Bear b = new Bear(bearBody, animation);
                 Body body = b.GetBody();
-                cast.AddActor(Constants.BEAR_GROUP, b); //adds bear b to the cast
+                cast.AddActor(Constants.FIGHTER_GROUP, b); //adds bear b to the cast
             }
 
             else if (keyboardService.IsKeyPressed("c"))
@@ -93,7 +93,7 @@ namespace Unit06.Game.Scripting
                 Animation animation = new Animation(Constants.BOW_FIGHTER_IMAGES, 0, Constants.BOW_FIGHTER_RATE);
                 BowFighter bf = new BowFighter(BowFighterBody, animation);
                 Body body = bf.GetBody();
-                cast.AddActor(Constants.BOW_FIGHTER_GROUP, bf); //adds bowfighter f to the cast
+                cast.AddActor(Constants.FIGHTER_GROUP, bf); //adds bowfighter f to the cast
             }
 
             else if (keyboardService.IsKeyPressed("n"))
@@ -107,7 +107,7 @@ namespace Unit06.Game.Scripting
                 Animation animation = new Animation(Constants.BOW_FIGHTER2_IMAGES, 0, Constants.BOW_FIGHTER_RATE);
                 BowFighter bf = new BowFighter(BowFighterBody, animation);
                 Body body = bf.GetBody();
-                cast.AddActor(Constants.BOW_FIGHTER_GROUP, bf); //adds fighter f to the cast
+                cast.AddActor(Constants.FIGHTER_GROUP, bf); //adds fighter f to the cast
             }
         }
 
