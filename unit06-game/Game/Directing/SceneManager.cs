@@ -333,8 +333,6 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.UPDATE, new MoveBearAction());
             script.AddAction(Constants.UPDATE, new MoveBowFighterAction());
             script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
-            script.AddAction(Constants.UPDATE, new SpawnBearAction(KeyboardService));
-            script.AddAction(Constants.UPDATE, new SpawnBowFighterAction(KeyboardService));
             
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideFightersAction(PhysicsService, AudioService));

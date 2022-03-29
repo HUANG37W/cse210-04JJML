@@ -22,7 +22,7 @@ namespace Unit06.Game.Scripting
          public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            Point sp1 = new Point(50, fighter.GetBody().GetPosition().GetY());
+            //Point sp1 = new Point(50, fighter.GetBody().GetPosition().GetY());
 
         // public void Execute(Cast cast, Script script, ActionCallback actionCallback)
         // {
