@@ -133,11 +133,11 @@ namespace Unit06
 
         public static List<string> BOW_FIGHTER_IMAGES
             = new List<string>() {
-                "Assets/Images/048.png"
+                "Assets/Images/Bowman_Rectangle.png"
             };
         public static List<string> BOW_FIGHTER2_IMAGES
             = new List<string>() {
-                "Assets/Images/046.png"
+                "Assets/Images/Bowman_Rectangle2.png"
             };
 
         public static int BOW_FIGHTER_WIDTH = 28;

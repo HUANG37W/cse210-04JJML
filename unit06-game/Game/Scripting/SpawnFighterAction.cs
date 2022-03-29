@@ -51,6 +51,64 @@ namespace Unit06.Game.Scripting
                 Body body = f.GetBody();
                 cast.AddActor(Constants.FIGHTER_GROUP, f); //adds fighter f to the cast
             }
+
+            else if (keyboardService.IsKeyPressed("q"))
+            {
+                //sets the pixel size and velocity values
+                Point size = new Point(Constants.BEAR_WIDTH, Constants.BEAR_HEIGHT);
+                Point velocity = new Point(Constants.BEAR_VELOCITY, 0);
+
+
+                //sets the point b1, size, and velocity to the bear
+                Body bearBody = new Body(sp1, size, velocity);
+                Animation animation = new Animation(Constants.BLACK_BEAR_IMAGES, 0, Constants.BEAR_RATE);
+                Bear b = new Bear(bearBody, animation);
+                Body body = b.GetBody();
+                cast.AddActor(Constants.BEAR_GROUP, b); //adds bear b to the cast
+            }
+
+            else if (keyboardService.IsKeyPressed("o"))
+            {
+                //sets the pixel size and velocity values to size and velocity
+                Point size = new Point(Constants.BEAR_WIDTH, Constants.BEAR_HEIGHT);
+                Point velocity = new Point(Constants.BEAR2_VELOCITY, 0);
+
+                //sets the point b2, size, and velocity to the player2 bear
+                Body bearBody = new Body(sp2, size, velocity);
+                Animation animation = new Animation(Constants.BROWN_BEAR_IMAGES, 0, Constants.SELECTOR_RATE);
+                Bear b = new Bear(bearBody, animation);
+                Body body = b.GetBody();
+                cast.AddActor(Constants.BEAR_GROUP, b); //adds bear b to the cast
+            }
+
+            else if (keyboardService.IsKeyPressed("c"))
+            {
+                //sets the pixel size and velocity values
+                Point size = new Point(Constants.BOW_FIGHTER_WIDTH, Constants.BOW_FIGHTER_HEIGHT);
+                Point velocity = new Point(Constants.BOW_FIGHTER_VELOCITY, 0);
+
+
+                //sets the point sp1, size, and velocity to the fighter
+                Body BowFighterBody = new Body(sp1, size, velocity);
+                Animation animation = new Animation(Constants.BOW_FIGHTER_IMAGES, 0, Constants.BOW_FIGHTER_RATE);
+                BowFighter bf = new BowFighter(BowFighterBody, animation);
+                Body body = bf.GetBody();
+                cast.AddActor(Constants.BOW_FIGHTER_GROUP, bf); //adds bowfighter f to the cast
+            }
+
+            else if (keyboardService.IsKeyPressed("n"))
+            {
+                //sets the pixel size and velocity values to size and velocity
+                Point size = new Point(Constants.BOW_FIGHTER_WIDTH, Constants.BOW_FIGHTER_HEIGHT);
+                Point velocity = new Point(Constants.BOW_FIGHTER2_VELOCITY, 0);
+
+                //sets the point sp2, size, and velocity to the player2 fighter
+                Body BowFighterBody = new Body(sp2, size, velocity);
+                Animation animation = new Animation(Constants.BOW_FIGHTER2_IMAGES, 0, Constants.BOW_FIGHTER_RATE);
+                BowFighter bf = new BowFighter(BowFighterBody, animation);
+                Body body = bf.GetBody();
+                cast.AddActor(Constants.BOW_FIGHTER_GROUP, bf); //adds fighter f to the cast
+            }
         }
 
     }
