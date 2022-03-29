@@ -8,12 +8,12 @@ namespace Unit06.Game.Scripting
     /// Implements the consequences of a fighter colliding with 
     /// or passing through the left or right side of the screen.
     /// </summary>
-    public class CollideBordersAction : Action
+    public class CollideWallAction : Action
     {
         private AudioService audioService;
         private PhysicsService physicsService;
         
-        public CollideBordersAction(PhysicsService physicsService, AudioService audioService)
+        public CollideWallAction(PhysicsService physicsService, AudioService audioService)
         {
             this.physicsService = physicsService;
             this.audioService = audioService;
@@ -27,8 +27,10 @@ namespace Unit06.Game.Scripting
             Point position = body.GetPosition();
             int x = position.GetX();
             int y = position.GetY();
-            //Sound bounceSound = new Sound(Constants.BOUNCE_SOUND);
-            //Sound overSound = new Sound(Constants.OVER_SOUND);
+            Sound cheersound = new Sound(Constants.CHEER_SOUND);
+            Sound oversound = new Sound(Constants.SOUND_OVER);
+            //put more sound bites in
+            
             
 
             // This is possibly for the second player when having to collid with the border.
@@ -38,13 +40,14 @@ namespace Unit06.Game.Scripting
             Point position2 = body.GetPosition();
             int x2 = position.GetX();
             int y2 = position.GetY();
-            //Sound bounceSound = new Sound(Constants.BOUNCE_SOUND);
-            //Sound overSound = new Sound(Constants.OVER_SOUND);
+            // Sound cheerSound = new Sound(Constants.CHEER_SOUND);
+            // Sound overSound = new Sound(Constants.OVER_SOUND);
 
             if (x2 < Constants.FIELD_LEFT)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
                 stats.RemovePlayer1Life();
+                audioService.PlaySound(cheersound);
 
                 if (stats.GetPlayer1Lives() > 0)
                 {
@@ -56,14 +59,14 @@ namespace Unit06.Game.Scripting
                 {
                     // Do stuff to show that Player 2 Wins!
                     callback.OnNext(Constants.GAME_OVER);
-                    //audioService.PlaySound(overSound);
+                    audioService.PlaySound(oversound);
                 }
 
                 //ball.BounceX();
                 //audioService.PlaySound(bounceSound);
             }
 
-            else if (x >= Constants.FIELD_RIGHT - Constants.SWORD_FIGHTER_WIDTH)
+            else if (x >= Constants.FIELD_RIGHT- Constants.SWORD_FIGHTER_WIDTH)
             {
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
                 stats.RemovePlayer2Life();
@@ -78,7 +81,7 @@ namespace Unit06.Game.Scripting
                 {
                     // Do stuff to show that Player 1 Wins!
                     callback.OnNext(Constants.GAME_OVER);
-                    /// audioService.PlaySound(overSound);
+                    audioService.PlaySound(oversound);
                 }
 
                 //ball.BounceX();
