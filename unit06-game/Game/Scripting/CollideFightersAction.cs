@@ -19,13 +19,18 @@ namespace Unit06.Game.Scripting
             this.audioService = audioService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback actionCallback)
+         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            List<Actor> bowfighters = cast.GetActors(Constants.BOW_FIGHTER_GROUP);
-            List<Actor> bears = cast.GetActors(Constants.BEAR_GROUP);
-            List<Actor> swordfighters = cast.GetActors(Constants.FIGHTER_GROUP);
+            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            Point sp1 = new Point(50, fighter.GetBody().GetPosition().GetY());
 
-            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+        // public void Execute(Cast cast, Script script, ActionCallback actionCallback)
+        // {
+        //     List<Actor> bowfighters = cast.GetActors(Constants.BOW_FIGHTER_GROUP);
+        //     List<Actor> bears = cast.GetActors(Constants.BEAR_GROUP);
+        //     List<Actor> swordfighters = cast.GetActors(Constants.FIGHTER_GROUP);
+
+        //     Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
 
             
             // Body bearbody = bears.GetBody();

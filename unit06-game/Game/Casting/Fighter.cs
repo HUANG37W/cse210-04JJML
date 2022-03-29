@@ -19,7 +19,7 @@ namespace Unit06.Game.Casting
         protected Animation animation;
         protected int points;
 
-        private Image image;
+        protected Image image;
 
         //private Image image;
 
