@@ -21,7 +21,21 @@ namespace Unit06.Game.Scripting
 
          public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            Fighter fighter = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            foreach (Fighter fighter in cast.GetActors(Constants.FIGHTER_GROUP))
+            
+            {   
+                
+                
+                Body body = fighter.GetBody();
+                Point position = body.GetPosition();
+                int x = position.GetX();
+                int y = position.GetY();
+
+                Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+           }
+            
+            
+
             //Point sp1 = new Point(50, fighter.GetBody().GetPosition().GetY());
 
         // public void Execute(Cast cast, Script script, ActionCallback actionCallback)
