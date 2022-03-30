@@ -21,17 +21,46 @@ namespace Unit06.Game.Scripting
 
          public void Execute(Cast cast, Script script, ActionCallback callback)
         {
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+
             foreach (Fighter fighter in cast.GetActors(Constants.FIGHTER_GROUP))
             
             {   
-                
-                
-                Body body = fighter.GetBody();
-                Point position = body.GetPosition();
-                int x = position.GetX();
-                int y = position.GetY();
 
-                Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+                swordfighters swf = (swordfighters)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                 
+                Body swfBody = swf.GetBody();
+                Body bfBody = bf.GetBody();
+                Body  bwfBody = bwf.GetBody();
+
+                if (physicsService.HasCollided(swfBody, bfBody))
+                {
+                    Sound sound = new Sound(Constants.BEAR_GROWL_SOUND);
+                    audioService.PlaySound(sound);
+                }
+                if (physicsService.HasCollided(swfBody, bwfBody))
+                {
+
+                }
+                if (physicsService.HasCollided(bfBody, bfBody))
+                {
+
+                }
+                if (physicsService.HasCollided(bfBody, bwfBody))
+                {
+
+                }
+                if (physicsService.HasCollided(swfBody, swfBody))
+                {
+
+                }
+                if (physicsService.HasCollided(bwfBody, bwfBody))
+                {
+
+                }
+               
            }
             
             

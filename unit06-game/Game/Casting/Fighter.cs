@@ -83,5 +83,10 @@ namespace Unit06.Game.Casting
             body.SetVelocity(velocity);
         }
 
+        public virtual void AttackAction()
+        {
+            return;
+        }
+
     }
 }

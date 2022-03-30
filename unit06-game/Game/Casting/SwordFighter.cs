@@ -18,6 +18,10 @@ namespace Unit06.Game.Casting
         {
              
         }
+    public override void AttackAction()
+    {
+        return;
+    }        
 
     }
 }
