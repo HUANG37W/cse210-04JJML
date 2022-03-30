@@ -9,12 +9,12 @@ namespace Unit06.Game.Casting
     /// The responsibility of Bear is to appear on the screen. 
     /// </para>
     /// </summary>
-    public class swordfighters : Fighter
+    public class SwordFighter : Fighter
     {
        
         // /// Constructs a new instance of Sword.
         // /// </summary>
-        public swordfighters(Body body, Animation animation, bool debug = false) : base(body,animation,debug) 
+        public SwordFighter(Body body, Animation animation, bool debug = false) : base(body,animation,debug) 
         {
              
         }

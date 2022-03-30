@@ -27,7 +27,7 @@ namespace Unit06.Game.Scripting
             
             {   
 
-                swordfighters swf = (swordfighters)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                SwordFighter swf = (SwordFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
                 Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
                 BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
                  
