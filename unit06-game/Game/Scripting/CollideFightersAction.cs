@@ -21,45 +21,49 @@ namespace Unit06.Game.Scripting
 
          public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-        //     Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
 
-        //     foreach (Fighter fighter in cast.GetActors(Constants.FIGHTER_GROUP))
+            // Dictionary<string, List<Actor>> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
+
+            // List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
+
+            // foreach (Actor actor in fighters)
             
-        //     {   
+            // {   
 
-        //         SwordFighter swf = (SwordFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-        //         Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-        //         BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            //     SwordFighter swf = (SwordFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            //     Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+            //     BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
                  
-        //         Body swfBody = swf.GetBody();
-        //         Body bfBody = bf.GetBody();
-        //         Body  bwfBody = bwf.GetBody();
+            //     Body swfBody = swf.GetBody();
+            //     Body bfBody = bf.GetBody();
+            //     Body  bwfBody = bwf.GetBody();
 
-        //         if (physicsService.HasCollided(swfBody, bfBody))
-        //         {
-        //             Sound sound = new Sound(Constants.BEAR_GROWL_SOUND);
-        //             audioService.PlaySound(sound);
-        //         }
-        //         if (physicsService.HasCollided(swfBody, bwfBody))
-        //         {
+            //     if (physicsService.HasCollided(swfBody, bfBody))
+            //     {
+            //         Sound sound = new Sound(Constants.BEAR_GROWL_SOUND);
+            //         audioService.PlaySound(sound);
+            //     }
+            //     if (physicsService.HasCollided(swfBody, bwfBody))
+            //     {
 
-        //         }
-        //         if (physicsService.HasCollided(bfBody, bfBody))
-        //         {
+            //     }
+            //     if (physicsService.HasCollided(bfBody, bfBody))
+            //     {
 
-        //         }
-        //         if (physicsService.HasCollided(bfBody, bwfBody))
-        //         {
+            //     }
+            //     if (physicsService.HasCollided(bfBody, bwfBody))
+            //     {
 
-        //         }
-        //         if (physicsService.HasCollided(swfBody, swfBody))
-        //         {
+            //     }
+            //     if (physicsService.HasCollided(swfBody, swfBody))
+            //     {
 
-        //         }
-        //         if (physicsService.HasCollided(bwfBody, bwfBody))
-        //         {
+            //     }
+            //     if (physicsService.HasCollided(bwfBody, bwfBody))
+            //     {
 
-        //         }
+            //     }
                
         // }
             
