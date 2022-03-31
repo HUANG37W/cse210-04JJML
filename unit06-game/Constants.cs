@@ -114,16 +114,22 @@ namespace Unit06
 
         public static List<string> SWORD_FIGHTER_IMAGES
             = new List<string>() {
-                "Assets/Images/fighterRectangle.png"
+                "Assets/Images/fighter1.png",
+                "Assets/Images/fighter1Walk1.png",
+                "Assets/Images/fighter1Walk2.png",
+                "Assets/Images/fighter1Walk3.png"
             };
         public static List<string> SWORD_FIGHTER2_IMAGES
             = new List<string>() {
-                "Assets/Images/fighter2Rectangle.png"
+                "Assets/Images/fighter2.png",
+                "Assets/Images/fighter2Walk1.png",
+                "Assets/Images/fighter2Walk2.png",
+                "Assets/Images/fighter2Walk3.png"
             };
 
         public static int SWORD_FIGHTER_WIDTH = 28;
         public static int SWORD_FIGHTER_HEIGHT = 58;
-        public static int SWORD_FIGHTER_RATE = 6;
+        public static int FIGHTER_RATE = 1;
         public static int SWORD_FIGHTER_VELOCITY = 2; public static int FIGHTER2_VELOCITY = -2;
         public static int SWORD_FIGHTER_HP = 100;
         public static int SWORD_DAMAGE = 25;
@@ -134,11 +140,17 @@ namespace Unit06
 
         public static List<string> BOW_FIGHTER_IMAGES
             = new List<string>() {
-                "Assets/Images/Bowman_Rectangle.png"
+                "Assets/Images/Bowman1.png",
+                "Assets/Images/Bowman1Walk1.png",
+                "Assets/Images/Bowman1Walk2.png",
+                "Assets/Images/Bowman1Walk3.png"
             };
         public static List<string> BOW_FIGHTER2_IMAGES
             = new List<string>() {
-                "Assets/Images/Bowman_Rectangle2.png"
+                "Assets/Images/Bowman2.png",
+                "Assets/Images/Bowman2Walk1.png",
+                "Assets/Images/Bowman2Walk2.png",
+                "Assets/Images/Bowman2Walk3.png"
             };
 
         public static int BOW_FIGHTER_WIDTH = 28;
