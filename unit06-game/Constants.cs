@@ -71,6 +71,9 @@ namespace Unit06
         public static string TRY_AGAIN = "try_again";
         public static string NEXT_LEVEL = "next_level";
         public static string IN_PLAY = "in_play";
+
+        public static string P1_WIN = "player1_win";
+        public static string P2_WIN = "player2_win";
         public static string GAME_OVER = "game_over";
 
         public static string PLACE_FIGHTER = "place_fighter";
@@ -213,6 +216,9 @@ namespace Unit06
         public static string ENTER_TO_START = "PRESS ENTER TO START";
         public static string PREP_TO_LAUNCH = "PREPARE TO FIGHT";
         public static string WAS_GOOD_GAME = "GAME OVER";
+
+        public static string P1_DID_WIN = "PLAYER 1 WINS!";
+        public static string P2_DID_WIN = "PLAYER 2 WINS!";
 
 
         // MISC CONSTANTS

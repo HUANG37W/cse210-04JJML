@@ -42,6 +42,14 @@ namespace Unit06.Game.Directing
             {
                 PrepareGameOver(cast, script);
             }
+            else if (scene == Constants.P1_DID_WIN)
+            {
+                PrepareGameOver(cast, script);
+            }
+            else if (scene == Constants.P2_DID_WIN)
+            {
+                PrepareGameOver(cast, script);
+            }
         }
 
         private void PrepareNewGame(Cast cast, Script script)
@@ -126,6 +134,8 @@ namespace Unit06.Game.Directing
         {
             AddSelector(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
+            // AddDialog(cast, Constants.P1_DID_WIN);
+            // AddDialog(cast, Constants.P2_DID_WIN);
 
             script.ClearAllActions();
 
@@ -252,7 +262,7 @@ namespace Unit06.Game.Directing
 
 
         // -----------------------------------------------------------------------------------------
-        // scriptig methods
+        // scripting methods
         // -----------------------------------------------------------------------------------------
 
         private void AddInitActions(Script script)
