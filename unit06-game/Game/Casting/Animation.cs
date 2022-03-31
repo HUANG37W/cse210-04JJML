@@ -68,7 +68,7 @@ namespace Unit06.Game.Casting
             DateTime currentTime = DateTime.Now;
             TimeSpan elapsedTime = currentTime.Subtract(startTime);
 
-            if (elapsedTime > delay)
+            if (true)
             {
                 frame++; 
                 if (frame >= rate)
