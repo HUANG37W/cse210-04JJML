@@ -1,11 +1,17 @@
 using Unit06.Game.Casting;
 using Unit06.Game.Services;
+using System.Collections.Generic;
 
 namespace Unit06.Game.Scripting
 {
     public class SpawnFighterAction : Action
     {
         private KeyboardService keyboardService;
+        private List<string> swordfighters = new List<string>();
+        private List<string> bowfighters = new List<string>();
+        private List<string> bears = new List<string>();
+        
+
 
         public SpawnFighterAction(KeyboardService keyboardService)
         {
@@ -35,7 +41,14 @@ namespace Unit06.Game.Scripting
                 Animation animation = new Animation(Constants.SWORD_FIGHTER_IMAGES, 0, Constants.SELECTOR_RATE);
                 Fighter f = new Fighter(fighterBody, animation);
                 Body body = f.GetBody();
-                cast.AddActor(Constants.FIGHTER_GROUP, f); //adds fighter f to the cast
+                cast.AddActor(Constants.FIGHTER_GROUP, f); 
+                //adds fighter f to the cast
+                // swordfighters.Add("f");
+                // if (swordfighters.Count > 5)
+                // {
+
+                // }
+                
             }
 
             else if (keyboardService.IsKeyPressed("u"))

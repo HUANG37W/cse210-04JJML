@@ -296,7 +296,7 @@ namespace Unit06.Game.Directing
             
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideFightersAction(PhysicsService, AudioService));
-            //script.AddAction(Constants.UPDATE, new CheckOverAction());     
+            // script.AddAction(Constants.UPDATE, new CheckOverAction());     
         }
     }
 }

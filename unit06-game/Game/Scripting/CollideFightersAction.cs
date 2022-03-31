@@ -25,47 +25,58 @@ namespace Unit06.Game.Scripting
 
             // Dictionary<string, List<Actor>> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
 
-            // List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
-
-            // foreach (Actor actor in fighters)
+            List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
             
-            // {   
+            foreach (Actor actor in fighters)
+            
+            {   
+                Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                // Fighter f2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
 
-            //     SwordFighter swf = (SwordFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            //     Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-            //     BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                // SwordFighter swf = (SwordFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                // Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
+                // BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
                  
-            //     Body swfBody = swf.GetBody();
-            //     Body bfBody = bf.GetBody();
-            //     Body  bwfBody = bwf.GetBody();
+                // Body swfBody = swf.GetBody();
+                // Body bfBody = bf.GetBody();
+                // Body  bwfBody = bwf.GetBody();
+                Body fBody = f.GetBody();
+                // Body f2Body = f2.GetBody();
 
-            //     if (physicsService.HasCollided(swfBody, bfBody))
-            //     {
-            //         Sound sound = new Sound(Constants.BEAR_GROWL_SOUND);
-            //         audioService.PlaySound(sound);
-            //     }
-            //     if (physicsService.HasCollided(swfBody, bwfBody))
-            //     {
+                if (physicsService.HasCollided(fBody, fBody))
+                {
+                    Sound sound = new Sound(Constants.WELCOME_SOUND);
+                    audioService.PlaySound(sound);
+                    // int points = .GetPoints();
+                    // stats.AddPoints(points);
+                    // cast.RemoveActor(Constants.FIGHTER_GROUP, f);
 
-            //     }
-            //     if (physicsService.HasCollided(bfBody, bfBody))
-            //     {
 
-            //     }
-            //     if (physicsService.HasCollided(bfBody, bwfBody))
-            //     {
 
-            //     }
-            //     if (physicsService.HasCollided(swfBody, swfBody))
-            //     {
+                }
+                
+                // if (physicsService.HasCollided(swfBody, bwfBody))
+                // {
 
-            //     }
-            //     if (physicsService.HasCollided(bwfBody, bwfBody))
-            //     {
+                // }
+                // if (physicsService.HasCollided(bfBody, bfBody))
+                // {
 
-            //     }
+                // }
+                // if (physicsService.HasCollided(bfBody, bwfBody))
+                // {
+
+                // }
+                // if (physicsService.HasCollided(swfBody, swfBody))
+                // {
+
+                // }
+                // if (physicsService.HasCollided(bwfBody, bwfBody))
+                // {
+
+                // }
                
-        // }
+        }
             
             
 
