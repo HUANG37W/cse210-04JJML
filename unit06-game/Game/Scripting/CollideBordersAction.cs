@@ -37,11 +37,11 @@ namespace Unit06.Game.Scripting
                 if (x < Constants.FIELD_LEFT)
                 {
                     
-                    stats.RemovePlayer2Life();
+                    stats.RemovePlayer1Life();
                     cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
                     //audioService.PlaySound(bounceSound);
 
-                    if (stats.GetPlayer2Lives() <= 0)
+                    if (stats.GetPlayer1Lives() <= 0)
                     {
                         // Do stuff to show that Player 1 Wins!
                         callback.OnNext(Constants.P1_DID_WIN);
@@ -53,11 +53,11 @@ namespace Unit06.Game.Scripting
                 }
                 else if (x >= Constants.FIELD_RIGHT - Constants.SWORD_FIGHTER_WIDTH)
                 {
-                    stats.RemovePlayer1Life();
+                    stats.RemovePlayer2Life();
                     cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
                     //audioService.PlaySound(bounceSound);
                     
-                    if (stats.GetPlayer1Lives() <= 0)
+                    if (stats.GetPlayer2Lives() <= 0)
                     {
                         // Do stuff to show that Player 2 Wins!
                         callback.OnNext(Constants.P2_DID_WIN);
