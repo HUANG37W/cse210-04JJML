@@ -27,7 +27,7 @@ namespace Unit06.Game.Scripting
 
             List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
             
-            foreach (Actor actor in fighters)
+            foreach ( Fighter fighter in fighters)
             
             {   
                 Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
