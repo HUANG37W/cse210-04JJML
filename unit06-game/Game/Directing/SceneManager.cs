@@ -302,7 +302,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.UPDATE, new MoveFighterAction());
             script.AddAction(Constants.UPDATE, new MoveSelectorAction());
             
-            script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService));
+            script.AddAction(Constants.UPDATE, new SpawnFighterAction(KeyboardService, AudioService));
             
             script.AddAction(Constants.UPDATE, new CollideBordersAction(PhysicsService, AudioService));
             script.AddAction(Constants.UPDATE, new CollideFightersAction(PhysicsService, AudioService));

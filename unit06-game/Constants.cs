@@ -31,7 +31,7 @@ namespace Unit06
         public static int FONT_SIZE = 22;
 
         // SOUND
-        public static string SWORD_CLASH_SOUND = "Assets/Sounds/";
+        public static string SWORD_CLASH_SOUND = "Assets/Sounds/Knife-Slice.wav";
         public static string WELCOME_SOUND = "Assets/Sounds/start.wav";
         public static string CHEER_SOUND = "Assets/Sounds/crowd2.wav";
         public static string SOUND_OVER = "Assets/Sounds/over.wav";
