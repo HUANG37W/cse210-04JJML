@@ -31,11 +31,11 @@ namespace Unit06
         public static int FONT_SIZE = 22;
 
         // SOUND
-        public static string SWORD_CLASH_SOUND = "Assets/Sounds/ENTER NAME";
+        public static string SWORD_CLASH_SOUND = "Assets/Sounds/";
         public static string WELCOME_SOUND = "Assets/Sounds/start.wav";
-        public static string CHEER_SOUND = "Assets/Sounds/over.wav";
+        public static string CHEER_SOUND = "Assets/Sounds/crowd2.wav";
         public static string SOUND_OVER = "Assets/Sounds/over.wav";
-        public static string BEAR_GROWL_SOUND = "Assets/Sounds/ENTER NAME";
+        public static string BEAR_GROWL_SOUND = "Assets/Sounds/Bear Growl 01.wav";
 
         // TEXT
         public static int ALIGN_LEFT = 0;
