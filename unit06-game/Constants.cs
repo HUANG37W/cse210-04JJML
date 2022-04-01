@@ -172,6 +172,7 @@ namespace Unit06
         public static List<string> BROWN_BEAR_IMAGES
             = new List<string>() {
                 "Assets/Images/rbrnbear.png"
+                
             };
         public static List<string> BLACK_BEAR_IMAGES
             = new List<string>() {

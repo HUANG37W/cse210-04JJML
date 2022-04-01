@@ -134,8 +134,8 @@ namespace Unit06.Game.Directing
         {
             AddSelector(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
-            // AddDialog(cast, Constants.P1_DID_WIN);
-            // AddDialog(cast, Constants.P2_DID_WIN);
+            AddDialog(cast, Constants.P1_DID_WIN);
+            AddDialog(cast, Constants.P2_DID_WIN);
 
             script.ClearAllActions();
 
