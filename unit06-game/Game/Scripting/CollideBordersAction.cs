@@ -44,7 +44,7 @@ namespace Unit06.Game.Scripting
                     if (stats.GetPlayer1Lives() <= 0)
                     {
                         // Do stuff to show that Player 1 Wins!
-                        callback.OnNext(Constants.P1_DID_WIN);
+                        callback.OnNext(Constants.P2_DID_WIN);
                         //clears all actors from screen for new game
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
                         //audioService.PlaySound(overSound);
@@ -60,11 +60,12 @@ namespace Unit06.Game.Scripting
                     if (stats.GetPlayer2Lives() <= 0)
                     {
                         // Do stuff to show that Player 2 Wins!
-                        callback.OnNext(Constants.P2_DID_WIN);
+                        callback.OnNext(Constants.P1_DID_WIN);
                         //clears all actors from screen for new game
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
                         /// audioService.PlaySound(overSound);
                     }
+
                 }
             }
         }
