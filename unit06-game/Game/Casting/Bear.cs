@@ -31,11 +31,11 @@ namespace Unit06.Game.Casting
 
             if (team == 1)
             {
-                this.animation = new Animation(Constants.BLACK_BEAR_IMAGES, 0, Constants.FIGHTER_RATE);
+                this.animation = new Animation(Constants.BEAR1_IMAGES, 0, Constants.FIGHTER_RATE);
             }
             else
             {
-                this.animation = new Animation(Constants.BROWN_BEAR_IMAGES, 0, Constants.FIGHTER_RATE);
+                this.animation = new Animation(Constants.BEAR2_IMAGES, 0, Constants.FIGHTER_RATE);
                 this.ReverseVelocity();
             }
             

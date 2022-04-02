@@ -168,15 +168,15 @@ namespace Unit06
         // BEAR_FIGHTERS
 
         // public static string BEAR_GROUP = "bears";
-
-        public static List<string> BROWN_BEAR_IMAGES
+        public static List<string> BEAR1_IMAGES
             = new List<string>() {
-                "Assets/Images/rbrnbear.png"
-                
+                "Assets/Images/bear1.png"
             };
-        public static List<string> BLACK_BEAR_IMAGES
+
+        public static List<string> BEAR2_IMAGES
             = new List<string>() {
-                "Assets/Images/lbkbear.png"
+                "Assets/Images/bear2.png"
+                
             };
 
         public static int BEAR_WIDTH = 25;
