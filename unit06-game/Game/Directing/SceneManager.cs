@@ -132,11 +132,19 @@ namespace Unit06.Game.Directing
 
         private void PrepareGameOver(Cast cast, Script script)
         {
+            Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
             AddSelector(cast);
             AddDialog(cast, Constants.WAS_GOOD_GAME);
-            AddDialog(cast, Constants.P1_DID_WIN);
-            AddDialog(cast, Constants.P2_DID_WIN);
-
+           
+            if (stats.GetPlayer2Lives() <= 0)
+            {
+                AddDialog(cast, Constants.P1_DID_WIN);
+            }
+            else
+            {
+                AddDialog(cast, Constants.P2_DID_WIN);
+            }
+            
             script.ClearAllActions();
 
             TimedChangeSceneAction ta = new TimedChangeSceneAction(Constants.NEW_GAME, 5, DateTime.Now);
