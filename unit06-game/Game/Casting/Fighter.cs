@@ -10,27 +10,24 @@ namespace Unit06.Game.Casting
     /// space.
     /// </para>
     /// </summary>
-    public class Fighter : Actor
+    public abstract class Fighter : Actor
     {
         // private Point position;
         // private Point size;
         //protected static Random random = new Random();
         protected Body body;
         protected Animation animation;
-        protected int points;
-
+        protected int health;
+        protected int team;
+        protected int damage;
         protected Image image;
-
-        //private Image image;
 
         //  /// <summary>
         // /// Constructs a new instance of Fighter.
         // /// </summary>
-        public Fighter(Body body, Animation animation, bool debug = false) : base(debug) 
+        public Fighter(bool debug = false) : base(debug) 
         {
-            this.body = body;
-            this.animation = animation;
-            //this.points = points;
+
         }
 
         /// <summary>
@@ -40,6 +37,15 @@ namespace Unit06.Game.Casting
         public Body GetBody()
         {
             return body;
+        }
+
+        /// <summary>
+        /// Sets the body.
+        /// </summary>
+        /// <returns>The body.</returns>
+        public void SetBody(Body body)
+        {
+            this.body = body;
         }
 
         /// <summary>
@@ -58,10 +64,6 @@ namespace Unit06.Game.Casting
         public Animation GetAnimation()
         {
             return animation;
-        }
-        public int GetPoints()
-        {
-            return points;
         }
 
         /// <summary>
@@ -86,6 +88,48 @@ namespace Unit06.Game.Casting
         public virtual void AttackAction()
         {
             return;
+        }
+
+        public int GetHealth()
+        {
+            return health;
+        }
+
+        public bool IsDead()
+        {
+            // return health <= 0; Protip
+
+            if (health <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void ReduceHealth(int attackerDamage)
+        {
+            health -= attackerDamage;
+        }
+
+        public int GetDamage()
+        {
+            return damage;
+        }
+
+        public int GetTeam()
+        {
+            return team;
+        }
+
+        public void ReverseVelocity()
+        {
+            Point velocity = body.GetVelocity();
+            Point newVelocity = new Point(velocity.GetX() * -1, velocity.GetY());
+
+            body.SetVelocity(newVelocity);
         }
 
     }

@@ -23,6 +23,7 @@ namespace Unit06.Game.Scripting
         {
             foreach (Fighter fighter in cast.GetActors(Constants.FIGHTER_GROUP))
             {
+                Sound victorySound = new Sound(Constants.CHEER_SOUND);
                 //loops through each fighter on screen and checks if they cross either
                 // the right or left border. The affected player loses a life per fighter crossed.
 
@@ -31,8 +32,6 @@ namespace Unit06.Game.Scripting
                 int x = position.GetX();
                 int y = position.GetY();
                 Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
-                //Sound bounceSound = new Sound(Constants.BOUNCE_SOUND);
-                //Sound overSound = new Sound(Constants.OVER_SOUND);
 
                 if (x < Constants.FIELD_LEFT)
                 {
@@ -47,7 +46,7 @@ namespace Unit06.Game.Scripting
                         callback.OnNext(Constants.P2_DID_WIN);
                         //clears all actors from screen for new game
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
-                        //audioService.PlaySound(overSound);
+                        audioService.PlaySound(victorySound);
                     }
                     
                 }
@@ -63,7 +62,7 @@ namespace Unit06.Game.Scripting
                         callback.OnNext(Constants.P1_DID_WIN);
                         //clears all actors from screen for new game
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
-                        /// audioService.PlaySound(overSound);
+                        audioService.PlaySound(victorySound);
                     }
 
                 }

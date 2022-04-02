@@ -9,7 +9,7 @@ namespace Unit06.Game.Casting
     /// <para>
     public class BowFighter : Fighter
     {
-        public BowFighter(Body body, Animation animation, bool debug = false) : base(body,animation,debug) 
+        public BowFighter(Body body, Animation animation, bool debug = false) : base(debug) 
         {
              
         }
