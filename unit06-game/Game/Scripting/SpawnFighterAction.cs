@@ -8,9 +8,7 @@ namespace Unit06.Game.Scripting
     {
         private KeyboardService keyboardService;
         private AudioService audioService;
-        private List<string> swordfighters = new List<string>();
-        private List<string> bowfighters = new List<string>();
-        private List<string> bears = new List<string>();
+        
         
 
 
