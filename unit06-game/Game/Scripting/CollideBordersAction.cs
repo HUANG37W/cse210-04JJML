@@ -39,8 +39,6 @@ namespace Unit06.Game.Scripting
                 {
                     
                     stats.RemovePlayer1Life();
-                    audioService.PlaySound(swordStrike);
-                    cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
 
                     if (stats.GetPlayer1Lives() <= 0)
                     {
@@ -50,13 +48,16 @@ namespace Unit06.Game.Scripting
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
                         audioService.PlaySound(victorySound);
                     }
+                    else
+                    {
+                        audioService.PlaySound(swordStrike);
+                        cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
+                    }
                     
                 }
                 else if (x >= Constants.FIELD_RIGHT - Constants.SWORD_FIGHTER_WIDTH)
                 {
                     stats.RemovePlayer2Life();
-                    audioService.PlaySound(swordStrike);
-                    cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
                     
                     if (stats.GetPlayer2Lives() <= 0)
                     {
@@ -65,6 +66,11 @@ namespace Unit06.Game.Scripting
                         //clears all actors from screen for new game
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
                         audioService.PlaySound(victorySound);
+                    }
+                    else
+                    {
+                        audioService.PlaySound(swordStrike);
+                        cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
                     }
 
                 }
