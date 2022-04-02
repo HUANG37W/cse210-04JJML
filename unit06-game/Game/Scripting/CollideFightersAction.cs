@@ -44,17 +44,17 @@ namespace Unit06.Game.Scripting
                 
                 // Body f2Body = f2.GetBody();
 
-                if (physicsService.HasCollided(fBody, f2Body))
-                {
-                    Sound sound = new Sound(Constants.WELCOME_SOUND);
-                    audioService.PlaySound(sound);
-                    // int points = .GetPoints();
-                    // stats.AddPoints(points);
-                    // cast.ClearActors(Constants.FIGHTER_GROUP);
+                // if (physicsService.HasCollided(fBody, fBody))
+                // {
+                //     Sound sound = new Sound(Constants.WELCOME_SOUND);
+                //     audioService.PlaySound(sound);
+                //     // int points = .GetPoints();
+                //     // stats.AddPoints(points);
+                //     // cast.ClearActors(Constants.FIGHTER_GROUP);
 
 
 
-                }
+                // }
                 
                 // if (physicsService.HasCollided(swfBody, bwfBody))
                 // {
