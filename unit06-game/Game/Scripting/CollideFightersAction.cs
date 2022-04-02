@@ -27,30 +27,28 @@ namespace Unit06.Game.Scripting
 
             List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
             
-            foreach (Fighter fighter in fighters)
-            
-            {   
-                Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-                Fighter f2 = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-
-                // SwordFighter swf = (SwordFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-                // Bear bf = (Bear)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-                // BowFighter bwf = (BowFighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
-                 
-                // Body swfBody = swf.GetBody();
-                // Body bfBody = bf.GetBody();
-                // Body  bwfBody = bwf.GetBody();
-                Body fBody = f.GetBody();
-                
-                // Body f2Body = f2.GetBody();
-
-                // if (physicsService.HasCollided(fBody, fBody))
-                // {
-                //     Sound sound = new Sound(Constants.WELCOME_SOUND);
-                //     audioService.PlaySound(sound);
-                //     // int points = .GetPoints();
-                //     // stats.AddPoints(points);
-                //     // cast.ClearActors(Constants.FIGHTER_GROUP);
+            foreach (Fighter f1 in fighters) 
+            {
+                foreach (Fighter f2 in fighters)
+                {
+                    if (f1 != f2 && f1.GetTeam() != f2.GetTeam())
+                    {
+                        Body b1 = f1.GetBody();
+                        Body b2 = f2.GetBody();
+                        if (physicsService.HasCollided(b1, b2))
+                        {
+                            f1.ReduceHealth(f2.GetDamage());
+                            if (f1.IsDead())
+                            {
+                                cast.RemoveActor(Constants.FIGHTER_GROUP, f1);
+                            }
+                            else if (f2.IsDead())
+                            {
+                                cast.RemoveActor(Constants.FIGHTER_GROUP, f2);
+                            }
+                        }
+                    }
+                }
 
 
 
