@@ -27,7 +27,7 @@ namespace Unit06.Game.Scripting
 
             List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
             
-            foreach ( Fighter fighter in fighters)
+            foreach (Fighter fighter in fighters)
             
             {   
                 Fighter f = (Fighter)cast.GetFirstActor(Constants.FIGHTER_GROUP);
@@ -41,7 +41,8 @@ namespace Unit06.Game.Scripting
                 // Body bfBody = bf.GetBody();
                 // Body  bwfBody = bwf.GetBody();
                 Body fBody = f.GetBody();
-                Body f2Body = f2.GetBody();
+                
+                // Body f2Body = f2.GetBody();
 
                 if (physicsService.HasCollided(fBody, f2Body))
                 {
@@ -49,7 +50,7 @@ namespace Unit06.Game.Scripting
                     audioService.PlaySound(sound);
                     // int points = .GetPoints();
                     // stats.AddPoints(points);
-                    cast.RemoveActor(Constants.FIGHTER_GROUP, f);
+                    // cast.ClearActors(Constants.FIGHTER_GROUP);
 
 
 
