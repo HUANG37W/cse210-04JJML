@@ -11,7 +11,7 @@ namespace Unit06
         // ----------------------------------------------------------------------------------------- 
 
         // GAME
-        public static string GAME_NAME = "Kingdom Battle";
+        public static string GAME_NAME = "Kingdom Fighters";
         public static int FRAME_RATE = 60;
 
         // SCREEN
@@ -36,6 +36,7 @@ namespace Unit06
         public static string CHEER_SOUND = "Assets/Sounds/crowd2.wav";
         public static string SOUND_OVER = "Assets/Sounds/over.wav";
         public static string BEAR_GROWL_SOUND = "Assets/Sounds/Bear Growl 01.wav";
+        public static string SWORD_SOUND = "Assets/Sounds/sword-remove.wav";
 
         // TEXT
         public static int ALIGN_LEFT = 0;
@@ -75,9 +76,9 @@ namespace Unit06
         public static string P1_WIN = "player1_win";
         public static string P2_WIN = "player2_win";
         public static string GAME_OVER = "game_over";
-
         public static string PLACE_FIGHTER = "place_fighter";
         //maybe use this to implement into time delay for spawning fighters?
+
 
         // ----------------------------------------------------------------------------------------- 
         // SCRIPTING CONSTANTS
@@ -98,7 +99,7 @@ namespace Unit06
 
         // STATS
         public static string STATS_GROUP = "stats";
-        // public static int MAXIMUM_LIVES = 5;
+        public static int MAXIMUM_LIVES = 10;
 
 
         // HUD
@@ -115,25 +116,34 @@ namespace Unit06
         // SWORD_FIGHTERS
         public static string FIGHTER_GROUP = "fighters";
 
+        public static int ANIMATION_RATE = 1;
+
         public static List<string> SWORD_FIGHTER_IMAGES
             = new List<string>() {
                 "Assets/Images/fighter1.png",
+                "Assets/Images/fighter1.png",
+                "Assets/Images/fighter1Walk1.png",
                 "Assets/Images/fighter1Walk1.png",
                 "Assets/Images/fighter1Walk2.png",
+                "Assets/Images/fighter1Walk2.png",
+                "Assets/Images/fighter1Walk3.png",
                 "Assets/Images/fighter1Walk3.png"
             };
         public static List<string> SWORD_FIGHTER2_IMAGES
             = new List<string>() {
                 "Assets/Images/fighter2.png",
+                "Assets/Images/fighter2.png",
+                "Assets/Images/fighter2Walk1.png",
                 "Assets/Images/fighter2Walk1.png",
                 "Assets/Images/fighter2Walk2.png",
+                "Assets/Images/fighter2Walk2.png",
+                "Assets/Images/fighter2Walk3.png",
                 "Assets/Images/fighter2Walk3.png"
             };
 
         public static int SWORD_FIGHTER_WIDTH = 28;
         public static int SWORD_FIGHTER_HEIGHT = 58;
-        public static int FIGHTER_RATE = 1;
-        public static int SWORD_FIGHTER_VELOCITY = 2; public static int FIGHTER2_VELOCITY = -2;
+        public static int SWORD_FIGHTER_VELOCITY = 2;
         public static int SWORD_FIGHTER_HP = 100;
         public static int SWORD_DAMAGE = 25;
 
@@ -144,24 +154,29 @@ namespace Unit06
         public static List<string> BOW_FIGHTER_IMAGES
             = new List<string>() {
                 "Assets/Images/Bowman1.png",
+                "Assets/Images/Bowman1.png",
+                "Assets/Images/Bowman1Walk1.png",
                 "Assets/Images/Bowman1Walk1.png",
                 "Assets/Images/Bowman1Walk2.png",
+                "Assets/Images/Bowman1Walk2.png",
+                "Assets/Images/Bowman1Walk3.png",
                 "Assets/Images/Bowman1Walk3.png"
             };
         public static List<string> BOW_FIGHTER2_IMAGES
             = new List<string>() {
                 "Assets/Images/Bowman2.png",
+                "Assets/Images/Bowman2.png",
+                "Assets/Images/Bowman2Walk1.png",
                 "Assets/Images/Bowman2Walk1.png",
                 "Assets/Images/Bowman2Walk2.png",
+                "Assets/Images/Bowman2Walk2.png",
+                "Assets/Images/Bowman2Walk3.png",
                 "Assets/Images/Bowman2Walk3.png"
             };
 
         public static int BOW_FIGHTER_WIDTH = 28;
         public static int BOW_FIGHTER_HEIGHT = 58;
-        public static int BOW_FIGHTER_RATE = 6;
-    
-
-        public static int BOW_FIGHTER_VELOCITY = 2; public static int BOW_FIGHTER2_VELOCITY = -2;
+        public static int BOW_FIGHTER_VELOCITY = 2;
         public static int BOW_FIGHTER_HP = 70;
         public static int ARROW_DAMAGE = 20;
 
@@ -170,19 +185,19 @@ namespace Unit06
         // public static string BEAR_GROUP = "bears";
         public static List<string> BEAR1_IMAGES
             = new List<string>() {
+                "Assets/Images/bear1.png",
                 "Assets/Images/bear1.png"
             };
 
         public static List<string> BEAR2_IMAGES
             = new List<string>() {
+                "Assets/Images/bear2.png",
                 "Assets/Images/bear2.png"
-                
             };
 
-        public static int BEAR_WIDTH = 25;
-        public static int BEAR_HEIGHT = 15;
-        public static int BEAR_RATE = 6;
-        public static int BEAR_VELOCITY = 1; public static int BEAR2_VELOCITY = -1;
+        public static int BEAR_WIDTH = 50;
+        public static int BEAR_HEIGHT = 25;
+        public static int BEAR_VELOCITY = 1;
         public static int BEAR_HP = 250;
         public static int BEAR_ATTACK_DAMAGE = 45;
 

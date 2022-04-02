@@ -29,11 +29,11 @@ namespace Unit06.Game.Casting
 
             if (team == 1)
             {
-                this.animation = new Animation(Constants.BOW_FIGHTER_IMAGES, 0, Constants.FIGHTER_RATE);
+                this.animation = new Animation(Constants.BOW_FIGHTER_IMAGES, 0, Constants.ANIMATION_RATE);
             }
             else
             {
-                this.animation = new Animation(Constants.BOW_FIGHTER2_IMAGES, 0, Constants.FIGHTER_RATE);
+                this.animation = new Animation(Constants.BOW_FIGHTER2_IMAGES, 0, Constants.ANIMATION_RATE);
                 this.ReverseVelocity();
             }
             
