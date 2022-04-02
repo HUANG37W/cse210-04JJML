@@ -186,13 +186,41 @@ namespace Unit06
         public static List<string> BEAR1_IMAGES
             = new List<string>() {
                 "Assets/Images/bear1.png",
-                "Assets/Images/bear1.png"
+                "Assets/Images/bear1.png",
+                "Assets/Images/bear1.png",
+                "Assets/Images/bear1.png",
+                "Assets/Images/bear1walk1.png",
+                "Assets/Images/bear1walk1.png",
+                "Assets/Images/bear1walk1.png",
+                "Assets/Images/bear1walk1.png",
+                "Assets/Images/bear1walk2.png",
+                "Assets/Images/bear1walk2.png",
+                "Assets/Images/bear1walk2.png",
+                "Assets/Images/bear1walk2.png",
+                "Assets/Images/bear1walk3.png",
+                "Assets/Images/bear1walk3.png",
+                "Assets/Images/bear1walk3.png",
+                "Assets/Images/bear1walk3.png"
             };
 
         public static List<string> BEAR2_IMAGES
             = new List<string>() {
                 "Assets/Images/bear2.png",
-                "Assets/Images/bear2.png"
+                "Assets/Images/bear2.png",
+                "Assets/Images/bear2.png",
+                "Assets/Images/bear2.png",
+                "Assets/Images/bear2walk1.png",
+                "Assets/Images/bear2walk1.png",
+                "Assets/Images/bear2walk1.png",
+                "Assets/Images/bear2walk1.png",
+                "Assets/Images/bear2walk2.png",
+                "Assets/Images/bear2walk2.png",
+                "Assets/Images/bear2walk2.png",
+                "Assets/Images/bear2walk2.png",
+                "Assets/Images/bear2walk3.png",
+                "Assets/Images/bear2walk3.png",
+                "Assets/Images/bear2walk3.png",
+                "Assets/Images/bear2walk3.png"
             };
 
         public static int BEAR_WIDTH = 50;
