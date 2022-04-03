@@ -11,7 +11,7 @@ namespace Unit06.Game.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Stats(int lives1 = 5, int lives2 = 5, 
+        public Stats(int lives1 = 10, int lives2 = 10, 
                 bool debug = false) : base(debug)
         {
             this.lives1 = lives1;
@@ -19,7 +19,7 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Adds one level.
+        /// Replenishes one life.
         /// </summary>
         public void AddPlayer1Lives()
         {
@@ -27,7 +27,7 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Adds an extra life.
+        /// Replenishes one life.
         /// </summary>
         public void AddPlayer2Lives()
         {

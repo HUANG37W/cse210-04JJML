@@ -21,9 +21,11 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
+            Sound victorySound = new Sound(Constants.CHEER_SOUND);
+            Sound swordStrike = new Sound(Constants.SWORD_CLASH_SOUND);
+
             foreach (Fighter fighter in cast.GetActors(Constants.FIGHTER_GROUP))
             {
-                Sound victorySound = new Sound(Constants.CHEER_SOUND);
                 //loops through each fighter on screen and checks if they cross either
                 // the right or left border. The affected player loses a life per fighter crossed.
 
@@ -37,8 +39,6 @@ namespace Unit06.Game.Scripting
                 {
                     
                     stats.RemovePlayer1Life();
-                    cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
-                    //audioService.PlaySound(bounceSound);
 
                     if (stats.GetPlayer1Lives() <= 0)
                     {
@@ -48,13 +48,16 @@ namespace Unit06.Game.Scripting
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
                         audioService.PlaySound(victorySound);
                     }
+                    else
+                    {
+                        audioService.PlaySound(swordStrike);
+                        cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
+                    }
                     
                 }
                 else if (x >= Constants.FIELD_RIGHT - Constants.SWORD_FIGHTER_WIDTH)
                 {
                     stats.RemovePlayer2Life();
-                    cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
-                    //audioService.PlaySound(bounceSound);
                     
                     if (stats.GetPlayer2Lives() <= 0)
                     {
@@ -63,6 +66,11 @@ namespace Unit06.Game.Scripting
                         //clears all actors from screen for new game
                         cast.ClearActors(Constants.FIGHTER_GROUP); 
                         audioService.PlaySound(victorySound);
+                    }
+                    else
+                    {
+                        audioService.PlaySound(swordStrike);
+                        cast.RemoveActor(Constants.FIGHTER_GROUP, fighter);
                     }
 
                 }
