@@ -100,6 +100,7 @@ namespace Unit06
         public static string STATS_GROUP = "stats";
         // public static int MAXIMUM_LIVES = 5;
 
+        // public static string SCENE_GROUP = "scenery";
 
         // HUD
         public static int HUD_MARGIN = 15;
