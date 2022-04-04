@@ -23,8 +23,7 @@ namespace Unit06.Game.Scripting
         {
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
 
-            // Dictionary<string, List<Actor>> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
-
+            ///Collision logic for fighters. Each fighter is compared to all the fighters in the list and lives are removed and actor if dead. Team is a variable in fighters.
             List<Actor> fighters = cast.GetActors(Constants.FIGHTER_GROUP);
             
             foreach (Fighter f1 in fighters) 

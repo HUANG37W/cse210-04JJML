@@ -24,7 +24,7 @@ namespace Unit06.Game.Casting
             this.health = Constants.BOW_FIGHTER_HP;
             this.damage = Constants.SWORD_DAMAGE;
 
-            //sets the point sp2, size, and velocity to the player2 fighter
+            //sets the point, size, and velocity to the bow fighter and according to team
             this.body = new Body(position, size, velocity);
 
             if (team == 1)
@@ -38,6 +38,7 @@ namespace Unit06.Game.Casting
             }
             
         }
+        ///creates method for attack
         public override void AttackAction()
         {
             return;

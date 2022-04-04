@@ -74,7 +74,7 @@ namespace Unit06.Game.Directing
             AddUnloadActions(script);
             AddReleaseActions(script);
         }
-
+        ///new Selector created and added to the cast
         private void ActivateSelector(Cast cast)
         {
             Selector selector = (Selector)cast.GetFirstActor(Constants.SELECTOR_GROUP);
@@ -113,7 +113,7 @@ namespace Unit06.Game.Directing
             AddUpdateActions(script);
             AddOutputActions(script);
         }
-
+        ///prepares InPlay for the game
         private void PrepareInPlay(Cast cast, Script script)
         {
             ActivateSelector(cast);
@@ -129,7 +129,7 @@ namespace Unit06.Game.Directing
             AddOutputActions(script);
         
         }
-
+        ///Game over setup for teams and ending when lives are at 0 or less
         private void PrepareGameOver(Cast cast, Script script)
         {
             Stats stats = (Stats)cast.GetFirstActor(Constants.STATS_GROUP);
@@ -249,18 +249,6 @@ namespace Unit06.Game.Directing
             }
         }
     
-        // private void AddScore(Cast cast)
-        // {
-        //     cast.ClearActors(Constants.SCORE_GROUP);
-
-        //     Text text = new Text(Constants.SCORE_FORMAT, Constants.FONT_FILE, Constants.FONT_SIZE, 
-        //         Constants.ALIGN_CENTER, Constants.WHITE);
-        //     Point position = new Point(Constants.CENTER_X, Constants.HUD_MARGIN);
-            
-        //     Label label = new Label(text, position);
-        //     cast.AddActor(Constants.SCORE_GROUP, label);   
-        // }
-
         private void AddStats(Cast cast)
         {
             cast.ClearActors(Constants.STATS_GROUP);
@@ -283,6 +271,7 @@ namespace Unit06.Game.Directing
         {
             script.AddAction(Constants.LOAD, new LoadAssetsAction(AudioService, VideoService));
         }
+        ///Draw script participants on the screen
 
         private void AddOutputActions(Script script)
         {
@@ -304,7 +293,7 @@ namespace Unit06.Game.Directing
             script.AddAction(Constants.RELEASE, new ReleaseDevicesAction(AudioService, 
                 VideoService));
         }
-
+        ///Updates the game with moving and spawning methods
         private void AddUpdateActions(Script script)
         {
             script.AddAction(Constants.UPDATE, new MoveFighterAction());
