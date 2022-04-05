@@ -1,5 +1,5 @@
 # cse210-04JJML
-The fighter game
+The Kingdom Battle
 
 # Description:
 The fighter game is a two player game using a standard keyboard to control the fighters on the screen. The fighters are spawned using key control. Velocity is set according to the fighter character. A selector is used to spawn the fighters on a choice of 3 set y positions. Each fighter has health and each player has lives. The game ends when one player loses all its lives. The fighters have varying damage affect with the bear top of the food chain. 
