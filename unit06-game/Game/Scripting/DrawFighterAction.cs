@@ -12,7 +12,7 @@ namespace Unit06.Game.Scripting
         {
             this.videoService = videoService;
         }
-
+        ///Method to draw fighter on the screen
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
             

@@ -1,7 +1,7 @@
 namespace Unit06.Game.Casting
 {
     /// <summary>
-    /// A thing that participates in the game.
+    /// A thing that participates in the game. Spawns fighters according to position
     /// </summary>
     public class Selector : Actor
     {
@@ -9,7 +9,7 @@ namespace Unit06.Game.Casting
         private Animation animation;
         
         /// <summary>
-        /// Constructs a new instance of Actor.
+        /// Constructs a new instance of Selector.
         /// </summary>
         public Selector(Body body, Animation animation, bool debug) : base(debug)
         {
@@ -36,15 +36,11 @@ namespace Unit06.Game.Casting
         }
 
         /// <summary>
-        /// Moves the Selector to its next position.
+        /// Moves the Selector to its next position. A more specific method is used with moveup and movedown.
         /// </summary>
         public void MoveNext()
         {
-            // Point position = body.GetPosition();
-
-            // // Point velocity = body.GetVelocity();
-            // Point newPosition = position.Add(velocity);
-            // body.SetPosition(newPosition);
+            
             return;
         }
 

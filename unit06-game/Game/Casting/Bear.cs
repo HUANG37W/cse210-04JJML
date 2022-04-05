@@ -26,7 +26,7 @@ namespace Unit06.Game.Casting
             this.health = Constants.BEAR_HP;
             this.damage = Constants.BEAR_ATTACK_DAMAGE;
 
-            //sets the point sp2, size, and velocity to the player2 fighter
+            //sets the point, size, and velocity to the bear fighter and according to team
             this.body = new Body(position, size, velocity);
 
             if (team == 1)

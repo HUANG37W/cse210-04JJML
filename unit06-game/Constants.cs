@@ -101,7 +101,9 @@ namespace Unit06
         public static string STATS_GROUP = "stats";
         public static int MAXIMUM_LIVES = 10;
 
-        // public static string SCENE_GROUP = "scenery";
+        // public static Image SCENE_GROUP = new Image("Assets/Images/trees.png");
+        // public static string SCENE_GROUP = "Assets/Images/trees.png";
+        public static string SCENE_GROUP = "Assets/Images/trees.png";
 
         // HUD
         public static int HUD_MARGIN = 15;
@@ -177,7 +179,7 @@ namespace Unit06
 
         public static int BOW_FIGHTER_WIDTH = 28;
         public static int BOW_FIGHTER_HEIGHT = 58;
-        public static int BOW_FIGHTER_VELOCITY = 2;
+        public static int BOW_FIGHTER_VELOCITY = 6;
         public static int BOW_FIGHTER_HP = 70;
         public static int ARROW_DAMAGE = 20;
 

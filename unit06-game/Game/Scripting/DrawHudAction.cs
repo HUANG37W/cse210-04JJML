@@ -1,9 +1,11 @@
 using Unit06.Game.Casting;
 using Unit06.Game.Services;
+using System.Collections.Generic;
 
 
 namespace Unit06.Game.Scripting
 {
+    ///Heads up display
     public class DrawHudAction : Action
     {
         private VideoService videoService;
@@ -20,10 +22,6 @@ namespace Unit06.Game.Scripting
             DrawLabel(cast, Constants.LIVES2_GROUP, Constants.LIVES2_FORMAT, stats.GetPlayer2Lives());
         }
 
-        // **********************************************************************************************
-        // You found the bug. Great job!
-        // **********************************************************************************************
-        // todo: fix the bug by making sure the text value is set to the appropriate variable.
         private void DrawLabel(Cast cast, string group, string format, int data)
         {
             string theValueToDisplay = string.Format(format, data);

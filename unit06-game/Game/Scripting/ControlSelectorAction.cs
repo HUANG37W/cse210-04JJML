@@ -14,7 +14,7 @@ namespace Unit06.Game.Scripting
         }
 
        
-
+        ///Moves Selector and stops movement
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
 
