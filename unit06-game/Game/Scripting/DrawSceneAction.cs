@@ -17,8 +17,9 @@ namespace Unit06.Game.Scripting
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-
-            // videoService.DrawImage(Constants.SCENE_GROUP, Constants.SCREEN_WIDTH);
+            Image image = new Image(Constants.SCENE_GROUP);
+            Point point = new Point(0,0);
+            videoService.DrawImage(image, point);
             
         }
 

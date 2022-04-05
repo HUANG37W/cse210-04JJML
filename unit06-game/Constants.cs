@@ -101,7 +101,9 @@ namespace Unit06
         public static string STATS_GROUP = "stats";
         public static int MAXIMUM_LIVES = 10;
 
-        public static Image SCENE_GROUP = new Image("Assets/Images/trees.png");
+        // public static Image SCENE_GROUP = new Image("Assets/Images/trees.png");
+        // public static string SCENE_GROUP = "Assets/Images/trees.png";
+        public static string SCENE_GROUP = "Assets/Images/trees.png";
 
         // HUD
         public static int HUD_MARGIN = 15;
