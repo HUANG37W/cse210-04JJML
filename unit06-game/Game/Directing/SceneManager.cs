@@ -276,6 +276,7 @@ namespace Unit06.Game.Directing
         private void AddOutputActions(Script script)
         {
             script.AddAction(Constants.OUTPUT, new StartDrawingAction(VideoService));
+            // script.AddAction(Constants.OUTPUT, new DrawSceneAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawHudAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawSelectorAction(VideoService));
             script.AddAction(Constants.OUTPUT, new DrawFighterAction(VideoService));
