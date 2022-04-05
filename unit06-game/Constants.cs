@@ -11,7 +11,7 @@ namespace Unit06
         // ----------------------------------------------------------------------------------------- 
 
         // GAME
-        public static string GAME_NAME = "Kingdom Fighters";
+        public static string GAME_NAME = "Kingdom Battle";
         public static int FRAME_RATE = 60;
 
         // SCREEN
